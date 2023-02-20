@@ -5,7 +5,7 @@
  */
 package PAC_MODELO;
 
-import PAC_ENTIDAD.MOD_CENTRO;
+import PAC_ENTIDAD.ENT_CENTRO;
 import static PAC_MODELO.CONEXION.getConexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -23,18 +23,18 @@ import javax.swing.table.DefaultTableModel;
  */
 public class SQL_CENTRO {
 
-    public ArrayList<MOD_CENTRO> getCentro() {
+    public ArrayList<ENT_CENTRO> getCentro() {
         PreparedStatement ps = null;
         Connection con = getConexion();
         ResultSet rs = null;
 
-        ArrayList<MOD_CENTRO> lista = new ArrayList();
+        ArrayList<ENT_CENTRO> lista = new ArrayList();
 
         try {
             ps = con.prepareStatement("select * from CENTRO_FORMACION");
             rs = ps.executeQuery();
             while (rs.next()) {
-                MOD_CENTRO mod = new MOD_CENTRO();
+                ENT_CENTRO mod = new ENT_CENTRO();
                 mod.setCf_codigo(rs.getLong("cf_codigo"));
                 mod.setCf_nombre(rs.getString("cf_nombre"));
                 lista.add(mod);
@@ -45,7 +45,7 @@ public class SQL_CENTRO {
         return lista;
     }
 
-    public boolean Verificar(MOD_CENTRO mod) {
+    public boolean Verificar(ENT_CENTRO mod) {
         PreparedStatement ps = null;
         Connection con = getConexion();
         ResultSet rs = null;
@@ -71,7 +71,7 @@ public class SQL_CENTRO {
         }
     }
 
-    public boolean Registrar(MOD_CENTRO mod) {
+    public boolean Registrar(ENT_CENTRO mod) {
         PreparedStatement ps = null;
         Connection con = getConexion();
         ResultSet rs = null;
@@ -93,7 +93,7 @@ public class SQL_CENTRO {
         }
     }
 
-    public boolean Modificar(MOD_CENTRO mod) {
+    public boolean Modificar(ENT_CENTRO mod) {
         PreparedStatement ps = null;
         Connection con = getConexion();
         ResultSet rs = null;

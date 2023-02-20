@@ -5,14 +5,14 @@
  */
 package PAC_VISTA.FLD_ADM;
 
-import PAC_ENTIDAD.MOD_USUARIO;
+import PAC_ENTIDAD.ENT_USUARIO;
 import PAC_MODELO.SQL_USUARIO;
 import java.awt.Color;
 import javax.swing.JRadioButton;
 
 public class VTN_USUARIO extends javax.swing.JPanel {
 
-    MOD_USUARIO modUsu = new MOD_USUARIO();
+    ENT_USUARIO modUsu = new ENT_USUARIO();
     SQL_USUARIO sqlUsu = new SQL_USUARIO();
 
     public VTN_USUARIO() {

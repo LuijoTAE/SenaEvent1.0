@@ -6,7 +6,7 @@
 package PAC_VISTA;
 
 import PAC_VISTA.FLD_ADM.FRM_ADM;
-import PAC_ENTIDAD.MOD_USUARIO;
+import PAC_ENTIDAD.ENT_USUARIO;
 import PAC_MODELO.SQL_USUARIO;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -18,7 +18,7 @@ import javax.swing.JPanel;
 public class FRM_INICIO extends javax.swing.JFrame {
 
     VTN_I_LOGIN frml_login = new VTN_I_LOGIN();
-    MOD_USUARIO mod_usu = new MOD_USUARIO();
+    ENT_USUARIO mod_usu = new ENT_USUARIO();
     SQL_USUARIO sql_usuario = new SQL_USUARIO();
 
     public FRM_INICIO() {

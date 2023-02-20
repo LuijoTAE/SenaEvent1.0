@@ -5,11 +5,11 @@
  */
 package PAC_VISTA.FLD_ADM;
 
-import PAC_ENTIDAD.MOD_CENTRO;
-import PAC_ENTIDAD.MOD_FICHA;
-import PAC_ENTIDAD.MOD_PROGRAMA;
-import PAC_ENTIDAD.MOD_REGIONAL;
-import PAC_ENTIDAD.MOD_USUARIO;
+import PAC_ENTIDAD.ENT_CENTRO;
+import PAC_ENTIDAD.ENT_FICHA;
+import PAC_ENTIDAD.ENT_PROGRAMA;
+import PAC_ENTIDAD.ENT_REGIONAL;
+import PAC_ENTIDAD.ENT_USUARIO;
 import PAC_MODELO.SQL_CENTRO;
 import PAC_MODELO.SQL_FICHA;
 import PAC_MODELO.SQL_PROGRAMA;
@@ -29,19 +29,19 @@ import javax.swing.JTextField;
  */
 public class VTN_A_REGIONAL extends javax.swing.JPanel {
 
-    MOD_REGIONAL modRe = new MOD_REGIONAL();
+    ENT_REGIONAL modRe = new ENT_REGIONAL();
     SQL_REGIONAL sqlRe = new SQL_REGIONAL();
 
-    MOD_USUARIO modUsu = new MOD_USUARIO();
+    ENT_USUARIO modUsu = new ENT_USUARIO();
     SQL_USUARIO sqlUsu = new SQL_USUARIO();
 
-    MOD_CENTRO modCe = new MOD_CENTRO();
+    ENT_CENTRO modCe = new ENT_CENTRO();
     SQL_CENTRO sqlCe = new SQL_CENTRO();
 
-    MOD_PROGRAMA modPr = new MOD_PROGRAMA();
+    ENT_PROGRAMA modPr = new ENT_PROGRAMA();
     SQL_PROGRAMA sqlPr = new SQL_PROGRAMA();
 
-    MOD_FICHA modFi = new MOD_FICHA();
+    ENT_FICHA modFi = new ENT_FICHA();
     SQL_FICHA sqlFi = new SQL_FICHA();
 
     public VTN_A_REGIONAL() {
@@ -58,40 +58,40 @@ public class VTN_A_REGIONAL extends javax.swing.JPanel {
 
     private void LlenarUsuarios() {
 
-        ArrayList<MOD_USUARIO> lista = sqlUsu.getUsuario();
+        ArrayList<ENT_USUARIO> lista = sqlUsu.getUsuario();
 
         this.cmb_Rusuario.removeAllItems();
 
         for (int i = 0; i < lista.size(); i++) {
-            this.cmb_Rusuario.addItem(new MOD_USUARIO(lista.get(i).getUs_nombre(), lista.get(i).getUs_apellido(), lista.get(i).getUs_dni()));
+            this.cmb_Rusuario.addItem(new ENT_USUARIO(lista.get(i).getUs_nombre(), lista.get(i).getUs_apellido(), lista.get(i).getUs_dni()));
         }
     }
 
     private void LlenarRegional() {
 
-        ArrayList<MOD_REGIONAL> lista = sqlRe.getRegional();
+        ArrayList<ENT_REGIONAL> lista = sqlRe.getRegional();
 
         this.cmb_Cregional.removeAllItems();
 
         for (int i = 0; i < lista.size(); i++) {
-            this.cmb_Cregional.addItem(new MOD_REGIONAL(lista.get(i).getRe_nombre(), lista.get(i).getRe_codigo()));
+            this.cmb_Cregional.addItem(new ENT_REGIONAL(lista.get(i).getRe_nombre(), lista.get(i).getRe_codigo()));
         }
     }
 
     private void LlenarCentro() {
-        ArrayList<MOD_CENTRO> lista = sqlCe.getCentro();
+        ArrayList<ENT_CENTRO> lista = sqlCe.getCentro();
         this.cmb_Fcentro.removeAllItems();
         for (int i = 0; i < lista.size(); i++) {
-            this.cmb_Fcentro.addItem(new MOD_CENTRO(lista.get(i).getCf_nombre(),
+            this.cmb_Fcentro.addItem(new ENT_CENTRO(lista.get(i).getCf_nombre(),
                     lista.get(i).getCf_codigo()));
         }
     }
 
     private void LlenarPrograma() {
-        ArrayList<MOD_PROGRAMA> lista = sqlPr.getPrograma();
+        ArrayList<ENT_PROGRAMA> lista = sqlPr.getPrograma();
         this.cmb_Fprograma.removeAllItems();
         for (int i = 0; i < lista.size(); i++) {
-            this.cmb_Fprograma.addItem(new MOD_PROGRAMA(lista.get(i).getPf_codigo(),
+            this.cmb_Fprograma.addItem(new ENT_PROGRAMA(lista.get(i).getPf_codigo(),
                     lista.get(i).getPf_version(), lista.get(i).getPf_nombre()));
         }
     }
@@ -762,13 +762,13 @@ public class VTN_A_REGIONAL extends javax.swing.JPanel {
     private javax.swing.JButton btn_Pverificar;
     private javax.swing.JButton btn_Rguardar;
     private javax.swing.JButton btn_Rverificar;
-    private javax.swing.JComboBox<MOD_REGIONAL> cmb_Cregional;
-    private javax.swing.JComboBox<MOD_CENTRO> cmb_Fcentro;
+    private javax.swing.JComboBox<ENT_REGIONAL> cmb_Cregional;
+    private javax.swing.JComboBox<ENT_CENTRO> cmb_Fcentro;
     private javax.swing.JComboBox<String> cmb_Fjornada;
     private javax.swing.JComboBox<String> cmb_Fmodalidad;
-    private javax.swing.JComboBox<MOD_PROGRAMA> cmb_Fprograma;
+    private javax.swing.JComboBox<ENT_PROGRAMA> cmb_Fprograma;
     private javax.swing.JComboBox<String> cmb_Pnivel;
-    private javax.swing.JComboBox<MOD_USUARIO> cmb_Rusuario;
+    private javax.swing.JComboBox<ENT_USUARIO> cmb_Rusuario;
     private javax.swing.ButtonGroup grpRegional;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

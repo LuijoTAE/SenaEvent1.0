@@ -5,11 +5,11 @@
  */
 package PAC_VISTA.FLD_FUN;
 
-import PAC_ENTIDAD.MOD_CIUDAD;
-import PAC_ENTIDAD.MOD_DEPARTAMENTO;
-import PAC_ENTIDAD.MOD_ESTRATEGICO;
-import PAC_ENTIDAD.MOD_EVENTO;
-import PAC_ENTIDAD.MOD_OPERATIVO;
+import PAC_ENTIDAD.ENT_CIUDAD;
+import PAC_ENTIDAD.ENT_DEPARTAMENTO;
+import PAC_ENTIDAD.ENT_ESTRATEGICO;
+import PAC_ENTIDAD.ENT_EVENTO;
+import PAC_ENTIDAD.ENT_OPERATIVO;
 import PAC_MODELO.SQL_CIUDAD;
 import PAC_MODELO.SQL_DEPARTAMENTO;
 import PAC_MODELO.SQL_ESTRATEGICO;
@@ -24,15 +24,15 @@ import javax.swing.JOptionPane;
  */
 public class VTN_F_EVENTOS extends javax.swing.JPanel {
 
-    MOD_EVENTO modEv = new MOD_EVENTO();
+    ENT_EVENTO modEv = new ENT_EVENTO();
     SQL_EVENTO sqlEv = new SQL_EVENTO();
     
-    MOD_OPERATIVO modOp = new MOD_OPERATIVO();
+    ENT_OPERATIVO modOp = new ENT_OPERATIVO();
     
-    MOD_DEPARTAMENTO modDp = new MOD_DEPARTAMENTO();
+    ENT_DEPARTAMENTO modDp = new ENT_DEPARTAMENTO();
     SQL_DEPARTAMENTO sqlDp = new SQL_DEPARTAMENTO();
     
-    MOD_CIUDAD modCi = new MOD_CIUDAD();
+    ENT_CIUDAD modCi = new ENT_CIUDAD();
     SQL_CIUDAD sqlCi = new SQL_CIUDAD();
     
     SQL_ESTRATEGICO sqlEs = new SQL_ESTRATEGICO();
@@ -47,10 +47,10 @@ public class VTN_F_EVENTOS extends javax.swing.JPanel {
     }
 
     private void LlenarEstrategico() {
-        ArrayList<MOD_ESTRATEGICO> lista = sqlEs.getEstrategico();
+        ArrayList<ENT_ESTRATEGICO> lista = sqlEs.getEstrategico();
         this.cmbEstrategico.removeAllItems();
         for (int i = 0; i < lista.size(); i++) {
-            this.cmbEstrategico.addItem(new MOD_ESTRATEGICO(lista.get(i).getOe_nombre(), lista.get(i).getOe_version()));
+            this.cmbEstrategico.addItem(new ENT_ESTRATEGICO(lista.get(i).getOe_nombre(), lista.get(i).getOe_version()));
         }
     }
 
@@ -59,29 +59,29 @@ public class VTN_F_EVENTOS extends javax.swing.JPanel {
         modOp.setOe_nombre(this.cmbEstrategico.getItemAt(this.cmbEstrategico.getSelectedIndex()).getOe_nombre());
         modOp.setOe_version(this.cmbEstrategico.getItemAt(this.cmbEstrategico.getSelectedIndex()).getOe_version());
 
-        ArrayList<MOD_OPERATIVO> lista = sqlOp.getOperativo(modOp);
+        ArrayList<ENT_OPERATIVO> lista = sqlOp.getOperativo(modOp);
         this.cmbOperativo.removeAllItems();
         for (int i = 0; i < lista.size(); i++) {
-            this.cmbOperativo.addItem(new MOD_OPERATIVO(lista.get(i).getObo_nombre(), lista.get(i).getObo_version()));
+            this.cmbOperativo.addItem(new ENT_OPERATIVO(lista.get(i).getObo_nombre(), lista.get(i).getObo_version()));
         }
     }
 
     private void LlenarDepa() {
         modDp.setPa_codigo(57);
 
-        ArrayList<MOD_DEPARTAMENTO> lista = sqlDp.getDepartamento(modDp);
+        ArrayList<ENT_DEPARTAMENTO> lista = sqlDp.getDepartamento(modDp);
         this.cmbDepa.removeAllItems();
         for (int i = 0; i < lista.size(); i++) {
-            this.cmbDepa.addItem(new MOD_DEPARTAMENTO(lista.get(i).getDe_nombre(), lista.get(i).getDe_codigo()));
+            this.cmbDepa.addItem(new ENT_DEPARTAMENTO(lista.get(i).getDe_nombre(), lista.get(i).getDe_codigo()));
         }
     }
 
     private void LlenarMunicipio() {
         modCi.setDe_codigo(this.cmbDepa.getItemAt(this.cmbDepa.getSelectedIndex()).getDe_codigo());
-        ArrayList<MOD_CIUDAD> lista = sqlCi.getCiudad(modCi);
+        ArrayList<ENT_CIUDAD> lista = sqlCi.getCiudad(modCi);
         this.cmbCiudad.removeAllItems();
         for (int i = 0; i < lista.size(); i++) {
-            this.cmbCiudad.addItem(new MOD_CIUDAD(lista.get(i).getCi_nombre(), lista.get(i).getCi_codigo()));
+            this.cmbCiudad.addItem(new ENT_CIUDAD(lista.get(i).getCi_nombre(), lista.get(i).getCi_codigo()));
         }
     }
 
@@ -589,10 +589,10 @@ public class VTN_F_EVENTOS extends javax.swing.JPanel {
     private javax.swing.JPanel BG;
     private javax.swing.JButton btnCverificar;
     private javax.swing.JButton btnFcalendario;
-    private javax.swing.JComboBox<MOD_CIUDAD> cmbCiudad;
-    private javax.swing.JComboBox<MOD_DEPARTAMENTO> cmbDepa;
-    private javax.swing.JComboBox<MOD_ESTRATEGICO> cmbEstrategico;
-    private javax.swing.JComboBox<MOD_OPERATIVO> cmbOperativo;
+    private javax.swing.JComboBox<ENT_CIUDAD> cmbCiudad;
+    private javax.swing.JComboBox<ENT_DEPARTAMENTO> cmbDepa;
+    private javax.swing.JComboBox<ENT_ESTRATEGICO> cmbEstrategico;
+    private javax.swing.JComboBox<ENT_OPERATIVO> cmbOperativo;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

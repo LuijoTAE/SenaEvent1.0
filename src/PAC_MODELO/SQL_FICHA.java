@@ -1,6 +1,6 @@
 package PAC_MODELO;
 
-import PAC_ENTIDAD.MOD_FICHA;
+import PAC_ENTIDAD.ENT_FICHA;
 import static PAC_MODELO.CONEXION.getConexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class SQL_FICHA {
 
-    public boolean Verificar(MOD_FICHA mod) {
+    public boolean Verificar(ENT_FICHA mod) {
         PreparedStatement ps = null;
         Connection con = getConexion();
         ResultSet rs = null;
@@ -37,7 +37,7 @@ public class SQL_FICHA {
         }
     }
 
-    public boolean Registrar(MOD_FICHA mod) {
+    public boolean Registrar(ENT_FICHA mod) {
         PreparedStatement ps = null;
         Connection con = getConexion();
         String sql = "insert into FICHA values(?,?,?,?,?)";
@@ -103,18 +103,18 @@ public class SQL_FICHA {
         }
     }
 
-    public ArrayList<MOD_FICHA> getFicha(MOD_FICHA mod) {
+    public ArrayList<ENT_FICHA> getFicha(ENT_FICHA mod) {
         PreparedStatement ps = null;
         Connection con = getConexion();
         ResultSet rs = null;
         String sql = "select * from FICHA where pf_codigo =?";
-        ArrayList<MOD_FICHA> lista = new ArrayList();
+        ArrayList<ENT_FICHA> lista = new ArrayList();
         try {
             ps = con.prepareStatement(sql);
             ps.setLong(1, mod.getPf_codigo());
             rs = ps.executeQuery();
             while(rs.next()){
-                MOD_FICHA modd = new MOD_FICHA();
+                ENT_FICHA modd = new ENT_FICHA();
                 modd.setFi_codigo(rs.getLong("fi_codigo"));
                 lista.add(modd);
             }

@@ -1,6 +1,6 @@
 package PAC_MODELO;
 
-import PAC_ENTIDAD.MOD_ASISTENCIAS;
+import PAC_ENTIDAD.ENT_ASISTENCIAS;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,7 +12,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class SQL_ASISTENCIAS extends CONEXION {
 
-    public boolean Registrar(MOD_ASISTENCIAS mod, int opcion) {
+    public boolean Registrar(ENT_ASISTENCIAS ent, int opcion) {
         PreparedStatement ps = null;
         Connection con = getConexion();
         String sql = "";
@@ -23,8 +23,8 @@ public class SQL_ASISTENCIAS extends CONEXION {
         }
         try {
             ps = con.prepareStatement(sql);
-            ps.setLong(1, mod.getEvCodigo());
-            ps.setLong(2, mod.getUsDni());
+            ps.setLong(1, ent.getEvCodigo());
+            ps.setLong(2, ent.getUsDni());
             ps.execute();
             JOptionPane.showMessageDialog(null, " !YES!...\n La asistencia fue registrada exitosamente");
             return true;

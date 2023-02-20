@@ -1,6 +1,6 @@
 package PAC_MODELO;
 
-import PAC_ENTIDAD.MOD_DEPARTAMENTO;
+import PAC_ENTIDAD.ENT_DEPARTAMENTO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 public class SQL_DEPARTAMENTO extends CONEXION {
 
-    public boolean Verificar(MOD_DEPARTAMENTO mod) {
+    public boolean Verificar(ENT_DEPARTAMENTO mod) {
         PreparedStatement ps = null;
         Connection con = getConexion();
         ResultSet rs = null;
@@ -35,18 +35,18 @@ public class SQL_DEPARTAMENTO extends CONEXION {
         }
     }
     
-    public ArrayList<MOD_DEPARTAMENTO> getDepartamento(MOD_DEPARTAMENTO mod) {
+    public ArrayList<ENT_DEPARTAMENTO> getDepartamento(ENT_DEPARTAMENTO mod) {
         PreparedStatement ps = null;
         Connection con = getConexion();
         ResultSet rs = null;
         String sql = "select * from DEPARTAMENTO where pa_codigo=?";
-        ArrayList<MOD_DEPARTAMENTO> lista = new ArrayList();
+        ArrayList<ENT_DEPARTAMENTO> lista = new ArrayList();
         try {
             ps = con.prepareStatement(sql);
             ps.setLong(1, mod.getPa_codigo());
             rs = ps.executeQuery();
             while (rs.next()) {
-                MOD_DEPARTAMENTO mod2 = new MOD_DEPARTAMENTO();
+                ENT_DEPARTAMENTO mod2 = new ENT_DEPARTAMENTO();
                 mod2.setDe_nombre(rs.getString("de_nombre"));
                 mod2.setDe_codigo(rs.getLong("de_codigo"));
                 lista.add(mod2);
@@ -57,7 +57,7 @@ public class SQL_DEPARTAMENTO extends CONEXION {
         return lista;
     }
 
-    public boolean Registrar(MOD_DEPARTAMENTO mod) {
+    public boolean Registrar(ENT_DEPARTAMENTO mod) {
         PreparedStatement ps = null;
         Connection con = getConexion();
         String sql = "insert into DEPARTAMENTO values (?,?,?)";
@@ -82,7 +82,7 @@ public class SQL_DEPARTAMENTO extends CONEXION {
         }
     }
 
-    public boolean Modificar(MOD_DEPARTAMENTO mod) {
+    public boolean Modificar(ENT_DEPARTAMENTO mod) {
         PreparedStatement ps = null;
         Connection con = getConexion();
         String sql = "update DEPARTAMENTO set de_nombre=? where de_codigo=?";

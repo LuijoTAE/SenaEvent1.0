@@ -1,6 +1,6 @@
 package PAC_MODELO;
 
-import PAC_ENTIDAD.MOD_CIUDAD;
+import PAC_ENTIDAD.ENT_CIUDAD;
 import static PAC_MODELO.CONEXION.getConexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 
 public class SQL_CIUDAD extends CONEXION {
 
-    public boolean Verificar(MOD_CIUDAD mod) {
+    public boolean Verificar(ENT_CIUDAD mod) {
         PreparedStatement ps = null;
         Connection con = getConexion();
         ResultSet rs = null;
@@ -36,19 +36,19 @@ public class SQL_CIUDAD extends CONEXION {
         }
     }
     
-    public ArrayList<MOD_CIUDAD> getCiudad(MOD_CIUDAD mod) {
+    public ArrayList<ENT_CIUDAD> getCiudad(ENT_CIUDAD mod) {
         PreparedStatement ps = null;
         Connection con = getConexion();
         ResultSet rs = null;
         String sql = "select * from CIUDAD where de_codigo=?";
-        ArrayList<MOD_CIUDAD> lista = new ArrayList();
+        ArrayList<ENT_CIUDAD> lista = new ArrayList();
         try {
             ps = con.prepareStatement(sql);
             ps.setLong(1, mod.getDe_codigo());
             rs = ps.executeQuery();
             while (rs.next()) {
 
-                MOD_CIUDAD modd = new MOD_CIUDAD();
+                ENT_CIUDAD modd = new ENT_CIUDAD();
                 modd.setCi_nombre(rs.getString("ci_nombre"));
                 modd.setCi_codigo(rs.getLong("ci_codigo"));
                 lista.add(modd);
@@ -59,7 +59,7 @@ public class SQL_CIUDAD extends CONEXION {
         return lista;
     }
 
-    public boolean Registrar(MOD_CIUDAD mod) {
+    public boolean Registrar(ENT_CIUDAD mod) {
         PreparedStatement ps = null;
         Connection con = getConexion();
         String sql = "insert into CIUDAD values (?,?,?)";
@@ -84,7 +84,7 @@ public class SQL_CIUDAD extends CONEXION {
         }
     }
     
-    public boolean Modificar(MOD_CIUDAD mod) {
+    public boolean Modificar(ENT_CIUDAD mod) {
         PreparedStatement ps = null;
         Connection con = getConexion();
         String sql = "update CIUDAD set ci_nombre=? where ci_codigo=?";

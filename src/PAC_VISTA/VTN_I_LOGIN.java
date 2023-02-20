@@ -6,8 +6,8 @@
 package PAC_VISTA;
 
 import PAC_VISTA.FLD_ADM.FRM_ADM;
-import PAC_ENTIDAD.MOD_ADMINISTRADOR;
-import PAC_ENTIDAD.MOD_USUARIO;
+import PAC_ENTIDAD.ENT_ADMINISTRADOR;
+import PAC_ENTIDAD.ENT_USUARIO;
 import PAC_MODELO.SQL_USUARIO;
 import PAC_VISTA.FLD_FUN.FRM_FUN;
 import java.awt.Color;
@@ -22,10 +22,10 @@ import javax.swing.JPanel;
 public class VTN_I_LOGIN extends javax.swing.JPanel {
 
     
-    MOD_USUARIO mod_usu = new MOD_USUARIO();
+    ENT_USUARIO mod_usu = new ENT_USUARIO();
     SQL_USUARIO sql_usu = new SQL_USUARIO();
     
-    MOD_ADMINISTRADOR mod_adm = new MOD_ADMINISTRADOR();
+    ENT_ADMINISTRADOR mod_adm = new ENT_ADMINISTRADOR();
     
     public VTN_I_LOGIN() {
         initComponents();

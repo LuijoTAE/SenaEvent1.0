@@ -5,7 +5,7 @@
  */
 package PAC_MODELO;
 
-import PAC_ENTIDAD.MOD_USUARIO;
+import PAC_ENTIDAD.ENT_USUARIO;
 import static PAC_MODELO.CONEXION.getConexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -25,7 +25,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class SQL_USUARIO extends CONEXION {
 
-    public boolean Validar_ingreso(MOD_USUARIO mod_usu) {
+    public boolean Validar_ingreso(ENT_USUARIO mod_usu) {
 
         PreparedStatement ps = null;
         Connection con = getConexion();
@@ -56,7 +56,7 @@ public class SQL_USUARIO extends CONEXION {
         }
     }
 
-    public boolean Verificar_usuario(MOD_USUARIO us) {
+    public boolean Verificar_usuario(ENT_USUARIO us) {
 
         PreparedStatement ps = null;
         Connection con = getConexion();
@@ -80,7 +80,7 @@ public class SQL_USUARIO extends CONEXION {
         }
     }
 
-    public boolean Registrar(MOD_USUARIO us) {
+    public boolean Registrar(ENT_USUARIO us) {
 
         PreparedStatement ps = null;
         Connection con = getConexion();
@@ -113,7 +113,7 @@ public class SQL_USUARIO extends CONEXION {
         }
     }
 
-    public boolean Modificar(MOD_USUARIO us) {
+    public boolean Modificar(ENT_USUARIO us) {
 
         PreparedStatement ps = null;
         Connection con = getConexion();
@@ -141,7 +141,7 @@ public class SQL_USUARIO extends CONEXION {
         }
     }
 
-    public ResultSet Buscar(MOD_USUARIO us) {
+    public ResultSet Buscar(ENT_USUARIO us) {
 
         PreparedStatement ps = null;
         Connection con = getConexion();
@@ -181,12 +181,12 @@ public class SQL_USUARIO extends CONEXION {
         }
     }
 
-    public ArrayList<MOD_USUARIO> getUsuario() {
+    public ArrayList<ENT_USUARIO> getUsuario() {
         PreparedStatement ps = null;
         Connection con = getConexion();
         ResultSet rs = null;
 
-        ArrayList<MOD_USUARIO> Listar_usu = new ArrayList();
+        ArrayList<ENT_USUARIO> Listar_usu = new ArrayList();
 
         try {
 
@@ -194,7 +194,7 @@ public class SQL_USUARIO extends CONEXION {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                MOD_USUARIO mod_usu = new MOD_USUARIO();
+                ENT_USUARIO mod_usu = new ENT_USUARIO();
                 mod_usu.setUs_nombre(rs.getString("us_nombre"));
                 mod_usu.setUs_apellido(rs.getString("us_apellido"));
                 mod_usu.setUs_dni(rs.getLong("us_dni"));

@@ -1,6 +1,6 @@
 package PAC_MODELO;
 
-import PAC_ENTIDAD.MOD_PROGRAMA;
+import PAC_ENTIDAD.ENT_PROGRAMA;
 import static PAC_MODELO.CONEXION.getConexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,18 +12,18 @@ import javax.swing.JOptionPane;
 public class SQL_PROGRAMA extends CONEXION {
 
     //MOD_PROGRAMA mod = new MOD_PROGRAMA();
-    public ArrayList<MOD_PROGRAMA> getPrograma() {
+    public ArrayList<ENT_PROGRAMA> getPrograma() {
         PreparedStatement ps = null;
         Connection con = getConexion();
         ResultSet rs = null;
 
-        ArrayList<MOD_PROGRAMA> lista = new ArrayList();
+        ArrayList<ENT_PROGRAMA> lista = new ArrayList();
 
         try {
             ps = con.prepareStatement("select * from PROGRAMA_FORMACION");
             rs = ps.executeQuery();
             while (rs.next()) {
-                MOD_PROGRAMA mod = new MOD_PROGRAMA();
+                ENT_PROGRAMA mod = new ENT_PROGRAMA();
                 mod.setPf_codigo(rs.getLong("pf_codigo"));
                 mod.setPf_nombre(rs.getString("pf_nombre"));
                 mod.setPf_version(rs.getDouble("pf_version"));
@@ -35,7 +35,7 @@ public class SQL_PROGRAMA extends CONEXION {
         return lista;
     }
 
-    public boolean Vereficar(MOD_PROGRAMA mod) {
+    public boolean Vereficar(ENT_PROGRAMA mod) {
         PreparedStatement ps = null;
         Connection con = getConexion();
         ResultSet rs = null;
@@ -59,7 +59,7 @@ public class SQL_PROGRAMA extends CONEXION {
         }
     }
 
-    public boolean Registrar(MOD_PROGRAMA mod) {
+    public boolean Registrar(ENT_PROGRAMA mod) {
         PreparedStatement ps = null;
         Connection con = getConexion();
         String sql = "insert into PROGRAMA_FORMACION values(?,?,?,?)";

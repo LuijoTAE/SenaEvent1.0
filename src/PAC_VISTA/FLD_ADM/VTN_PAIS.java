@@ -5,9 +5,9 @@
  */
 package PAC_VISTA.FLD_ADM;
 
-import PAC_ENTIDAD.MOD_CIUDAD;
-import PAC_ENTIDAD.MOD_DEPARTAMENTO;
-import PAC_ENTIDAD.MOD_USUARIO;
+import PAC_ENTIDAD.ENT_CIUDAD;
+import PAC_ENTIDAD.ENT_DEPARTAMENTO;
+import PAC_ENTIDAD.ENT_USUARIO;
 import PAC_MODELO.SQL_CIUDAD;
 import PAC_MODELO.SQL_DEPARTAMENTO;
 import PAC_MODELO.SQL_USUARIO;
@@ -21,13 +21,13 @@ import javax.swing.JRadioButton;
  */
 public class VTN_PAIS extends javax.swing.JPanel {
 
-    MOD_USUARIO modUsu = new MOD_USUARIO();
+    ENT_USUARIO modUsu = new ENT_USUARIO();
     SQL_USUARIO sqlUsu = new SQL_USUARIO();
     
-    MOD_DEPARTAMENTO modDp = new MOD_DEPARTAMENTO();
+    ENT_DEPARTAMENTO modDp = new ENT_DEPARTAMENTO();
     SQL_DEPARTAMENTO sqlDp = new SQL_DEPARTAMENTO();
     
-    MOD_CIUDAD modCi = new MOD_CIUDAD();
+    ENT_CIUDAD modCi = new ENT_CIUDAD();
     SQL_CIUDAD sqlCi = new SQL_CIUDAD();
     
     public VTN_PAIS() {
@@ -53,22 +53,22 @@ public class VTN_PAIS extends javax.swing.JPanel {
     
     private void LlenarUsuarios() {
 
-        ArrayList<MOD_USUARIO> lista = sqlUsu.getUsuario();
+        ArrayList<ENT_USUARIO> lista = sqlUsu.getUsuario();
 
         this.cmbUsuario.removeAllItems();
 
         for (int i = 0; i < lista.size(); i++) {
-            this.cmbUsuario.addItem(new MOD_USUARIO(lista.get(i).getUs_nombre(), lista.get(i).getUs_apellido(), lista.get(i).getUs_dni()));
+            this.cmbUsuario.addItem(new ENT_USUARIO(lista.get(i).getUs_nombre(), lista.get(i).getUs_apellido(), lista.get(i).getUs_dni()));
         }
     }
     
     private void LlenarDepa() {
         modDp.setPa_codigo(57);
 
-        ArrayList<MOD_DEPARTAMENTO> lista = sqlDp.getDepartamento(modDp);
+        ArrayList<ENT_DEPARTAMENTO> lista = sqlDp.getDepartamento(modDp);
         this.cmbDepartamento.removeAllItems();
         for (int i = 0; i < lista.size(); i++) {
-            this.cmbDepartamento.addItem(new MOD_DEPARTAMENTO(lista.get(i).getDe_nombre(), lista.get(i).getDe_codigo()));
+            this.cmbDepartamento.addItem(new ENT_DEPARTAMENTO(lista.get(i).getDe_nombre(), lista.get(i).getDe_codigo()));
         }
     }
     
@@ -503,9 +503,9 @@ public class VTN_PAIS extends javax.swing.JPanel {
     private javax.swing.JButton btnDverificar;
     private javax.swing.JButton btnPguardar;
     private javax.swing.JButton btnPverificar;
-    private javax.swing.JComboBox<MOD_DEPARTAMENTO> cmbDepartamento;
+    private javax.swing.JComboBox<ENT_DEPARTAMENTO> cmbDepartamento;
     private javax.swing.JComboBox<String> cmbPais;
-    private javax.swing.JComboBox<MOD_USUARIO> cmbUsuario;
+    private javax.swing.JComboBox<ENT_USUARIO> cmbUsuario;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator2;

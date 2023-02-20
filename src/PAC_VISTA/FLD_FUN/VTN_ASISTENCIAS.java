@@ -5,11 +5,11 @@
  */
 package PAC_VISTA.FLD_FUN;
 
-import PAC_ENTIDAD.MOD_ASISTENCIAS;
-import PAC_ENTIDAD.MOD_CENTRO;
-import PAC_ENTIDAD.MOD_EVENTO;
-import PAC_ENTIDAD.MOD_FICHA;
-import PAC_ENTIDAD.MOD_PROGRAMA;
+import PAC_ENTIDAD.ENT_ASISTENCIAS;
+import PAC_ENTIDAD.ENT_CENTRO;
+import PAC_ENTIDAD.ENT_EVENTO;
+import PAC_ENTIDAD.ENT_FICHA;
+import PAC_ENTIDAD.ENT_PROGRAMA;
 import PAC_MODELO.SQL_ASISTENCIAS;
 import PAC_MODELO.SQL_CENTRO;
 import PAC_MODELO.SQL_EVENTO;
@@ -25,19 +25,19 @@ import javax.swing.JComboBox;
  */
 public class VTN_ASISTENCIAS extends javax.swing.JPanel {
 
-    MOD_CENTRO modCe = new MOD_CENTRO();
+    ENT_CENTRO modCe = new ENT_CENTRO();
     SQL_CENTRO sqlCe = new SQL_CENTRO();
 
-    MOD_EVENTO modEv = new MOD_EVENTO();
+    ENT_EVENTO modEv = new ENT_EVENTO();
     SQL_EVENTO sqlEv = new SQL_EVENTO();
 
-    MOD_FICHA modFi = new MOD_FICHA();
+    ENT_FICHA modFi = new ENT_FICHA();
     SQL_FICHA sqlFi = new SQL_FICHA();
 
-    MOD_PROGRAMA modPr = new MOD_PROGRAMA();
+    ENT_PROGRAMA modPr = new ENT_PROGRAMA();
     SQL_PROGRAMA sqlPr = new SQL_PROGRAMA();
 
-    MOD_ASISTENCIAS modAs = new MOD_ASISTENCIAS();
+    ENT_ASISTENCIAS modAs = new ENT_ASISTENCIAS();
     SQL_ASISTENCIAS sqlAs = new SQL_ASISTENCIAS();
 
     public VTN_ASISTENCIAS() {
@@ -49,37 +49,37 @@ public class VTN_ASISTENCIAS extends javax.swing.JPanel {
     }
 
     private void LlenarCentro() {
-        ArrayList<MOD_CENTRO> lista = sqlCe.getCentro();
+        ArrayList<ENT_CENTRO> lista = sqlCe.getCentro();
         this.cmbCentro.removeAllItems();
         for (int i = 0; i < lista.size(); i++) {
-            this.cmbCentro.addItem(new MOD_CENTRO(lista.get(i).getCf_nombre(),
+            this.cmbCentro.addItem(new ENT_CENTRO(lista.get(i).getCf_nombre(),
                     lista.get(i).getCf_codigo()));
         }
     }
 
     private void LlenarPrograma() {
-        ArrayList<MOD_PROGRAMA> lista = sqlPr.getPrograma();
+        ArrayList<ENT_PROGRAMA> lista = sqlPr.getPrograma();
         this.cmbPrograma.removeAllItems();
         for (int i = 0; i < lista.size(); i++) {
-            this.cmbPrograma.addItem(new MOD_PROGRAMA(lista.get(i).getPf_codigo(),
+            this.cmbPrograma.addItem(new ENT_PROGRAMA(lista.get(i).getPf_codigo(),
                     lista.get(i).getPf_version(), lista.get(i).getPf_nombre()));
         }
     }
 
     private void LlenarFicha() {
         modFi.setPf_codifo(this.cmbPrograma.getItemAt(this.cmbPrograma.getSelectedIndex()).getPf_codigo());
-        ArrayList<MOD_FICHA> lista = sqlFi.getFicha(modFi);
+        ArrayList<ENT_FICHA> lista = sqlFi.getFicha(modFi);
         this.cmbFicha.removeAllItems();
         for (int i = 0; i < lista.size(); i++) {
-            this.cmbFicha.addItem(new MOD_FICHA(lista.get(i).getFi_codigo(), lista.get(i).getCf_codigo(), lista.get(i).getPf_codigo()));
+            this.cmbFicha.addItem(new ENT_FICHA(lista.get(i).getFi_codigo(), lista.get(i).getCf_codigo(), lista.get(i).getPf_codigo()));
         }
     }
 
     private void LlenarEvento() {
-        ArrayList<MOD_EVENTO> lista = sqlEv.getEvento(modEv);
+        ArrayList<ENT_EVENTO> lista = sqlEv.getEvento(modEv);
         this.cmbEventos.removeAllItems();
         for (int i = 0; i < lista.size(); i++) {
-            this.cmbEventos.addItem(new MOD_EVENTO(lista.get(i).getEv_nombre(), lista.get(i).getEv_codigo()));
+            this.cmbEventos.addItem(new ENT_EVENTO(lista.get(i).getEv_nombre(), lista.get(i).getEv_codigo()));
 
         }
     }
@@ -532,10 +532,10 @@ public class VTN_ASISTENCIAS extends javax.swing.JPanel {
     private javax.swing.JButton btnEventos;
     private javax.swing.JButton btnFuncionario;
     private javax.swing.JButton btnGuardar;
-    private javax.swing.JComboBox<MOD_CENTRO> cmbCentro;
-    private javax.swing.JComboBox<MOD_EVENTO> cmbEventos;
-    private javax.swing.JComboBox<MOD_FICHA> cmbFicha;
-    private javax.swing.JComboBox<MOD_PROGRAMA> cmbPrograma;
+    private javax.swing.JComboBox<ENT_CENTRO> cmbCentro;
+    private javax.swing.JComboBox<ENT_EVENTO> cmbEventos;
+    private javax.swing.JComboBox<ENT_FICHA> cmbFicha;
+    private javax.swing.JComboBox<ENT_PROGRAMA> cmbPrograma;
     private javax.swing.ButtonGroup grbModo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

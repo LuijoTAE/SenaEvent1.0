@@ -5,7 +5,7 @@
  */
 package PAC_MODELO;
 
-import PAC_ENTIDAD.MOD_REGIONAL;
+import PAC_ENTIDAD.ENT_REGIONAL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,9 +19,9 @@ import javax.swing.JOptionPane;
  */
 public class SQL_REGIONAL extends CONEXION {
 
-    MOD_REGIONAL mod = new MOD_REGIONAL();
+    ENT_REGIONAL mod = new ENT_REGIONAL();
 
-    public boolean Verificar(MOD_REGIONAL mod) {
+    public boolean Verificar(ENT_REGIONAL mod) {
 
         PreparedStatement ps = null;
         Connection con = getConexion();
@@ -47,7 +47,7 @@ public class SQL_REGIONAL extends CONEXION {
         }
     }
 
-    public boolean Registrar(MOD_REGIONAL mod, long usu) {
+    public boolean Registrar(ENT_REGIONAL mod, long usu) {
 
         PreparedStatement ps = null;
         Connection con = getConexion();
@@ -76,7 +76,7 @@ public class SQL_REGIONAL extends CONEXION {
         }
     }
 
-    public boolean Modificar(MOD_REGIONAL mod) {
+    public boolean Modificar(ENT_REGIONAL mod) {
 
         PreparedStatement ps = null;
         Connection con = getConexion();
@@ -104,18 +104,18 @@ public class SQL_REGIONAL extends CONEXION {
         }
     }
 
-    public ArrayList<MOD_REGIONAL> getRegional() {
+    public ArrayList<ENT_REGIONAL> getRegional() {
         PreparedStatement ps = null;
         Connection con = getConexion();
         ResultSet rs = null;
 
-        ArrayList<MOD_REGIONAL> listar = new ArrayList();
+        ArrayList<ENT_REGIONAL> listar = new ArrayList();
 
         try {
             ps = con.prepareStatement("select * from REGIONAL");
             rs = ps.executeQuery();
             while (rs.next()) {
-                MOD_REGIONAL mod = new MOD_REGIONAL();
+                ENT_REGIONAL mod = new ENT_REGIONAL();
                 mod.setRe_nombre(rs.getString("re_nombre"));
                 mod.setRe_codigo(rs.getLong("re_codigo"));
                 listar.add(mod);

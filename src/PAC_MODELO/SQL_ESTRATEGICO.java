@@ -1,7 +1,7 @@
 
 package PAC_MODELO;
 
-import PAC_ENTIDAD.MOD_ESTRATEGICO;
+import PAC_ENTIDAD.ENT_ESTRATEGICO;
 import static PAC_MODELO.CONEXION.getConexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,18 +12,18 @@ import java.util.ArrayList;
 
 public class SQL_ESTRATEGICO extends CONEXION{
     
-    public ArrayList<MOD_ESTRATEGICO> getEstrategico(){
+    public ArrayList<ENT_ESTRATEGICO> getEstrategico(){
         PreparedStatement ps = null;
         Connection con = getConexion();
         ResultSet rs = null;
         
-        ArrayList<MOD_ESTRATEGICO> lista = new ArrayList();
+        ArrayList<ENT_ESTRATEGICO> lista = new ArrayList();
         
         try{
             ps = con.prepareStatement("select * from OBJ_ESTRATEGICO");
             rs = ps.executeQuery();
             while(rs.next()){
-                MOD_ESTRATEGICO mod = new MOD_ESTRATEGICO();
+                ENT_ESTRATEGICO mod = new ENT_ESTRATEGICO();
                 mod.setOe_nombre(rs.getString("oe_nombre"));
                 mod.setOe_version(rs.getDouble("oe_version"));
                 lista.add(mod);

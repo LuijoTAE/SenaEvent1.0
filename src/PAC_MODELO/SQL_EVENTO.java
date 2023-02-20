@@ -1,6 +1,6 @@
 package PAC_MODELO;
 
-import PAC_ENTIDAD.MOD_EVENTO;
+import PAC_ENTIDAD.ENT_EVENTO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 public class SQL_EVENTO extends CONEXION {
 
-    public boolean Verificar(MOD_EVENTO mod) {
+    public boolean Verificar(ENT_EVENTO mod) {
         PreparedStatement ps = null;
         Connection con = getConexion();
         ResultSet rs = null;
@@ -32,7 +32,7 @@ public class SQL_EVENTO extends CONEXION {
         }
     }
 
-    public boolean Registrar(MOD_EVENTO mod) {
+    public boolean Registrar(ENT_EVENTO mod) {
         PreparedStatement ps = null;
         Connection con = getConexion();
         String sql = "insert into EVENTO values(?,?,?,?,?,?,?)";
@@ -53,17 +53,17 @@ public class SQL_EVENTO extends CONEXION {
         }
     }
 
-    public ArrayList<MOD_EVENTO> getEvento(MOD_EVENTO mod) {
+    public ArrayList<ENT_EVENTO> getEvento(ENT_EVENTO mod) {
         PreparedStatement ps = null;
         Connection con = getConexion();
         ResultSet rs = null;
         String sql = "select * from EVENTO";
-        ArrayList<MOD_EVENTO> lista = new ArrayList();
+        ArrayList<ENT_EVENTO> lista = new ArrayList();
         try {
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
-                MOD_EVENTO modd = new MOD_EVENTO();
+                ENT_EVENTO modd = new ENT_EVENTO();
                 modd.setEv_codigo(rs.getLong("ev_codigo"));
                 modd.setEv_nombre(rs.getString("ev_nombre"));
                 lista.add(modd);
