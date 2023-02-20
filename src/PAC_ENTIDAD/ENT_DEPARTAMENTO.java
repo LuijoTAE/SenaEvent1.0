@@ -2,16 +2,16 @@
 package PAC_ENTIDAD;
 
 
-public class MOD_DEPARTAMENTO {
+public class ENT_DEPARTAMENTO {
     private long de_codigo;
     private long pa_codigo;
     private String de_nombre;
     
-    public MOD_DEPARTAMENTO(){
+    public ENT_DEPARTAMENTO(){
         
     }
     
-    public MOD_DEPARTAMENTO(String de_nombre, long de_codigo){
+    public ENT_DEPARTAMENTO(String de_nombre, long de_codigo){
         this.de_nombre = de_nombre;
         this.de_codigo = de_codigo;
     }

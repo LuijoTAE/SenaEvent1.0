@@ -6,7 +6,7 @@ import javax.swing.JComboBox;
  *
  * @author windows21
  */
-public class MOD_USUARIO {
+public class ENT_USUARIO {
 
     private long us_dni;
     private long us_telefono;
@@ -18,11 +18,11 @@ public class MOD_USUARIO {
     private String us_clave;
     private String us_rol;
 
-    public MOD_USUARIO() {
+    public ENT_USUARIO() {
 
     }
 
-    public MOD_USUARIO(String us_nombre, String us_apellido, long us_dni) {
+    public ENT_USUARIO(String us_nombre, String us_apellido, long us_dni) {
         this.us_nombre = us_nombre;
         this.us_apellido = us_apellido;
         this.us_dni = us_dni;

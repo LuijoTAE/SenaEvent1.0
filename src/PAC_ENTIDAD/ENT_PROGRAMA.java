@@ -6,18 +6,18 @@
 package PAC_ENTIDAD;
 
 
-public class MOD_PROGRAMA {
+public class ENT_PROGRAMA {
     
     private long pf_codigo;
     private double pf_version;
     private String pf_nombre;
     private String pf_nivel;
     
-    public MOD_PROGRAMA(){
+    public ENT_PROGRAMA(){
         
     }
     
-    public MOD_PROGRAMA(long pf_codigo, double pf_versio, String pf_nombre){
+    public ENT_PROGRAMA(long pf_codigo, double pf_versio, String pf_nombre){
         this.pf_codigo = pf_codigo;
         this.pf_version = pf_versio;
         this.pf_nombre = pf_nombre;

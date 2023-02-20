@@ -2,18 +2,18 @@
 package PAC_ENTIDAD;
 
 
-public class MOD_OPERATIVO {
+public class ENT_OPERATIVO {
     
     private String obo_nombre;
     private double obo_version;
     private String oe_nombre;
     private double oe_version;
     
-     public MOD_OPERATIVO(){
+     public ENT_OPERATIVO(){
         
     }
     
-    public  MOD_OPERATIVO(String obo_nombre, double obo_version){
+    public  ENT_OPERATIVO(String obo_nombre, double obo_version){
         this.obo_nombre = obo_nombre;
         this.obo_version = obo_version;
     }

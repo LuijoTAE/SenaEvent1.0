@@ -2,7 +2,7 @@
 package PAC_ENTIDAD;
 
 
-public class MOD_FICHA {
+public class ENT_FICHA {
     
     private long fi_codigo;
     private long cf_codigo;
@@ -10,11 +10,11 @@ public class MOD_FICHA {
     private String fi_jornada;
     private String fi_modalidad;
 
-    public MOD_FICHA(){
+    public ENT_FICHA(){
         
     }
     
-    public MOD_FICHA(long fi_codigo, long cf_codigo, long pf_codigo){
+    public ENT_FICHA(long fi_codigo, long cf_codigo, long pf_codigo){
         this.fi_codigo = fi_codigo;
         this.cf_codigo = cf_codigo;
         this.pf_codigo = pf_codigo;

@@ -2,16 +2,16 @@
 package PAC_ENTIDAD;
 
 
-public class MOD_CIUDAD {
+public class ENT_CIUDAD {
     private long ci_codigo;
     private long de_codigo;
     private String ci_nombre;
 
-    public MOD_CIUDAD(){
+    public ENT_CIUDAD(){
         
     }
     
-    public MOD_CIUDAD(String ci_nombre, long ci_codigo){
+    public ENT_CIUDAD(String ci_nombre, long ci_codigo){
         this.ci_nombre = ci_nombre;
         this.ci_codigo = ci_codigo;
     }

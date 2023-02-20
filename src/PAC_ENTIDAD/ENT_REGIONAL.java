@@ -5,17 +5,17 @@
  */
 package PAC_ENTIDAD;
 
-public class MOD_REGIONAL {
+public class ENT_REGIONAL {
 
     private long re_codigo;
     private long us_dni;
     private String re_nombre;
     
-    public MOD_REGIONAL(){
+    public ENT_REGIONAL(){
         
     }
     
-    public MOD_REGIONAL(String re_nombre, long re_codigo){
+    public ENT_REGIONAL(String re_nombre, long re_codigo){
         this.re_nombre = re_nombre;
         this.re_codigo = re_codigo;
     }

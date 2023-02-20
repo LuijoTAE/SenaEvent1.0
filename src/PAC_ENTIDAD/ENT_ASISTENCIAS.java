@@ -2,12 +2,12 @@
 package PAC_ENTIDAD;
 
 
-public class MOD_ASISTENCIAS {
+public class ENT_ASISTENCIAS {
 
-    public MOD_ASISTENCIAS() {
+    public ENT_ASISTENCIAS() {
     }
     
-    public MOD_ASISTENCIAS(long evCodigo, long usDni){
+    public ENT_ASISTENCIAS(long evCodigo, long usDni){
         this.evCodigo = evCodigo;
         this.usDni = usDni;
     }

@@ -2,17 +2,17 @@
 package PAC_ENTIDAD;
 
 
-public class MOD_ESTRATEGICO {
+public class ENT_ESTRATEGICO {
     
     private String oe_nombre;
     private double oe_version;
     private long us_dni;
 
-    public MOD_ESTRATEGICO(){
+    public ENT_ESTRATEGICO(){
         
     }
     
-    public MOD_ESTRATEGICO(String oe_nombre, double oe_version){
+    public ENT_ESTRATEGICO(String oe_nombre, double oe_version){
         this.oe_nombre = oe_nombre;
         this.oe_version = oe_version;
     }

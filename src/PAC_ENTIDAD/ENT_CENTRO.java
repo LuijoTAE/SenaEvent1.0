@@ -9,17 +9,17 @@ package PAC_ENTIDAD;
  *
  * @author windows21
  */
-public class MOD_CENTRO {
+public class ENT_CENTRO {
     
     private long cf_codigo;
     private long re_codigo;
     private String cf_nombre;
     
-    public MOD_CENTRO(){
+    public ENT_CENTRO(){
         
     }
     
-    public MOD_CENTRO(String cf_nombre, long cf_codigo){
+    public ENT_CENTRO(String cf_nombre, long cf_codigo){
         this.cf_nombre = cf_nombre;
         this.cf_codigo = cf_codigo;
         

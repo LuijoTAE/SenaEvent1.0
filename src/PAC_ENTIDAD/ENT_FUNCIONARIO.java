@@ -11,6 +11,7 @@ public class ENT_FUNCIONARIO {
         this.usDni = usDni;
         this.fuCargo = fuCargo;
     }
+    
     private long usDni;
     private String fuCargo;
 

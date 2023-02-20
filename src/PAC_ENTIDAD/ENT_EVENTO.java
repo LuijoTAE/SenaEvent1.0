@@ -1,6 +1,6 @@
 package PAC_ENTIDAD;
 
-public class MOD_EVENTO {
+public class ENT_EVENTO {
 
     private long ev_codigo;
     private String obo_nombre;
@@ -10,11 +10,11 @@ public class MOD_EVENTO {
     private String ev_fecha;
     private String ev_proposito;
 
-    public MOD_EVENTO(){
+    public ENT_EVENTO(){
         
     }
     
-    public MOD_EVENTO(String ev_nombre, long ev_codigo){
+    public ENT_EVENTO(String ev_nombre, long ev_codigo){
         this.ev_nombre = ev_nombre;
         this.ev_codigo = ev_codigo;
     }

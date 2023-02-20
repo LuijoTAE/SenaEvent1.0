@@ -9,7 +9,7 @@ package PAC_ENTIDAD;
  *
  * @author windows21
  */
-public class MOD_ADMINISTRADOR {
+public class ENT_ADMINISTRADOR {
     
     private long us_dni;
 
