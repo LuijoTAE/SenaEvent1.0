@@ -47,11 +47,11 @@ public class FRM_INICIO extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jSeparator9 = new javax.swing.JSeparator();
-        txt_clave = new javax.swing.JTextField();
-        txt_usuario = new javax.swing.JTextField();
-        jSeparator1 = new javax.swing.JSeparator();
-        jLabel14 = new javax.swing.JLabel();
         jSeparator5 = new javax.swing.JSeparator();
+        txt_clave = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
+        txt_usuario = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
         pnlL_ingresar = new javax.swing.JPanel();
         lbtL_ingresar = new javax.swing.JLabel();
         pnlL_validar = new javax.swing.JPanel();
@@ -68,9 +68,9 @@ public class FRM_INICIO extends javax.swing.JFrame {
         pnlA_bar_top.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Ibarra Real Nova SemiBold", 1, 58)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(92, 184, 92));
+        jLabel1.setForeground(new java.awt.Color(0, 150, 70));
         jLabel1.setText("SenaEvents");
-        pnlA_bar_top.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 54, -1, 60));
+        pnlA_bar_top.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, -1, 70));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PAC_IMG/logo_sena.jpg"))); // NOI18N
         pnlA_bar_top.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
@@ -79,36 +79,46 @@ public class FRM_INICIO extends javax.swing.JFrame {
         jSeparator9.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator9.setFont(new java.awt.Font("Roboto Medium", 0, 11)); // NOI18N
         pnlA_bar_top.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 10, 90));
+        pnlA_bar_top.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 115, 150, 10));
 
         txt_clave.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
         txt_clave.setForeground(new java.awt.Color(102, 102, 102));
         txt_clave.setText("Clave...");
         txt_clave.setBorder(null);
+        txt_clave.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txt_claveMousePressed(evt);
+            }
+        });
         txt_clave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_claveActionPerformed(evt);
             }
         });
-        pnlA_bar_top.add(txt_clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 80, 150, 30));
+        pnlA_bar_top.add(txt_clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 90, 150, 30));
+        pnlA_bar_top.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 115, 150, 10));
 
         txt_usuario.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
         txt_usuario.setForeground(new java.awt.Color(102, 102, 102));
         txt_usuario.setText("Usuario...");
         txt_usuario.setBorder(null);
+        txt_usuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txt_usuarioMousePressed(evt);
+            }
+        });
         txt_usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_usuarioActionPerformed(evt);
             }
         });
-        pnlA_bar_top.add(txt_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 80, 150, 30));
-        pnlA_bar_top.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 110, 150, 10));
+        pnlA_bar_top.add(txt_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 90, 150, 30));
 
         jLabel14.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
         jLabel14.setText("Iniciar sesion ");
         pnlA_bar_top.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 50, -1, -1));
-        pnlA_bar_top.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 110, 150, 10));
 
-        pnlL_ingresar.setBackground(new java.awt.Color(92, 184, 92));
+        pnlL_ingresar.setBackground(new java.awt.Color(0, 150, 70));
 
         lbtL_ingresar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         lbtL_ingresar.setForeground(new java.awt.Color(255, 255, 255));
@@ -131,9 +141,7 @@ public class FRM_INICIO extends javax.swing.JFrame {
         pnlL_ingresar.setLayout(pnlL_ingresarLayout);
         pnlL_ingresarLayout.setHorizontalGroup(
             pnlL_ingresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlL_ingresarLayout.createSequentialGroup()
-                .addComponent(lbtL_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 24, Short.MAX_VALUE))
+            .addComponent(lbtL_ingresar, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
         );
         pnlL_ingresarLayout.setVerticalGroup(
             pnlL_ingresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,9 +150,9 @@ public class FRM_INICIO extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        pnlA_bar_top.add(pnlL_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 70, 120, 40));
+        pnlA_bar_top.add(pnlL_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 80, 120, 40));
 
-        pnlL_validar.setBackground(new java.awt.Color(92, 184, 92));
+        pnlL_validar.setBackground(new java.awt.Color(0, 150, 70));
 
         lbtL_registrar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         lbtL_registrar.setForeground(new java.awt.Color(255, 255, 255));
@@ -167,9 +175,7 @@ public class FRM_INICIO extends javax.swing.JFrame {
         pnlL_validar.setLayout(pnlL_validarLayout);
         pnlL_validarLayout.setHorizontalGroup(
             pnlL_validarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlL_validarLayout.createSequentialGroup()
-                .addComponent(lbtL_registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 16, Short.MAX_VALUE))
+            .addComponent(lbtL_registrar, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
         );
         pnlL_validarLayout.setVerticalGroup(
             pnlL_validarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,7 +184,7 @@ public class FRM_INICIO extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        pnlA_bar_top.add(pnlL_validar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 70, 110, -1));
+        pnlA_bar_top.add(pnlL_validar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 80, 110, -1));
 
         cmb_dni.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         cmb_dni.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -189,7 +195,7 @@ public class FRM_INICIO extends javax.swing.JFrame {
         });
         pnlA_bar_top.add(cmb_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 240, 240, 40));
 
-        BG.add(pnlA_bar_top, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1320, 130));
+        BG.add(pnlA_bar_top, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1320, 120));
 
         pnl_contenedor.setBackground(new java.awt.Color(0, 102, 102));
 
@@ -201,10 +207,10 @@ public class FRM_INICIO extends javax.swing.JFrame {
         );
         pnl_contenedorLayout.setVerticalGroup(
             pnl_contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 560, Short.MAX_VALUE)
+            .addGap(0, 570, Short.MAX_VALUE)
         );
 
-        BG.add(pnl_contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 1320, 560));
+        BG.add(pnl_contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 1320, 570));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -279,6 +285,14 @@ public class FRM_INICIO extends javax.swing.JFrame {
     private void cmb_dniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_dniActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmb_dniActionPerformed
+
+    private void txt_usuarioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_usuarioMousePressed
+        this.txt_usuario.setText("");
+    }//GEN-LAST:event_txt_usuarioMousePressed
+
+    private void txt_claveMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_claveMousePressed
+        this.txt_clave.setText("");
+    }//GEN-LAST:event_txt_claveMousePressed
 
     /**
      * @param args the command line arguments
