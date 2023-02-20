@@ -41,25 +41,15 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
     private void initComponents() {
 
         BG = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        pnlL_validar = new javax.swing.JPanel();
-        lbtL_validar = new javax.swing.JLabel();
-        pnl_bar_left = new javax.swing.JPanel();
-        pnl_rigch2 = new javax.swing.JPanel();
+        pnlIniciarSesion = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         txt_usuario = new javax.swing.JTextField();
-        jSeparator1 = new javax.swing.JSeparator();
         jLabel14 = new javax.swing.JLabel();
-        txt_clave = new javax.swing.JTextField();
-        jSeparator5 = new javax.swing.JSeparator();
         pnlL_ingresar = new javax.swing.JPanel();
         lbtL_ingresar = new javax.swing.JLabel();
+        txt_clave = new javax.swing.JTextField();
         pnl_top = new javax.swing.JPanel();
-        txt_dni = new javax.swing.JTextField();
-        jSeparator4 = new javax.swing.JSeparator();
-        jLabel13 = new javax.swing.JLabel();
-        cmb_dni = new javax.swing.JComboBox<>();
         pnl_datos_personales = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         cmb_genero = new javax.swing.JComboBox<>();
@@ -78,89 +68,41 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
         cmb_correo = new javax.swing.JComboBox<>();
         jLabel20 = new javax.swing.JLabel();
         btn_enviar = new javax.swing.JButton();
+        pnlRegistrar = new javax.swing.JPanel();
+        txt_dni = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        cmb_dni = new javax.swing.JComboBox<>();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        pnlL_validar = new javax.swing.JPanel();
+        lbtL_validar = new javax.swing.JLabel();
 
         BG.setBackground(new java.awt.Color(255, 255, 255));
         BG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel12.setFont(new java.awt.Font("Roboto Medium", 0, 36)); // NOI18N
-        jLabel12.setText("Registrarse ");
-        BG.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 110, -1, -1));
+        pnlIniciarSesion.setBackground(new java.awt.Color(255, 255, 255));
+        pnlIniciarSesion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pnlL_validar.setBackground(new java.awt.Color(92, 184, 92));
-
-        lbtL_validar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        lbtL_validar.setForeground(new java.awt.Color(255, 255, 255));
-        lbtL_validar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbtL_validar.setText("VALIDAR");
-        lbtL_validar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lbtL_validar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lbtL_validarMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lbtL_validarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lbtL_validarMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout pnlL_validarLayout = new javax.swing.GroupLayout(pnlL_validar);
-        pnlL_validar.setLayout(pnlL_validarLayout);
-        pnlL_validarLayout.setHorizontalGroup(
-            pnlL_validarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlL_validarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbtL_validar, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        pnlL_validarLayout.setVerticalGroup(
-            pnlL_validarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlL_validarLayout.createSequentialGroup()
-                .addComponent(lbtL_validar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        BG.add(pnlL_validar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 420, -1, -1));
-
-        pnl_bar_left.setBackground(new java.awt.Color(250, 250, 250));
-
-        pnl_rigch2.setBackground(new java.awt.Color(255, 255, 255));
-        pnl_rigch2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel10.setFont(new java.awt.Font("Roboto Medium", 0, 36)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jLabel10.setText("Iniciar Sesión");
-        pnl_rigch2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+        pnlIniciarSesion.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, -1));
 
-        jLabel11.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel11.setText("Usuario");
-        pnl_rigch2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
+        pnlIniciarSesion.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
 
         txt_usuario.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txt_usuario.setForeground(new java.awt.Color(102, 102, 102));
-        txt_usuario.setBorder(null);
         txt_usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_usuarioActionPerformed(evt);
             }
         });
-        pnl_rigch2.add(txt_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 260, 40));
-        pnl_rigch2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 260, 10));
+        pnlIniciarSesion.add(txt_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 160, 30));
 
-        jLabel14.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel14.setText("Contraseña");
-        pnl_rigch2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
-
-        txt_clave.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txt_clave.setForeground(new java.awt.Color(102, 102, 102));
-        txt_clave.setBorder(null);
-        txt_clave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_claveActionPerformed(evt);
-            }
-        });
-        pnl_rigch2.add(txt_clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 260, 40));
-        pnl_rigch2.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 260, 10));
+        pnlIniciarSesion.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
 
         pnlL_ingresar.setBackground(new java.awt.Color(92, 184, 92));
 
@@ -185,38 +127,23 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
         pnlL_ingresar.setLayout(pnlL_ingresarLayout);
         pnlL_ingresarLayout.setHorizontalGroup(
             pnlL_ingresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlL_ingresarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbtL_ingresar, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE))
+            .addGroup(pnlL_ingresarLayout.createSequentialGroup()
+                .addComponent(lbtL_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         pnlL_ingresarLayout.setVerticalGroup(
             pnlL_ingresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlL_ingresarLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlL_ingresarLayout.createSequentialGroup()
                 .addComponent(lbtL_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        pnl_rigch2.add(pnlL_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 351, 260, 40));
+        pnlIniciarSesion.add(pnlL_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 190, 40));
+        pnlIniciarSesion.add(txt_clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 160, 30));
 
-        javax.swing.GroupLayout pnl_bar_leftLayout = new javax.swing.GroupLayout(pnl_bar_left);
-        pnl_bar_left.setLayout(pnl_bar_leftLayout);
-        pnl_bar_leftLayout.setHorizontalGroup(
-            pnl_bar_leftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_bar_leftLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(pnl_rigch2, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
-        );
-        pnl_bar_leftLayout.setVerticalGroup(
-            pnl_bar_leftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_bar_leftLayout.createSequentialGroup()
-                .addComponent(pnl_rigch2, javax.swing.GroupLayout.DEFAULT_SIZE, 479, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        BG.add(pnlIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 220, 300));
 
-        BG.add(pnl_bar_left, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 390, 490));
-
-        pnl_top.setBackground(new java.awt.Color(92, 184, 92));
+        pnl_top.setBackground(new java.awt.Color(0, 150, 70));
 
         javax.swing.GroupLayout pnl_topLayout = new javax.swing.GroupLayout(pnl_top);
         pnl_top.setLayout(pnl_topLayout);
@@ -226,35 +153,10 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
         );
         pnl_topLayout.setVerticalGroup(
             pnl_topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 70, Short.MAX_VALUE)
+            .addGap(0, 50, Short.MAX_VALUE)
         );
 
-        BG.add(pnl_top, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1320, 70));
-
-        txt_dni.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txt_dni.setForeground(new java.awt.Color(102, 102, 102));
-        txt_dni.setText("Ingrese su usuario...");
-        txt_dni.setBorder(null);
-        txt_dni.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_dniActionPerformed(evt);
-            }
-        });
-        BG.add(txt_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 290, 240, 40));
-        BG.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 330, 240, 10));
-
-        jLabel13.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        jLabel13.setText("Número DNI");
-        BG.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 200, -1, -1));
-
-        cmb_dni.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        cmb_dni.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cédula", "Tarjeta de identidad", "DNI extranjero" }));
-        cmb_dni.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmb_dniActionPerformed(evt);
-            }
-        });
-        BG.add(cmb_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 240, 240, 40));
+        BG.add(pnl_top, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1320, 50));
 
         pnl_datos_personales.setBackground(new java.awt.Color(250, 250, 250));
         pnl_datos_personales.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -361,6 +263,67 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
 
         BG.add(pnl_datos_personales, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 90, 570, 460));
 
+        pnlRegistrar.setBackground(new java.awt.Color(255, 255, 255));
+        pnlRegistrar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pnlRegistrar.add(txt_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 160, 30));
+
+        jLabel13.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel13.setText("Número DNI");
+        pnlRegistrar.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
+
+        cmb_dni.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        cmb_dni.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cédula", "Tarjeta de identidad", "DNI extranjero" }));
+        cmb_dni.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmb_dniActionPerformed(evt);
+            }
+        });
+        pnlRegistrar.add(cmb_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 160, 30));
+
+        jLabel12.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        jLabel12.setText("Registrarse ");
+        pnlRegistrar.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jLabel21.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel21.setText("Tipo de DNI");
+        pnlRegistrar.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+
+        pnlL_validar.setBackground(new java.awt.Color(92, 184, 92));
+
+        lbtL_validar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        lbtL_validar.setForeground(new java.awt.Color(255, 255, 255));
+        lbtL_validar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbtL_validar.setText("VALIDAR");
+        lbtL_validar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lbtL_validar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbtL_validarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lbtL_validarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lbtL_validarMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlL_validarLayout = new javax.swing.GroupLayout(pnlL_validar);
+        pnlL_validar.setLayout(pnlL_validarLayout);
+        pnlL_validarLayout.setHorizontalGroup(
+            pnlL_validarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lbtL_validar, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+        );
+        pnlL_validarLayout.setVerticalGroup(
+            pnlL_validarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlL_validarLayout.createSequentialGroup()
+                .addComponent(lbtL_validar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        pnlRegistrar.add(pnlL_validar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 190, -1));
+
+        BG.add(pnlRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 220, 300));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -385,10 +348,6 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_usuarioActionPerformed
 
-    private void txt_claveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_claveActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_claveActionPerformed
-
     private void lbtL_ingresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbtL_ingresarMouseEntered
 
     }//GEN-LAST:event_lbtL_ingresarMouseEntered
@@ -396,10 +355,6 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
     private void lbtL_ingresarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbtL_ingresarMouseExited
 
     }//GEN-LAST:event_lbtL_ingresarMouseExited
-
-    private void txt_dniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_dniActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_dniActionPerformed
 
     private void cmb_dniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_dniActionPerformed
         // TODO add your handling code here:
@@ -510,20 +465,18 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JLabel lbtL_ingresar;
     private javax.swing.JLabel lbtL_validar;
+    private javax.swing.JPanel pnlIniciarSesion;
     private javax.swing.JPanel pnlL_ingresar;
     private javax.swing.JPanel pnlL_validar;
-    private javax.swing.JPanel pnl_bar_left;
+    private javax.swing.JPanel pnlRegistrar;
     private javax.swing.JPanel pnl_datos_personales;
-    private javax.swing.JPanel pnl_rigch2;
     private javax.swing.JPanel pnl_top;
     private javax.swing.JTextField txt_apellido;
     private javax.swing.JTextField txt_clave;
