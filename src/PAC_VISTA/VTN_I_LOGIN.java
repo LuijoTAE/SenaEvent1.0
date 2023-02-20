@@ -49,25 +49,24 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
         pnlL_ingresar = new javax.swing.JPanel();
         lbtL_ingresar = new javax.swing.JLabel();
         txt_clave = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
         pnl_top = new javax.swing.JPanel();
         pnl_datos_personales = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         cmb_genero = new javax.swing.JComboBox<>();
-        txt_nombre = new javax.swing.JTextField();
-        jSeparator6 = new javax.swing.JSeparator();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        txt_apellido = new javax.swing.JTextField();
-        jSeparator7 = new javax.swing.JSeparator();
         jLabel18 = new javax.swing.JLabel();
-        txt_telefono = new javax.swing.JTextField();
-        jSeparator8 = new javax.swing.JSeparator();
         jLabel19 = new javax.swing.JLabel();
-        txt_correo = new javax.swing.JTextField();
-        jSeparator9 = new javax.swing.JSeparator();
         cmb_correo = new javax.swing.JComboBox<>();
         jLabel20 = new javax.swing.JLabel();
         btn_enviar = new javax.swing.JButton();
+        txt_apellido = new javax.swing.JTextField();
+        txt_telefono = new javax.swing.JTextField();
+        txt_nombre = new javax.swing.JTextField();
+        txt_correo = new javax.swing.JTextField();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
         pnlRegistrar = new javax.swing.JPanel();
         txt_dni = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
@@ -76,6 +75,8 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
         jLabel21 = new javax.swing.JLabel();
         pnlL_validar = new javax.swing.JPanel();
         lbtL_validar = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
 
         BG.setBackground(new java.awt.Color(255, 255, 255));
         BG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -85,11 +86,11 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
 
         jLabel10.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jLabel10.setText("Iniciar Sesión");
-        pnlIniciarSesion.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, -1));
+        pnlIniciarSesion.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel11.setText("Usuario");
-        pnlIniciarSesion.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+        pnlIniciarSesion.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
         txt_usuario.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txt_usuario.setForeground(new java.awt.Color(102, 102, 102));
@@ -98,11 +99,11 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
                 txt_usuarioActionPerformed(evt);
             }
         });
-        pnlIniciarSesion.add(txt_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 160, 30));
+        pnlIniciarSesion.add(txt_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 160, 30));
 
         jLabel14.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel14.setText("Contraseña");
-        pnlIniciarSesion.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
+        pnlIniciarSesion.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
         pnlL_ingresar.setBackground(new java.awt.Color(92, 184, 92));
 
@@ -138,10 +139,11 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        pnlIniciarSesion.add(pnlL_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 190, 40));
-        pnlIniciarSesion.add(txt_clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 160, 30));
+        pnlIniciarSesion.add(pnlL_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 190, 40));
+        pnlIniciarSesion.add(txt_clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 160, 30));
+        pnlIniciarSesion.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 80, 10));
 
-        BG.add(pnlIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 220, 300));
+        BG.add(pnlIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 230, 300));
 
         pnl_top.setBackground(new java.awt.Color(0, 150, 70));
 
@@ -161,9 +163,9 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
         pnl_datos_personales.setBackground(new java.awt.Color(250, 250, 250));
         pnl_datos_personales.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel15.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jLabel15.setText("Formulario Solicitud De Registro");
-        pnl_datos_personales.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        pnl_datos_personales.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         cmb_genero.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         cmb_genero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "F", "NB" }));
@@ -173,71 +175,23 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
                 cmb_generoActionPerformed(evt);
             }
         });
-        pnl_datos_personales.add(cmb_genero, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 240, 40));
+        pnl_datos_personales.add(cmb_genero, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, 160, 30));
 
-        txt_nombre.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txt_nombre.setForeground(new java.awt.Color(102, 102, 102));
-        txt_nombre.setText("Ingrese su usuario...");
-        txt_nombre.setBorder(null);
-        txt_nombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_nombreActionPerformed(evt);
-            }
-        });
-        pnl_datos_personales.add(txt_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 240, 40));
-        pnl_datos_personales.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 240, 10));
-
-        jLabel16.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel16.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel16.setText("Genero");
-        pnl_datos_personales.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, -1, -1));
+        pnl_datos_personales.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, -1, -1));
 
-        jLabel17.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel17.setText("Apellidos");
-        pnl_datos_personales.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
+        pnl_datos_personales.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
-        txt_apellido.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txt_apellido.setForeground(new java.awt.Color(102, 102, 102));
-        txt_apellido.setText("Ingrese su usuario...");
-        txt_apellido.setBorder(null);
-        txt_apellido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_apellidoActionPerformed(evt);
-            }
-        });
-        pnl_datos_personales.add(txt_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 240, 40));
-        pnl_datos_personales.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 240, 10));
-
-        jLabel18.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel18.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel18.setText("Correo electrónico");
-        pnl_datos_personales.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, -1, -1));
+        pnl_datos_personales.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, -1, -1));
 
-        txt_telefono.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txt_telefono.setForeground(new java.awt.Color(102, 102, 102));
-        txt_telefono.setText("Ingrese su usuario...");
-        txt_telefono.setBorder(null);
-        txt_telefono.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_telefonoActionPerformed(evt);
-            }
-        });
-        pnl_datos_personales.add(txt_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 240, 40));
-        pnl_datos_personales.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 240, 10));
-
-        jLabel19.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel19.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel19.setText("Teléfono");
-        pnl_datos_personales.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
-
-        txt_correo.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txt_correo.setForeground(new java.awt.Color(102, 102, 102));
-        txt_correo.setText("Ingrese su usuario...");
-        txt_correo.setBorder(null);
-        txt_correo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_correoActionPerformed(evt);
-            }
-        });
-        pnl_datos_personales.add(txt_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, 240, 40));
-        pnl_datos_personales.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, 240, 10));
+        pnl_datos_personales.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, -1, -1));
 
         cmb_correo.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         cmb_correo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "@gmail.com", "@misena.edu.co" }));
@@ -246,11 +200,11 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
                 cmb_correoActionPerformed(evt);
             }
         });
-        pnl_datos_personales.add(cmb_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, 240, 40));
+        pnl_datos_personales.add(cmb_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, 160, 30));
 
-        jLabel20.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel20.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel20.setText("Nombres");
-        pnl_datos_personales.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+        pnl_datos_personales.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
         btn_enviar.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         btn_enviar.setText("Enviar");
@@ -259,17 +213,25 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
                 btn_enviarMouseClicked(evt);
             }
         });
-        pnl_datos_personales.add(btn_enviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 20, 80, 30));
+        pnl_datos_personales.add(btn_enviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 80, 30));
+        pnl_datos_personales.add(txt_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 160, 30));
+        pnl_datos_personales.add(txt_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 160, 30));
+        pnl_datos_personales.add(txt_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 160, 30));
+        pnl_datos_personales.add(txt_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 180, 160, 30));
+        pnl_datos_personales.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 300, 10));
 
-        BG.add(pnl_datos_personales, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 90, 570, 460));
+        jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        pnl_datos_personales.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 10, 240));
+
+        BG.add(pnl_datos_personales, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 60, 600, 300));
 
         pnlRegistrar.setBackground(new java.awt.Color(255, 255, 255));
         pnlRegistrar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        pnlRegistrar.add(txt_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 160, 30));
+        pnlRegistrar.add(txt_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 160, 30));
 
         jLabel13.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel13.setText("Número DNI");
-        pnlRegistrar.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
+        pnlRegistrar.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
         cmb_dni.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         cmb_dni.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cédula", "Tarjeta de identidad", "DNI extranjero" }));
@@ -278,15 +240,15 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
                 cmb_dniActionPerformed(evt);
             }
         });
-        pnlRegistrar.add(cmb_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 160, 30));
+        pnlRegistrar.add(cmb_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 160, 30));
 
         jLabel12.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jLabel12.setText("Registrarse ");
-        pnlRegistrar.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        pnlRegistrar.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         jLabel21.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel21.setText("Tipo de DNI");
-        pnlRegistrar.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+        pnlRegistrar.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
         pnlL_validar.setBackground(new java.awt.Color(92, 184, 92));
 
@@ -320,9 +282,13 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        pnlRegistrar.add(pnlL_validar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 190, -1));
+        pnlRegistrar.add(pnlL_validar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 190, -1));
+        pnlRegistrar.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 100, 10));
 
-        BG.add(pnlRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 220, 300));
+        jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        pnlRegistrar.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 10, 240));
+
+        BG.add(pnlRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 230, 300));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -332,7 +298,7 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(BG, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -363,22 +329,6 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
     private void cmb_generoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_generoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmb_generoActionPerformed
-
-    private void txt_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_nombreActionPerformed
-
-    private void txt_apellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_apellidoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_apellidoActionPerformed
-
-    private void txt_telefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_telefonoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_telefonoActionPerformed
-
-    private void txt_correoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_correoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_correoActionPerformed
 
     private void cmb_correoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_correoActionPerformed
         // TODO add your handling code here:
@@ -466,10 +416,11 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JSeparator jSeparator7;
-    private javax.swing.JSeparator jSeparator8;
-    private javax.swing.JSeparator jSeparator9;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JLabel lbtL_ingresar;
     private javax.swing.JLabel lbtL_validar;
     private javax.swing.JPanel pnlIniciarSesion;
