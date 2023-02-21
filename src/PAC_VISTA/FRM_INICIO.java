@@ -8,6 +8,7 @@ package PAC_VISTA;
 import PAC_VISTA.FLD_ADM.FRM_ADM;
 import PAC_ENTIDAD.ENT_USUARIO;
 import PAC_MODELO.SQL_USUARIO;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -37,6 +38,14 @@ public class FRM_INICIO extends javax.swing.JFrame {
         this.pnl_contenedor.repaint();
     }
 
+    private void AnimacioBtn1(JPanel back) {
+        back.setBackground(new Color(51, 51, 51));
+    }
+
+    private void AnimacioBtn2(JPanel back) {
+        back.setBackground(new Color(0, 150, 70));
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -54,8 +63,6 @@ public class FRM_INICIO extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         pnlL_ingresar = new javax.swing.JPanel();
         lbtL_ingresar = new javax.swing.JLabel();
-        pnlL_validar = new javax.swing.JPanel();
-        lbtL_registrar = new javax.swing.JLabel();
         cmb_dni = new javax.swing.JComboBox<>();
         pnl_contenedor = new javax.swing.JPanel();
 
@@ -79,7 +86,7 @@ public class FRM_INICIO extends javax.swing.JFrame {
         jSeparator9.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator9.setFont(new java.awt.Font("Roboto Medium", 0, 11)); // NOI18N
         pnlA_bar_top.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 10, 90));
-        pnlA_bar_top.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 115, 150, 10));
+        pnlA_bar_top.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 115, 150, 10));
 
         txt_clave.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
         txt_clave.setForeground(new java.awt.Color(102, 102, 102));
@@ -95,8 +102,8 @@ public class FRM_INICIO extends javax.swing.JFrame {
                 txt_claveActionPerformed(evt);
             }
         });
-        pnlA_bar_top.add(txt_clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 90, 150, 30));
-        pnlA_bar_top.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 115, 150, 10));
+        pnlA_bar_top.add(txt_clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 90, 150, 30));
+        pnlA_bar_top.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 115, 150, 10));
 
         txt_usuario.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
         txt_usuario.setForeground(new java.awt.Color(102, 102, 102));
@@ -112,11 +119,11 @@ public class FRM_INICIO extends javax.swing.JFrame {
                 txt_usuarioActionPerformed(evt);
             }
         });
-        pnlA_bar_top.add(txt_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 90, 150, 30));
+        pnlA_bar_top.add(txt_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 90, 150, 30));
 
         jLabel14.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
         jLabel14.setText("Iniciar sesion ");
-        pnlA_bar_top.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 50, -1, -1));
+        pnlA_bar_top.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 50, -1, -1));
 
         pnlL_ingresar.setBackground(new java.awt.Color(0, 150, 70));
 
@@ -150,41 +157,7 @@ public class FRM_INICIO extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        pnlA_bar_top.add(pnlL_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 80, 120, 40));
-
-        pnlL_validar.setBackground(new java.awt.Color(0, 150, 70));
-
-        lbtL_registrar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        lbtL_registrar.setForeground(new java.awt.Color(255, 255, 255));
-        lbtL_registrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbtL_registrar.setText("Registrar");
-        lbtL_registrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lbtL_registrar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lbtL_registrarMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lbtL_registrarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lbtL_registrarMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout pnlL_validarLayout = new javax.swing.GroupLayout(pnlL_validar);
-        pnlL_validar.setLayout(pnlL_validarLayout);
-        pnlL_validarLayout.setHorizontalGroup(
-            pnlL_validarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lbtL_registrar, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
-        );
-        pnlL_validarLayout.setVerticalGroup(
-            pnlL_validarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlL_validarLayout.createSequentialGroup()
-                .addComponent(lbtL_registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        pnlA_bar_top.add(pnlL_validar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 80, 110, -1));
+        pnlA_bar_top.add(pnlL_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 80, 120, 40));
 
         cmb_dni.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         cmb_dni.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -255,32 +228,12 @@ public class FRM_INICIO extends javax.swing.JFrame {
     }//GEN-LAST:event_lbtL_ingresarMouseClicked
 
     private void lbtL_ingresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbtL_ingresarMouseEntered
-
+        this.AnimacioBtn1(this.pnlL_ingresar);
     }//GEN-LAST:event_lbtL_ingresarMouseEntered
 
     private void lbtL_ingresarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbtL_ingresarMouseExited
-
+        this.AnimacioBtn2(this.pnlL_ingresar);
     }//GEN-LAST:event_lbtL_ingresarMouseExited
-
-    private void lbtL_registrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbtL_registrarMouseClicked
-
-        if (!this.txt_usuario.getText().equals("")) {
-            mod_usu.setUs_dni(Long.parseLong(this.txt_usuario.getText()));
-            if (!sql_usuario.Verificar_usuario(mod_usu)) {
-                ShowPanel(frml_login);
-            }
-        } else {
-            JOptionPane.showConfirmDialog(null, "algo salió mal intenta otra vez", "¿Desea continuar con el proceso de pre registro?", 1);
-        }
-    }//GEN-LAST:event_lbtL_registrarMouseClicked
-
-    private void lbtL_registrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbtL_registrarMouseEntered
-
-    }//GEN-LAST:event_lbtL_registrarMouseEntered
-
-    private void lbtL_registrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbtL_registrarMouseExited
-
-    }//GEN-LAST:event_lbtL_registrarMouseExited
 
     private void cmb_dniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_dniActionPerformed
         // TODO add your handling code here:
@@ -340,10 +293,8 @@ public class FRM_INICIO extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JLabel lbtL_ingresar;
-    private javax.swing.JLabel lbtL_registrar;
     private javax.swing.JPanel pnlA_bar_top;
     private javax.swing.JPanel pnlL_ingresar;
-    private javax.swing.JPanel pnlL_validar;
     private javax.swing.JPanel pnl_contenedor;
     private javax.swing.JTextField txt_clave;
     private javax.swing.JTextField txt_usuario;
