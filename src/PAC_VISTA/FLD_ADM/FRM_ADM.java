@@ -6,7 +6,6 @@
 package PAC_VISTA.FLD_ADM;
 
 import java.awt.Color;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
@@ -17,7 +16,7 @@ public class FRM_ADM extends javax.swing.JFrame {
     
     VTN_A_REGIONAL vtn_a_regional = new VTN_A_REGIONAL();
     VTN_USUARIO vtnUsuario = new VTN_USUARIO();
-    VTN_PAIS vtnPais = new VTN_PAIS();
+    VTN_LOCACIONES vtnPais = new VTN_LOCACIONES();
     
     public FRM_ADM() {
         initComponents();
@@ -89,7 +88,7 @@ public class FRM_ADM extends javax.swing.JFrame {
         lblA_pais.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         lblA_pais.setForeground(new java.awt.Color(255, 255, 255));
         lblA_pais.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblA_pais.setText("DEPARTAMENTO");
+        lblA_pais.setText("LOCACIONES");
         lblA_pais.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblA_pais.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -114,7 +113,7 @@ public class FRM_ADM extends javax.swing.JFrame {
             .addComponent(lblA_pais, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
         );
 
-        pnlA_bar_top.add(pnlDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 85, 180, -1));
+        pnlA_bar_top.add(pnlDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 85, 180, -1));
 
         pnlRegional.setBackground(new java.awt.Color(0, 150, 70));
 
@@ -139,14 +138,14 @@ public class FRM_ADM extends javax.swing.JFrame {
         pnlRegional.setLayout(pnlRegionalLayout);
         pnlRegionalLayout.setHorizontalGroup(
             pnlRegionalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblA_regional, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+            .addComponent(lblA_regional, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
         );
         pnlRegionalLayout.setVerticalGroup(
             pnlRegionalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lblA_regional, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
         );
 
-        pnlA_bar_top.add(pnlRegional, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 85, 130, -1));
+        pnlA_bar_top.add(pnlRegional, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 85, 160, -1));
 
         pnlUsuario.setBackground(new java.awt.Color(0, 150, 70));
 
@@ -171,14 +170,14 @@ public class FRM_ADM extends javax.swing.JFrame {
         pnlUsuario.setLayout(pnlUsuarioLayout);
         pnlUsuarioLayout.setHorizontalGroup(
             pnlUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblA_usuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+            .addComponent(lblA_usuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
         );
         pnlUsuarioLayout.setVerticalGroup(
             pnlUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lblA_usuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
         );
 
-        pnlA_bar_top.add(pnlUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 85, 130, -1));
+        pnlA_bar_top.add(pnlUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 85, 140, -1));
         pnlA_bar_top.add(lbl_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1184, 10, 120, 20));
 
         BG.add(pnlA_bar_top, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1320, 120));

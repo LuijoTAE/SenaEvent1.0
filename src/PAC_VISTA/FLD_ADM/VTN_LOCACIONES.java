@@ -19,7 +19,7 @@ import javax.swing.JRadioButton;
  *
  * @author windows21
  */
-public class VTN_PAIS extends javax.swing.JPanel {
+public class VTN_LOCACIONES extends javax.swing.JPanel {
 
     ENT_USUARIO modUsu = new ENT_USUARIO();
     SQL_USUARIO sqlUsu = new SQL_USUARIO();
@@ -30,7 +30,7 @@ public class VTN_PAIS extends javax.swing.JPanel {
     ENT_CIUDAD modCi = new ENT_CIUDAD();
     SQL_CIUDAD sqlCi = new SQL_CIUDAD();
     
-    public VTN_PAIS() {
+    public VTN_LOCACIONES() {
         initComponents();
         LlenarUsuarios();
         LlenarDepa();
@@ -92,8 +92,6 @@ public class VTN_PAIS extends javax.swing.JPanel {
         jSeparator2 = new javax.swing.JSeparator();
         cmbUsuario = new javax.swing.JComboBox<>();
         txt11 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblPais = new javax.swing.JTable();
         pnl_Rgestion1 = new javax.swing.JPanel();
         txt6 = new javax.swing.JLabel();
         txt3 = new javax.swing.JLabel();
@@ -113,7 +111,6 @@ public class VTN_PAIS extends javax.swing.JPanel {
         txtCnombre = new javax.swing.JTextField();
         btnCverificar = new javax.swing.JButton();
         btnCguardar = new javax.swing.JButton();
-        jSeparator4 = new javax.swing.JSeparator();
         cmbDepartamento = new javax.swing.JComboBox<>();
         txt13 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -200,7 +197,7 @@ public class VTN_PAIS extends javax.swing.JPanel {
         pnl_Rgestion.add(btnPverificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 30, 30));
 
         btnPguardar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        btnPguardar.setText("Enviar");
+        btnPguardar.setText("Guardar");
         btnPguardar.setBorder(null);
         btnPguardar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -221,31 +218,7 @@ public class VTN_PAIS extends javax.swing.JPanel {
         txt11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pnl_Rgestion.add(txt11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
 
-        BG.add(pnl_Rgestion, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 270, 310));
-
-        tblPais.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        tblPais.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Código", "Pais", "Código", "Departamento"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Long.class, java.lang.String.class, java.lang.Long.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(tblPais);
-
-        BG.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, 490, 160));
+        BG.add(pnl_Rgestion, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 270, 310));
 
         pnl_Rgestion1.setBackground(new java.awt.Color(255, 255, 255));
         pnl_Rgestion1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -289,7 +262,7 @@ public class VTN_PAIS extends javax.swing.JPanel {
         pnl_Rgestion1.add(btnDverificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 30, 30));
 
         btnDguardar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        btnDguardar.setText("Enviar");
+        btnDguardar.setText("Guardar");
         btnDguardar.setBorder(null);
         btnDguardar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -311,7 +284,7 @@ public class VTN_PAIS extends javax.swing.JPanel {
         txt12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pnl_Rgestion1.add(txt12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
 
-        BG.add(pnl_Rgestion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, 270, 310));
+        BG.add(pnl_Rgestion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 60, 270, 310));
 
         pnl_Rgestion2.setBackground(new java.awt.Color(255, 255, 255));
         pnl_Rgestion2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -355,7 +328,7 @@ public class VTN_PAIS extends javax.swing.JPanel {
         pnl_Rgestion2.add(btnCverificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 30, 30));
 
         btnCguardar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        btnCguardar.setText("Enviar");
+        btnCguardar.setText("Guardar");
         btnCguardar.setBorder(null);
         btnCguardar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -363,9 +336,6 @@ public class VTN_PAIS extends javax.swing.JPanel {
             }
         });
         pnl_Rgestion2.add(btnCguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 70, 30));
-
-        jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        pnl_Rgestion2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, 10, 240));
 
         cmbDepartamento.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         pnl_Rgestion2.add(cmbDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 190, 30));
@@ -376,22 +346,22 @@ public class VTN_PAIS extends javax.swing.JPanel {
         txt13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pnl_Rgestion2.add(txt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
 
-        BG.add(pnl_Rgestion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(923, 70, 270, 310));
+        BG.add(pnl_Rgestion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 60, 270, 310));
 
         btnCiudad.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         btnCiudad.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Código", "Departamento", "Código", "Municipio"
+                "Código", "País", "Código", "Departamento", "Código", "Municipio"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Long.class, java.lang.String.class, java.lang.Long.class, java.lang.String.class
+                java.lang.Long.class, java.lang.String.class, java.lang.Long.class, java.lang.String.class, java.lang.Long.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -400,7 +370,7 @@ public class VTN_PAIS extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(btnCiudad);
 
-        BG.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 380, 520, 160));
+        BG.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, 790, 160));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -503,21 +473,18 @@ public class VTN_PAIS extends javax.swing.JPanel {
     private javax.swing.JButton btnDverificar;
     private javax.swing.JButton btnPguardar;
     private javax.swing.JButton btnPverificar;
-    private javax.swing.JComboBox<ENT_DEPARTAMENTO> cmbDepartamento;
+    private javax.swing.JComboBox<PAC_ENTIDAD.ENT_DEPARTAMENTO> cmbDepartamento;
     private javax.swing.JComboBox<String> cmbPais;
-    private javax.swing.JComboBox<ENT_USUARIO> cmbUsuario;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JComboBox<PAC_ENTIDAD.ENT_USUARIO> cmbUsuario;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JLabel lbl_actualizar;
     private javax.swing.JPanel pnl_Rgestion;
     private javax.swing.JPanel pnl_Rgestion1;
     private javax.swing.JPanel pnl_Rgestion2;
     private javax.swing.JRadioButton rbtActualizar;
     private javax.swing.JRadioButton rbtRgistrar;
-    private javax.swing.JTable tblPais;
     private javax.swing.JLabel txt;
     private javax.swing.JLabel txt1;
     private javax.swing.JLabel txt11;
