@@ -151,7 +151,6 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
         pnlIniciarSesion.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 80, 10));
 
         txtClave.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtClave.setText("jPasswordField1");
         pnlIniciarSesion.add(txtClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 190, 30));
 
         BG.add(pnlIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 240, 300));
