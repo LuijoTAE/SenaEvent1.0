@@ -99,10 +99,12 @@ public class SQL_USUARIO extends CONEXION {
             ps.setString(8, us.getUs_clave());
             ps.setString(9, us.getUs_rol());
             ps.execute();
+            JOptionPane.showMessageDialog(null, " !YES!...\n EL usuario " + us.getUs_nombre() + " fue registrada exitosamente");
             return true;
 
         } catch (SQLException e) {
-            System.err.println(e);
+            System.out.print("\n"+e.toString());
+            JOptionPane.showMessageDialog(null, "¡UPS!...\nAlgo salió mal..!\nRevisa que los campos fueron diligenciados de forma correcta");
             return false;
         } finally {
             try {
@@ -130,6 +132,7 @@ public class SQL_USUARIO extends CONEXION {
             return true;
 
         } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "¡UPS!...\nAlgo salió mal..!\nRevisa que los campos fueron diligenciados de forma correcta");
             System.out.print("\n" + e.toString());
             return false;
         } finally {
