@@ -29,9 +29,10 @@ public class SQL_CIUDAD extends CONEXION {
             if (rs.next()) {
                 mod.setCi_nombre(rs.getString("ci_nombre"));
                 System.out.print(mod.getCi_nombre());
+                JOptionPane.showMessageDialog(null, "...MODO *ACTUALIZAR* ACTIVO...");
                 return true;
             }
-
+            JOptionPane.showMessageDialog(null, "...MODO *REGISTRAR* ACTIVO...");
             return false;
         } catch (SQLException e) {
             System.out.print(e.toString());

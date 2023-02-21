@@ -36,9 +36,10 @@ public class SQL_REGIONAL extends CONEXION {
 
             if (rs.next()) {
                 mod.setRe_nombre(rs.getString("re_nombre"));
-                return true;
+                JOptionPane.showMessageDialog(null, "...MODO *ACTUALIZAR* ACTIVO...");
+                return true; 
             }
-
+            JOptionPane.showMessageDialog(null, "...MODO *REGISTRAR* ACTIVO...");
             return false;
         } catch (SQLException e) {
 

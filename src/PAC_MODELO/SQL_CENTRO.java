@@ -60,13 +60,14 @@ public class SQL_CENTRO {
             if (rs.next()) {
                 mod.setCf_nombre(rs.getString("cf_nombre"));
                 System.out.print(mod.getCf_nombre());
+                JOptionPane.showMessageDialog(null, "...MODO *ACTUALIZAR* ACTIVO...");
                 return true;
             }
-
+            JOptionPane.showMessageDialog(null, "...MODO *REGISTRAR* ACTIVO...");
             return false;
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "¡UPS!...\nAlgo salió mal..!\nRevisa que los campos fueron diligenciados de forma correcta");
-            System.out.print("\n"+e.toString());
+            System.out.print("\n" + e.toString());
             return false;
         }
     }
@@ -88,7 +89,7 @@ public class SQL_CENTRO {
 
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "¡UPS!...\nAlgo salió mal..!\nRevisa que los campos fueron diligenciados de forma correcta");
-            System.out.print("\n"+e.toString());
+            System.out.print("\n" + e.toString());
             return false;
         }
     }
@@ -109,23 +110,23 @@ public class SQL_CENTRO {
             return true;
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "¡UPS!...\nAlgo salió mal..!\nRevisa que los campos fueron diligenciados de forma correcta");
-            System.out.print("\n"+e.toString());
+            System.out.print("\n" + e.toString());
             return false;
         }
     }
 
-    public void Cargar(String condicion, JTable tabla){
+    public void Cargar(String condicion, JTable tabla) {
         String where = "";
-        if(!"".equals(condicion)){
-            where = " where re_codigo = " +condicion;
+        if (!"".equals(condicion)) {
+            where = " where re_codigo = " + condicion;
         }
-        try{
+        try {
             DefaultTableModel modelo = new DefaultTableModel();
             tabla.setModel(modelo);
             PreparedStatement ps = null;
             ResultSet rs = null;
             Connection con = getConexion();
-            String sql = "select REGIONAL.re_codigo, re_nombre, cf_codigo, cf_Nombre from CENTRO_FORMACION, REGIONAL where REGIONAL.re_codigo = CENTRO_FORMACION.re_codigo" ;//+where;
+            String sql = "select REGIONAL.re_codigo, re_nombre, cf_codigo, cf_Nombre from CENTRO_FORMACION, REGIONAL where REGIONAL.re_codigo = CENTRO_FORMACION.re_codigo";//+where;
             // testing System.out.print(sql);
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
@@ -135,18 +136,18 @@ public class SQL_CENTRO {
             modelo.addColumn("Regional");
             modelo.addColumn("Código");
             modelo.addColumn("Centro de formación");
-            int[] anchos = {50,100,70,300};
-            for(int i=0;i<colum;i++){
+            int[] anchos = {50, 100, 70, 300};
+            for (int i = 0; i < colum; i++) {
                 tabla.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
             }
-            while(rs.next()){
+            while (rs.next()) {
                 Object[] filas = new Object[colum];
-                for(int i=0;i<colum;i++){
-                    filas[i] = rs.getObject(i+1);
+                for (int i = 0; i < colum; i++) {
+                    filas[i] = rs.getObject(i + 1);
                 }
                 modelo.addRow(filas);
             }
-        }catch(SQLException e){
+        } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "¡UPS!...\nAlgo salió mal..!\nRevisa que los campos fueron diligenciados de forma correcta");
         }
     }

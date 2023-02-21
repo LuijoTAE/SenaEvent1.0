@@ -71,8 +71,10 @@ public class SQL_USUARIO extends CONEXION {
 
             if (rs.next()) {
                 us.setUs_dni(rs.getLong("us_dni"));
+                JOptionPane.showMessageDialog(null, "...MODO *ACTUALIZAR* ACTIVO...");
                 return true;
             }
+            JOptionPane.showMessageDialog(null, "...MODO *REGISTRAR* ACTIVO...");
             return false;
         } catch (SQLException e) {
             System.out.print(e.toString());

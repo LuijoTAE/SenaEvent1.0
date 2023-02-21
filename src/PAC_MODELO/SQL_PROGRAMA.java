@@ -49,9 +49,10 @@ public class SQL_PROGRAMA extends CONEXION {
 
             if (rs.next()) {
                 mod.setPf_nombre(rs.getString("pf_nombre"));
+                JOptionPane.showMessageDialog(null, "...MODO *ACTUALIZAR* ACTIVO...");
                 return true;
             }
-
+            JOptionPane.showMessageDialog(null, "...MODO *REGISTRAR* ACTIVO...");
             return false;
         } catch (SQLException e) {
             System.out.print(e.toString());
@@ -70,17 +71,17 @@ public class SQL_PROGRAMA extends CONEXION {
             ps.setDouble(3, mod.getPf_version());
             ps.setString(4, mod.getPf_nivel());
             ps.execute();
-            JOptionPane.showMessageDialog(null, " !YES!...\n La ficha " + mod.getPf_nombre()+ " fue registrada exitosamente");
+            JOptionPane.showMessageDialog(null, " !YES!...\n La ficha " + mod.getPf_nombre() + " fue registrada exitosamente");
             return true;
 
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "¡UPS!...\nAlgo salió mal..!\nRevisa que los campos fueron diligenciados de forma correcta");
             System.out.print(e.toString());
             return false;
-        }finally{
-            try{
+        } finally {
+            try {
                 con.close();
-            }catch(SQLException e){
+            } catch (SQLException e) {
                 System.out.print(e.toString());
             }
         }
