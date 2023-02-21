@@ -21,8 +21,8 @@ import javax.swing.JPanel;
  */
 public class VTN_I_LOGIN extends javax.swing.JPanel {
 
-    ENT_USUARIO mod_usu = new ENT_USUARIO();
-    SQL_USUARIO sql_usu = new SQL_USUARIO();
+    ENT_USUARIO modUs = new ENT_USUARIO();
+    SQL_USUARIO sqlUs = new SQL_USUARIO();
 
     ENT_ADMINISTRADOR mod_adm = new ENT_ADMINISTRADOR();
 
@@ -39,6 +39,12 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
         back.setBackground(new Color(0, 150, 70));
     }
 
+    private void Clear() {
+        this.txt_nombre.setText("");
+        this.txt_apellido.setText("");
+        this.txt_telefono.setText("");
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -51,8 +57,8 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
         jLabel14 = new javax.swing.JLabel();
         pnlIngresar = new javax.swing.JPanel();
         lbtL_ingresar = new javax.swing.JLabel();
-        txt_clave = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
+        txtClave = new javax.swing.JPasswordField();
         pnl_top = new javax.swing.JPanel();
         pnl_datos_personales = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
@@ -69,7 +75,7 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
         txt_correo = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
-        jButton2 = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
         pnlRegistrar = new javax.swing.JPanel();
         txt_dni = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
@@ -142,10 +148,11 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
         );
 
         pnlIniciarSesion.add(pnlIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 190, 40));
-
-        txt_clave.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        pnlIniciarSesion.add(txt_clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 190, 30));
         pnlIniciarSesion.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 80, 10));
+
+        txtClave.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtClave.setText("jPasswordField1");
+        pnlIniciarSesion.add(txtClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 190, 30));
 
         BG.add(pnlIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 240, 300));
 
@@ -226,9 +233,15 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
         jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
         pnl_datos_personales.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 10, 240));
 
-        jButton2.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jButton2.setText("Guardar");
-        pnl_datos_personales.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, -1, -1));
+        btnGuardar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        btnGuardar.setText("Guardar");
+        btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
+        pnl_datos_personales.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, -1, -1));
 
         BG.add(pnl_datos_personales, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 60, 670, 300));
 
@@ -312,11 +325,11 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lbtL_validarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbtL_validarMouseEntered
-
+        this.AnimacioBtn1(this.pnlValidar);
     }//GEN-LAST:event_lbtL_validarMouseEntered
 
     private void lbtL_validarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbtL_validarMouseExited
-
+        this.AnimacioBtn2(this.pnlValidar);
     }//GEN-LAST:event_lbtL_validarMouseExited
 
     private void txt_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_usuarioActionPerformed
@@ -328,7 +341,7 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
     }//GEN-LAST:event_lbtL_ingresarMouseEntered
 
     private void lbtL_ingresarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbtL_ingresarMouseExited
-
+        this.AnimacioBtn2(this.pnlIngresar);
     }//GEN-LAST:event_lbtL_ingresarMouseExited
 
     private void cmb_dniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_dniActionPerformed
@@ -345,18 +358,18 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
 
     private void lbtL_ingresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbtL_ingresarMouseClicked
 
-        if (!this.txt_usuario.getText().equals("") && !this.txt_clave.getText().equals("")) {
-            mod_usu.setUs_dni(Long.parseLong(this.txt_usuario.getText()));
-            mod_usu.setUs_clave(this.txt_clave.getText());
-            System.out.print(mod_usu.getUs_clave());
+        if (!this.txt_usuario.getText().equals("") && !this.txtClave.getText().equals("")) {
+            modUs.setUs_dni(Long.parseLong(this.txt_usuario.getText()));
+            modUs.setUs_clave(this.txtClave.getText());
+            System.out.print(modUs.getUs_clave());
 
-            if (sql_usu.Validar_ingreso(mod_usu)) {
+            if (sqlUs.Validar_ingreso(modUs)) {
 
-                if (mod_usu.getUs_rol().equals("FUNCIONARIO")) {
+                if (modUs.getUs_rol().equals("FUNCIONARIO")) {
                     FRM_FUN frm = new FRM_FUN();
                     frm.setVisible(true);
                 }
-                if (mod_usu.getUs_rol().equals("ADMINISTRADOR")) {
+                if (modUs.getUs_rol().equals("ADMINISTRADOR")) {
                     FRM_ADM frm = new FRM_ADM();
                     frm.setVisible(true);
                 }
@@ -370,12 +383,12 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
     private void lbtL_validarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbtL_validarMouseClicked
 
         if (!this.txt_dni.getText().equals("")) {
-            mod_usu.setUs_dni(Long.parseLong(this.txt_dni.getText()));
-            mod_usu.setUs_tipo_dni(this.cmb_dni.getSelectedItem().toString());
+            modUs.setUs_dni(Long.parseLong(this.txt_dni.getText()));
+            modUs.setUs_tipo_dni(this.cmb_dni.getSelectedItem().toString());
 
-            if (sql_usu.Verificar_usuario(mod_usu)) {
+            if (sqlUs.Verificar_usuario(modUs)) {
 
-                String usuario = String.valueOf(mod_usu.getUs_dni());
+                String usuario = String.valueOf(modUs.getUs_dni());
                 JOptionPane.showMessageDialog(null, "El usuario | " + usuario + " | ya exixte");
             } else {
                 this.pnl_datos_personales.setVisible(true);
@@ -385,12 +398,30 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_lbtL_validarMouseClicked
 
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+
+        int option = JOptionPane.showConfirmDialog(null, "¿Estás seguro que deseas continuar?", "Confirmación", JOptionPane.YES_NO_OPTION);
+        if (option != JOptionPane.YES_OPTION) {
+            Clear();
+        } else {
+            modUs.setUs_nombre(this.txt_nombre.getText());
+            modUs.setUs_apellido(this.txt_apellido.getText());
+            modUs.setUs_telefono(Long.parseLong(this.txt_telefono.getText()));
+            modUs.setUs_genero(this.cmb_genero.getSelectedItem().toString());
+            modUs.setUs_correo(this.txt_correo.getText() + this.cmb_correo.getSelectedItem().toString());
+
+            if (!sqlUs.Registrar(modUs)) {
+            }
+        }
+
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BG;
+    private javax.swing.JButton btnGuardar;
     private javax.swing.JComboBox<String> cmb_correo;
     private javax.swing.JComboBox<String> cmb_dni;
     private javax.swing.JComboBox<String> cmb_genero;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -416,8 +447,8 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
     private javax.swing.JPanel pnlValidar;
     private javax.swing.JPanel pnl_datos_personales;
     private javax.swing.JPanel pnl_top;
+    private javax.swing.JPasswordField txtClave;
     private javax.swing.JTextField txt_apellido;
-    private javax.swing.JTextField txt_clave;
     private javax.swing.JTextField txt_correo;
     private javax.swing.JTextField txt_dni;
     private javax.swing.JTextField txt_nombre;
