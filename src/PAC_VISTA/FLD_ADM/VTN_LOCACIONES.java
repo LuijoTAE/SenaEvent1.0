@@ -34,6 +34,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
         initComponents();
         LlenarUsuarios();
         LlenarDepa();
+        sqlCi.Cargar(this.tblTabla, 1, "");
     }
 
     private void Animacion(JRadioButton btn) {
@@ -114,7 +115,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
         cmbDepartamento = new javax.swing.JComboBox<>();
         txt13 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        btnCiudad = new javax.swing.JTable();
+        tblTabla = new javax.swing.JTable();
 
         BG.setBackground(new java.awt.Color(255, 255, 255));
         BG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -348,8 +349,8 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
 
         BG.add(pnl_Rgestion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 60, 270, 310));
 
-        btnCiudad.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        btnCiudad.setModel(new javax.swing.table.DefaultTableModel(
+        tblTabla.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        tblTabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -368,7 +369,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(btnCiudad);
+        jScrollPane2.setViewportView(tblTabla);
 
         BG.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, 790, 160));
 
@@ -467,7 +468,6 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
     private javax.swing.JPanel BG;
     private javax.swing.JPanel barTop;
     private javax.swing.JButton btnCguardar;
-    private javax.swing.JTable btnCiudad;
     private javax.swing.JButton btnCverificar;
     private javax.swing.JButton btnDguardar;
     private javax.swing.JButton btnDverificar;
@@ -485,6 +485,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
     private javax.swing.JPanel pnl_Rgestion2;
     private javax.swing.JRadioButton rbtActualizar;
     private javax.swing.JRadioButton rbtRgistrar;
+    private javax.swing.JTable tblTabla;
     private javax.swing.JLabel txt;
     private javax.swing.JLabel txt1;
     private javax.swing.JLabel txt11;

@@ -5,9 +5,12 @@ import static PAC_MODELO.CONEXION.getConexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public class SQL_CIUDAD extends CONEXION {
 
@@ -35,7 +38,7 @@ public class SQL_CIUDAD extends CONEXION {
             return false;
         }
     }
-    
+
     public ArrayList<ENT_CIUDAD> getCiudad(ENT_CIUDAD mod) {
         PreparedStatement ps = null;
         Connection con = getConexion();
@@ -83,7 +86,7 @@ public class SQL_CIUDAD extends CONEXION {
             }
         }
     }
-    
+
     public boolean Modificar(ENT_CIUDAD mod) {
         PreparedStatement ps = null;
         Connection con = getConexion();
@@ -106,5 +109,53 @@ public class SQL_CIUDAD extends CONEXION {
                 System.out.print(e.toString());
             }
         }
+    }
+
+    public void Cargar(JTable tabla, long Departamento, String Municipio) {
+
+        String departamento = "";
+        String municipio = "";
+        if (Departamento != 1) {
+            departamento = " and de_codigo=" + Departamento;
+        }
+        if (!Municipio.equals("")) {
+            municipio = " and ci_codigo like '" + Municipio + "'";
+        }
+
+        try {
+            DefaultTableModel modelo = new DefaultTableModel();
+            tabla.setModel(modelo);
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+            Connection con = getConexion();
+            String select = "select PAIS.pa_codigo, PAIS.pa_nombre, DEPARTAMENTO.de_codigo, DEPARTAMENTO.de_nombre, CIUDAD.ci_codigo, CIUDAD.ci_nombre";
+            String from = " from PAIS, DEPARTAMENTO, CIUDAD ";
+
+            String where = "where PAIS.pa_codigo = DEPARTAMENTO.pa_codigo and DEPARTAMENTO.de_codigo = CIUDAD.de_codigo";
+            ps = con.prepareStatement(select + from + where + departamento + municipio);
+            rs = ps.executeQuery();
+            ResultSetMetaData rsmd = rs.getMetaData();
+            int colum = rsmd.getColumnCount();
+            modelo.addColumn("Código");
+            modelo.addColumn("País");
+            modelo.addColumn("Código");
+            modelo.addColumn("Departamento");
+            modelo.addColumn("Código");
+            modelo.addColumn("Municipio");
+            int[] anchos = {50, 100, 50, 100, 50, 100};
+            for (int i = 0; i < colum; i++) {
+                tabla.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
+            }
+            while (rs.next()) {
+                Object[] filas = new Object[colum];
+                for (int i = 0; i < colum; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException e) {
+            System.out.print("\n" + e.toString());
+        }
+
     }
 }
