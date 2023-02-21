@@ -387,10 +387,10 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
             modUs.setUs_tipo_dni(this.cmb_dni.getSelectedItem().toString());
 
             if (sqlUs.Verificar_usuario(modUs)) {
-
                 String usuario = String.valueOf(modUs.getUs_dni());
                 JOptionPane.showMessageDialog(null, "El usuario | " + usuario + " | ya exixte");
             } else {
+                this.txt_dni.setEnabled(false);
                 this.pnl_datos_personales.setVisible(true);
             }
         } else {
@@ -410,7 +410,8 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
             modUs.setUs_genero(this.cmb_genero.getSelectedItem().toString());
             modUs.setUs_correo(this.txt_correo.getText() + this.cmb_correo.getSelectedItem().toString());
 
-            if (!sqlUs.Registrar(modUs)) {
+            if (sqlUs.Registrar(modUs)) {
+                this.txt_dni.setEnabled(true);
             }
         }
 
