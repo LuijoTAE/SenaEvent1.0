@@ -25,16 +25,17 @@ public class SQL_DEPARTAMENTO extends CONEXION {
             if (rs.next()) {
                 mod.setDe_nombre(rs.getString("de_nombre"));
                 System.out.print(mod.getDe_nombre());
+                JOptionPane.showMessageDialog(null, "...MODO *ACTUALIZAR* ACTIVO...");
                 return true;
             }
-
+            JOptionPane.showMessageDialog(null, "...MODO *REGISTRAR* ACTIVO...");
             return false;
         } catch (SQLException e) {
             System.out.print(e.toString());
             return false;
         }
     }
-    
+
     public ArrayList<ENT_DEPARTAMENTO> getDepartamento(ENT_DEPARTAMENTO mod) {
         PreparedStatement ps = null;
         Connection con = getConexion();

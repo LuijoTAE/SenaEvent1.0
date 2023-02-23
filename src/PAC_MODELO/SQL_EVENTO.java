@@ -22,9 +22,10 @@ public class SQL_EVENTO extends CONEXION {
             if (rs.next()) {
                 mod.setEv_codigo(rs.getLong("ev_codigo"));
                 mod.setEv_nombre(rs.getString("ev_nombre"));
-                JOptionPane.showMessageDialog(null, "El código " + mod.getEv_codigo() + " está siendo usado por el evento " + mod.getEv_nombre());
+                JOptionPane.showMessageDialog(null, "...MODO *ACTUALIZAR* ACTIVO...");
                 return true;
             }
+            JOptionPane.showMessageDialog(null, "...MODO *REGISTRAR* ACTIVO...");
             return false;
         } catch (SQLException e) {
             System.out.print(e.toString());

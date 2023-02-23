@@ -273,7 +273,7 @@ public class VTN_A_REGIONAL extends javax.swing.JPanel {
         pnl_Rgestion.add(txt5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, -1));
 
         btn_Rguardar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        btn_Rguardar.setText("Enviar");
+        btn_Rguardar.setText("Guardar");
         btn_Rguardar.setBorder(null);
         btn_Rguardar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -338,7 +338,7 @@ public class VTN_A_REGIONAL extends javax.swing.JPanel {
         pnl_Fcentro.add(txt6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, -1));
 
         btn_Cguardar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        btn_Cguardar.setText("Enviar");
+        btn_Cguardar.setText("Guardar");
         btn_Cguardar.setBorder(null);
         btn_Cguardar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -408,7 +408,7 @@ public class VTN_A_REGIONAL extends javax.swing.JPanel {
         pnl_Fprograma.add(txt7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, -1));
 
         btn_Pguardar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        btn_Pguardar.setText("Enviar");
+        btn_Pguardar.setText("Guardar");
         btn_Pguardar.setBorder(null);
         btn_Pguardar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -424,7 +424,7 @@ public class VTN_A_REGIONAL extends javax.swing.JPanel {
         pnl_Fprograma.add(txt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, -1));
 
         btn_Fguardar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        btn_Fguardar.setText("Enviar");
+        btn_Fguardar.setText("Guardar");
         btn_Fguardar.setBorder(null);
         btn_Fguardar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -762,13 +762,13 @@ public class VTN_A_REGIONAL extends javax.swing.JPanel {
     private javax.swing.JButton btn_Pverificar;
     private javax.swing.JButton btn_Rguardar;
     private javax.swing.JButton btn_Rverificar;
-    private javax.swing.JComboBox<ENT_REGIONAL> cmb_Cregional;
-    private javax.swing.JComboBox<ENT_CENTRO> cmb_Fcentro;
+    private javax.swing.JComboBox<PAC_ENTIDAD.ENT_REGIONAL> cmb_Cregional;
+    private javax.swing.JComboBox<PAC_ENTIDAD.ENT_CENTRO> cmb_Fcentro;
     private javax.swing.JComboBox<String> cmb_Fjornada;
     private javax.swing.JComboBox<String> cmb_Fmodalidad;
-    private javax.swing.JComboBox<ENT_PROGRAMA> cmb_Fprograma;
+    private javax.swing.JComboBox<PAC_ENTIDAD.ENT_PROGRAMA> cmb_Fprograma;
     private javax.swing.JComboBox<String> cmb_Pnivel;
-    private javax.swing.JComboBox<ENT_USUARIO> cmb_Rusuario;
+    private javax.swing.JComboBox<PAC_ENTIDAD.ENT_USUARIO> cmb_Rusuario;
     private javax.swing.ButtonGroup grpRegional;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

@@ -130,7 +130,7 @@ public class FRM_INICIO extends javax.swing.JFrame {
         lbtL_ingresar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         lbtL_ingresar.setForeground(new java.awt.Color(255, 255, 255));
         lbtL_ingresar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbtL_ingresar.setText("Ingresar");
+        lbtL_ingresar.setText("INGRESAR");
         lbtL_ingresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lbtL_ingresar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
