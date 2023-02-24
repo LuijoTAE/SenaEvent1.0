@@ -27,7 +27,7 @@ import javax.swing.JTextField;
  *
  * @author windows21
  */
-public class VTN_A_REGIONAL extends javax.swing.JPanel {
+public class VTN_REGIONAL extends javax.swing.JPanel {
 
     ENT_REGIONAL modRe = new ENT_REGIONAL();
     SQL_REGIONAL sqlRe = new SQL_REGIONAL();
@@ -44,7 +44,7 @@ public class VTN_A_REGIONAL extends javax.swing.JPanel {
     ENT_FICHA modFi = new ENT_FICHA();
     SQL_FICHA sqlFi = new SQL_FICHA();
 
-    public VTN_A_REGIONAL() {
+    public VTN_REGIONAL() {
         initComponents();
         this.grpRegional.add(this.rbtActualizar);
         this.grpRegional.add(this.rbtRgistrar);
@@ -100,12 +100,11 @@ public class VTN_A_REGIONAL extends javax.swing.JPanel {
         if (btn.isSelected() && btn.getText().equals("Actualizar")) {
             this.bar_top.setBackground(new Color(51, 51, 51));
             this.pnl_buscar.setBackground(new Color(51, 51, 51));
-            this.txt_buscar.setBackground(new Color(51, 51, 51));
+            
         } else {
             if (btn.isSelected() && btn.getText().equals("Registrar")) {
                 this.bar_top.setBackground(new Color(0, 150, 70));
                 this.pnl_buscar.setBackground(new Color(0, 150, 70));
-                this.txt_buscar.setBackground(new Color(0, 150, 70));
             }
         }
 
@@ -137,10 +136,7 @@ public class VTN_A_REGIONAL extends javax.swing.JPanel {
         rbtActualizar = new javax.swing.JRadioButton();
         rbtRgistrar = new javax.swing.JRadioButton();
         lbl_actualizar = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        txt_buscar = new javax.swing.JTextField();
         pnl_buscar = new javax.swing.JPanel();
-        lbl_buscar = new javax.swing.JLabel();
         pnl_Rgestion = new javax.swing.JPanel();
         txt5 = new javax.swing.JLabel();
         btn_Rguardar = new javax.swing.JButton();
@@ -192,6 +188,7 @@ public class VTN_A_REGIONAL extends javax.swing.JPanel {
         cmb_Fprograma = new javax.swing.JComboBox<>();
         scrTablaPF = new javax.swing.JScrollPane();
         tblFicha = new javax.swing.JTable();
+        jScrollPane1 = new javax.swing.JScrollPane();
         scrTablaRC = new javax.swing.JScrollPane();
         tblCentro = new javax.swing.JTable();
 
@@ -231,32 +228,18 @@ public class VTN_A_REGIONAL extends javax.swing.JPanel {
         lbl_actualizar.setText("MODO");
         lbl_actualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bar_top.add(lbl_actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 96, 35));
-        bar_top.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 40, 140, 10));
-
-        txt_buscar.setBackground(new java.awt.Color(0, 150, 70));
-        txt_buscar.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        txt_buscar.setForeground(new java.awt.Color(255, 255, 255));
-        txt_buscar.setText("Consultar...");
-        txt_buscar.setBorder(null);
-        bar_top.add(txt_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 10, 140, 40));
 
         pnl_buscar.setBackground(new java.awt.Color(0, 150, 70));
-
-        lbl_buscar.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        lbl_buscar.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_buscar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_buscar.setText("Buscar");
-        lbl_buscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout pnl_buscarLayout = new javax.swing.GroupLayout(pnl_buscar);
         pnl_buscar.setLayout(pnl_buscarLayout);
         pnl_buscarLayout.setHorizontalGroup(
             pnl_buscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lbl_buscar, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+            .addGap(0, 90, Short.MAX_VALUE)
         );
         pnl_buscarLayout.setVerticalGroup(
             pnl_buscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lbl_buscar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 35, Short.MAX_VALUE)
         );
 
         bar_top.add(pnl_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 10, 90, -1));
@@ -570,6 +553,7 @@ public class VTN_A_REGIONAL extends javax.swing.JPanel {
         scrTablaPF.setViewportView(tblFicha);
 
         pnl_Fprograma.add(scrTablaPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 710, 170));
+        pnl_Fprograma.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 140, 80));
 
         BG.add(pnl_Fprograma, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 60, 740, 500));
 
@@ -770,13 +754,12 @@ public class VTN_A_REGIONAL extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> cmb_Pnivel;
     private javax.swing.JComboBox<PAC_ENTIDAD.ENT_USUARIO> cmb_Rusuario;
     private javax.swing.ButtonGroup grpRegional;
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JLabel lbl_actualizar;
-    private javax.swing.JLabel lbl_buscar;
     private javax.swing.JPanel pnl_Fcentro;
     private javax.swing.JPanel pnl_Fprograma;
     private javax.swing.JPanel pnl_Rgestion;
@@ -814,6 +797,5 @@ public class VTN_A_REGIONAL extends javax.swing.JPanel {
     private javax.swing.JTextField txt_Pversion;
     private javax.swing.JTextField txt_Rcodigo;
     private javax.swing.JTextField txt_Rnombre;
-    private javax.swing.JTextField txt_buscar;
     // End of variables declaration//GEN-END:variables
 }

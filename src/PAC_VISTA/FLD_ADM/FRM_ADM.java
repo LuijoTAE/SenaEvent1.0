@@ -14,7 +14,7 @@ import javax.swing.JPanel;
  */
 public class FRM_ADM extends javax.swing.JFrame {
     
-    VTN_A_REGIONAL vtn_a_regional = new VTN_A_REGIONAL();
+    VTN_REGIONAL vtn_a_regional = new VTN_REGIONAL();
     VTN_USUARIO vtnUsuario = new VTN_USUARIO();
     VTN_LOCACIONES vtnPais = new VTN_LOCACIONES();
     
