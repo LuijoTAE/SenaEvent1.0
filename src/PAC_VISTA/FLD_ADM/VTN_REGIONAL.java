@@ -89,6 +89,15 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
 
     }
 
+    private void Clear() {
+        this.txtCentro.setText("");
+        this.txtRegional.setText("");
+        this.txt_Ccodigo.setText("");
+        this.txt_Cnombre.setText("");
+        this.txt_Rcodigo.setText("");
+        this.txt_Rnombre.setText("");
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -436,36 +445,35 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_RverificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_RverificarMouseClicked
-        try {
+
+        if (!this.txt_Rcodigo.getText().equals("")) {
             modRe.setRe_codigo(Long.parseLong(this.txt_Rcodigo.getText()));
             if (!sqlRe.Verificar(modRe)) {
                 this.rbtRgistrar.setSelected(true);
                 Animacion(this.rbtRgistrar);
-                //HabilitarCampos(this.rbtRgistrar, this.txt_Rnombre, this.txt_Rnombre, this.cmb_Rusuario);
                 LlenarUsuarios();
             } else {
                 this.rbtActualizar.setSelected(true);
                 Animacion(this.rbtActualizar);
-                //HabilitarCampos(this.rbtActualizar, this.txt_Rnombre, this.txt_Rnombre, this.cmb_Rusuario);
             }
-        }catch(Exception e){
-            System.out.print("\n"+e.toString());
+        } else {
+            JOptionPane.showMessageDialog(null, " !UPS! \n Algo salió mal verificar que el si hace falat un campo por llenar");
         }
-            
-            
+
     }//GEN-LAST:event_btn_RverificarMouseClicked
 
     private void btn_RguardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_RguardarMouseClicked
+        if (!this.txt_Rcodigo.getText().equals("") && !this.txt_Rnombre.getText().equals("")) {
+            modRe.setRe_codigo(Long.parseLong(this.txt_Rcodigo.getText()));
+            modRe.setRe_nombre(this.txt_Rnombre.getText());
 
-        modRe.setRe_codigo(Long.parseLong(this.txt_Rcodigo.getText()));
-        modRe.setRe_nombre(this.txt_Rnombre.getText());
-
-        if (this.rbtRgistrar.isSelected()) {
-            long usuario = this.cmb_Rusuario.getItemAt(this.cmb_Rusuario.getSelectedIndex()).getUs_dni();
-            sqlRe.Registrar(modRe, usuario);
-        }
-        if (this.rbtActualizar.isSelected()) {
-            sqlRe.Modificar(modRe);
+            if (this.rbtRgistrar.isSelected()) {
+                long usuario = this.cmb_Rusuario.getItemAt(this.cmb_Rusuario.getSelectedIndex()).getUs_dni();
+                sqlRe.Registrar(modRe, usuario);
+            }
+            if (this.rbtActualizar.isSelected()) {
+                sqlRe.Modificar(modRe);
+            }
         }
     }//GEN-LAST:event_btn_RguardarMouseClicked
 
@@ -483,6 +491,8 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
                 Animacion(this.rbtActualizar);
                 //HabilitarCampos(this.rbtActualizar, this.txt_Cnombre, this.txt_Cnombre, this.cmb_Cregional);
             }
+        } else {
+            JOptionPane.showMessageDialog(null, " !UPS! \n Algo salió mal verificar que el si hace falat un campo por llenar");
         }
     }//GEN-LAST:event_btn_CverificarMouseClicked
 
@@ -491,16 +501,16 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
         if (!this.txt_Ccodigo.getText().equals("") && !this.txt_Cnombre.getText().equals("")) {
             modCe.setCf_codigo(Long.parseLong(this.txt_Ccodigo.getText()));
             modCe.setCf_nombre(this.txt_Cnombre.getText());
-        }
-        if (this.rbtRgistrar.isSelected()) {
-            long reCodigo = this.cmb_Cregional.getItemAt(this.cmb_Cregional.getSelectedIndex()).getRe_codigo();
-            modCe.setRe_codigo(reCodigo);
-            sqlCe.Registrar(modCe);
-        }
-        if (this.rbtActualizar.isSelected()) {
-            sqlCe.Modificar(modCe);
-        }
 
+            if (this.rbtRgistrar.isSelected()) {
+                long reCodigo = this.cmb_Cregional.getItemAt(this.cmb_Cregional.getSelectedIndex()).getRe_codigo();
+                modCe.setRe_codigo(reCodigo);
+                sqlCe.Registrar(modCe);
+            }
+            if (this.rbtActualizar.isSelected()) {
+                sqlCe.Modificar(modCe);
+            }
+        }
     }//GEN-LAST:event_btn_CguardarMouseClicked
 
     private void cmb_CregionalItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmb_CregionalItemStateChanged
@@ -517,11 +527,11 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
 
     private void btnRegionalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegionalMouseClicked
 
-        try {
+        if (!this.txt_Rcodigo.getText().equals("")) {
             long codigo = Long.parseLong(this.txt_Rcodigo.getText());
             sqlRe.Cargar(codigo, tblCentro);
-        } catch (Exception e) {
-            System.out.print("\n" + e.toString());
+        } else {
+            sqlRe.Cargar(1, tblCentro);
         }
     }//GEN-LAST:event_btnRegionalMouseClicked
 
@@ -534,8 +544,13 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
     }//GEN-LAST:event_btnRegional1MouseClicked
 
     private void btnCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCentroActionPerformed
-        long codigo = Long.parseLong(this.txtCentro.getText());
-        sqlCe.Cargar(codigo, tblCentro);
+        if (!this.txtCentro.getText().equals("")) {
+            long codigo = Long.parseLong(this.txtCentro.getText());
+            sqlCe.Cargar(codigo, tblCentro);
+        } else {
+            sqlCe.Cargar(1, tblCentro);
+        }
+
     }//GEN-LAST:event_btnCentroActionPerformed
 
     private void btnRegional1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegional1ActionPerformed

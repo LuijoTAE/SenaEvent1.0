@@ -146,7 +146,7 @@ public class SQL_REGIONAL extends CONEXION {
             String select = "select USUARIO.us_dni, us_nombre, REGIONAL.re_codigo, re_nombre ";
             String from = "from USUARIO, ADMINISTRADOR, REGIONAL ";
             String where = "where USUARIO.us_dni = ADMINISTRADOR.us_dni and ADMINISTRADOR.us_dni = REGIONAL.us_dni " +Where;
-            ps = con.prepareStatement(select);
+            ps = con.prepareStatement(select + from + where);
             rs = ps.executeQuery();
             ResultSetMetaData rsmd = rs.getMetaData();
             int colum = rsmd.getColumnCount();
