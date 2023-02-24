@@ -50,10 +50,7 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
         this.grpRegional.add(this.rbtRgistrar);
         LlenarUsuarios();
         LlenarRegional();
-        LlenarCentro();
-        LlenarPrograma();
         sqlCe.Cargar("", this.tblCentro);
-        sqlFi.Cargar("", this.tblFicha);
     }
 
     private void LlenarUsuarios() {
@@ -75,24 +72,6 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
 
         for (int i = 0; i < lista.size(); i++) {
             this.cmb_Cregional.addItem(new ENT_REGIONAL(lista.get(i).getRe_nombre(), lista.get(i).getRe_codigo()));
-        }
-    }
-
-    private void LlenarCentro() {
-        ArrayList<ENT_CENTRO> lista = sqlCe.getCentro();
-        this.cmb_Fcentro.removeAllItems();
-        for (int i = 0; i < lista.size(); i++) {
-            this.cmb_Fcentro.addItem(new ENT_CENTRO(lista.get(i).getCf_nombre(),
-                    lista.get(i).getCf_codigo()));
-        }
-    }
-
-    private void LlenarPrograma() {
-        ArrayList<ENT_PROGRAMA> lista = sqlPr.getPrograma();
-        this.cmb_Fprograma.removeAllItems();
-        for (int i = 0; i < lista.size(); i++) {
-            this.cmb_Fprograma.addItem(new ENT_PROGRAMA(lista.get(i).getPf_codigo(),
-                    lista.get(i).getPf_version(), lista.get(i).getPf_nombre()));
         }
     }
 
@@ -147,6 +126,7 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
         txt_Rnombre = new javax.swing.JTextField();
         txt11 = new javax.swing.JLabel();
         cmb_Rusuario = new javax.swing.JComboBox<>();
+        jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         pnl_Fcentro = new javax.swing.JPanel();
         txt6 = new javax.swing.JLabel();
@@ -158,39 +138,19 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
         txt_Cnombre = new javax.swing.JTextField();
         txt9 = new javax.swing.JLabel();
         cmb_Cregional = new javax.swing.JComboBox<>();
-        jSeparator3 = new javax.swing.JSeparator();
-        pnl_Fprograma = new javax.swing.JPanel();
-        txt7 = new javax.swing.JLabel();
-        btn_Pguardar = new javax.swing.JButton();
-        txt13 = new javax.swing.JLabel();
-        btn_Fguardar = new javax.swing.JButton();
-        txt4 = new javax.swing.JLabel();
-        txt_Pcodigo = new javax.swing.JTextField();
-        btn_Pverificar = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JSeparator();
-        txt14 = new javax.swing.JLabel();
-        txt_Fcodigo = new javax.swing.JTextField();
-        btn_Fverificar = new javax.swing.JButton();
-        txt16 = new javax.swing.JLabel();
-        cmb_Fmodalidad = new javax.swing.JComboBox<>();
-        txt8 = new javax.swing.JLabel();
-        txt_Pnombre = new javax.swing.JTextField();
-        txt18 = new javax.swing.JLabel();
-        cmb_Fcentro = new javax.swing.JComboBox<>();
-        txt17 = new javax.swing.JLabel();
-        cmb_Fjornada = new javax.swing.JComboBox<>();
-        txt12 = new javax.swing.JLabel();
-        cmb_Pnivel = new javax.swing.JComboBox<>();
-        txt10 = new javax.swing.JLabel();
-        txt_Pversion = new javax.swing.JTextField();
-        jSeparator5 = new javax.swing.JSeparator();
-        txt15 = new javax.swing.JLabel();
-        cmb_Fprograma = new javax.swing.JComboBox<>();
-        scrTablaPF = new javax.swing.JScrollPane();
-        tblFicha = new javax.swing.JTable();
-        jScrollPane1 = new javax.swing.JScrollPane();
         scrTablaRC = new javax.swing.JScrollPane();
         tblCentro = new javax.swing.JTable();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel8 = new javax.swing.JLabel();
+        jSeparator9 = new javax.swing.JSeparator();
+        jLabel1 = new javax.swing.JLabel();
+        txtFuncionario = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txtAprendiz = new javax.swing.JTextField();
+        btnRegional = new javax.swing.JButton();
+        jSeparator5 = new javax.swing.JSeparator();
+        btnFormacion = new javax.swing.JButton();
 
         BG.setBackground(new java.awt.Color(255, 255, 255));
         BG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -253,7 +213,7 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
         txt5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txt5.setText("Gestion de Regional");
         txt5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnl_Rgestion.add(txt5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, -1));
+        pnl_Rgestion.add(txt5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, -1));
 
         btn_Rguardar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btn_Rguardar.setText("Guardar");
@@ -263,18 +223,18 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
                 btn_RguardarMouseClicked(evt);
             }
         });
-        pnl_Rgestion.add(btn_Rguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 70, 30));
+        pnl_Rgestion.add(btn_Rguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 70, 30));
 
         txt2.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txt2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txt2.setText("Código");
         txt2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnl_Rgestion.add(txt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+        pnl_Rgestion.add(txt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
 
         txt_Rcodigo.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txt_Rcodigo.setForeground(new java.awt.Color(20, 7, 7));
         txt_Rcodigo.setToolTipText("");
-        pnl_Rgestion.add(txt_Rcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 160, 30));
+        pnl_Rgestion.add(txt_Rcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 160, 30));
 
         btn_Rverificar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btn_Rverificar.setText("V");
@@ -284,32 +244,34 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
                 btn_RverificarMouseClicked(evt);
             }
         });
-        pnl_Rgestion.add(btn_Rverificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 30, 30));
+        pnl_Rgestion.add(btn_Rverificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 30, 30));
 
         txt.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txt.setText("Nombre");
         txt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnl_Rgestion.add(txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
+        pnl_Rgestion.add(txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
 
         txt_Rnombre.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txt_Rnombre.setForeground(new java.awt.Color(20, 7, 7));
         txt_Rnombre.setToolTipText("");
-        pnl_Rgestion.add(txt_Rnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 190, 30));
+        pnl_Rgestion.add(txt_Rnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 190, 30));
 
         txt11.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txt11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txt11.setText("Usuario");
         txt11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnl_Rgestion.add(txt11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
+        pnl_Rgestion.add(txt11, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, -1, -1));
 
         cmb_Rusuario.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        pnl_Rgestion.add(cmb_Rusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 190, 30));
+        pnl_Rgestion.add(cmb_Rusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 190, 30));
 
-        jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        pnl_Rgestion.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, 10, 240));
+        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator1.setToolTipText("");
+        pnl_Rgestion.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 50, 10, 140));
+        pnl_Rgestion.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 260, 10));
 
-        BG.add(pnl_Rgestion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 270, 310));
+        BG.add(pnl_Rgestion, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 460, 210));
 
         pnl_Fcentro.setBackground(new java.awt.Color(255, 255, 255));
         pnl_Fcentro.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -318,7 +280,7 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
         txt6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txt6.setText("Centro de Formación");
         txt6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnl_Fcentro.add(txt6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, -1));
+        pnl_Fcentro.add(txt6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, -1));
 
         btn_Cguardar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btn_Cguardar.setText("Guardar");
@@ -328,18 +290,18 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
                 btn_CguardarMouseClicked(evt);
             }
         });
-        pnl_Fcentro.add(btn_Cguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 70, 30));
+        pnl_Fcentro.add(btn_Cguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 60, 70, 30));
 
         txt3.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txt3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txt3.setText("Código");
         txt3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnl_Fcentro.add(txt3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+        pnl_Fcentro.add(txt3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
 
         txt_Ccodigo.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txt_Ccodigo.setForeground(new java.awt.Color(20, 7, 7));
         txt_Ccodigo.setToolTipText("");
-        pnl_Fcentro.add(txt_Ccodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 160, 30));
+        pnl_Fcentro.add(txt_Ccodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 160, 30));
 
         btn_Cverificar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btn_Cverificar.setText("V");
@@ -349,24 +311,24 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
                 btn_CverificarMouseClicked(evt);
             }
         });
-        pnl_Fcentro.add(btn_Cverificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 30, 30));
+        pnl_Fcentro.add(btn_Cverificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 30, 30));
 
         txt1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txt1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txt1.setText("Nombre");
         txt1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnl_Fcentro.add(txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
+        pnl_Fcentro.add(txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
 
         txt_Cnombre.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txt_Cnombre.setForeground(new java.awt.Color(20, 7, 7));
         txt_Cnombre.setToolTipText("");
-        pnl_Fcentro.add(txt_Cnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 190, 30));
+        pnl_Fcentro.add(txt_Cnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 190, 30));
 
         txt9.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txt9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txt9.setText("Regional");
         txt9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnl_Fcentro.add(txt9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
+        pnl_Fcentro.add(txt9, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, -1, -1));
 
         cmb_Cregional.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         cmb_Cregional.addItemListener(new java.awt.event.ItemListener() {
@@ -374,188 +336,10 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
                 cmb_CregionalItemStateChanged(evt);
             }
         });
-        pnl_Fcentro.add(cmb_Cregional, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 190, 30));
+        pnl_Fcentro.add(cmb_Cregional, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 190, 30));
+        pnl_Fcentro.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 250, 20));
 
-        jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        pnl_Fcentro.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, 10, 240));
-
-        BG.add(pnl_Fcentro, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 270, 310));
-
-        pnl_Fprograma.setBackground(new java.awt.Color(255, 255, 255));
-        pnl_Fprograma.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        txt7.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        txt7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txt7.setText("Programa de Formación");
-        txt7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnl_Fprograma.add(txt7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, -1));
-
-        btn_Pguardar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        btn_Pguardar.setText("Guardar");
-        btn_Pguardar.setBorder(null);
-        btn_Pguardar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_PguardarMouseClicked(evt);
-            }
-        });
-        pnl_Fprograma.add(btn_Pguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 70, 30));
-
-        txt13.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        txt13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txt13.setText("Ficha de Formación");
-        txt13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnl_Fprograma.add(txt13, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, -1));
-
-        btn_Fguardar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        btn_Fguardar.setText("Guardar");
-        btn_Fguardar.setBorder(null);
-        btn_Fguardar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_FguardarMouseClicked(evt);
-            }
-        });
-        pnl_Fprograma.add(btn_Fguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 70, 30));
-
-        txt4.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txt4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txt4.setText("Código");
-        txt4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnl_Fprograma.add(txt4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
-
-        txt_Pcodigo.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        txt_Pcodigo.setForeground(new java.awt.Color(20, 7, 7));
-        txt_Pcodigo.setToolTipText("");
-        pnl_Fprograma.add(txt_Pcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 160, 30));
-
-        btn_Pverificar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        btn_Pverificar.setText("V");
-        btn_Pverificar.setBorder(null);
-        btn_Pverificar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_PverificarMouseClicked(evt);
-            }
-        });
-        pnl_Fprograma.add(btn_Pverificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 30, 30));
-
-        jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        pnl_Fprograma.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 10, 160));
-
-        txt14.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txt14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txt14.setText("Número de Ficha");
-        txt14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnl_Fprograma.add(txt14, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, -1, -1));
-
-        txt_Fcodigo.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        txt_Fcodigo.setForeground(new java.awt.Color(20, 7, 7));
-        txt_Fcodigo.setToolTipText("");
-        pnl_Fprograma.add(txt_Fcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 160, 30));
-
-        btn_Fverificar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        btn_Fverificar.setText("V");
-        btn_Fverificar.setBorder(null);
-        btn_Fverificar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_FverificarMouseClicked(evt);
-            }
-        });
-        pnl_Fprograma.add(btn_Fverificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 30, 30));
-
-        txt16.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txt16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txt16.setText("Modalidad");
-        txt16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnl_Fprograma.add(txt16, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 80, -1, -1));
-
-        cmb_Fmodalidad.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        cmb_Fmodalidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PRESENCIAL", "VIRTUAL" }));
-        pnl_Fprograma.add(cmb_Fmodalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, 190, 30));
-
-        txt8.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txt8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txt8.setText("Nombre");
-        txt8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnl_Fprograma.add(txt8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
-
-        txt_Pnombre.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        txt_Pnombre.setForeground(new java.awt.Color(20, 7, 7));
-        txt_Pnombre.setToolTipText("");
-        pnl_Fprograma.add(txt_Pnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 190, 30));
-
-        txt18.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txt18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txt18.setText("Centro de Formación");
-        txt18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnl_Fprograma.add(txt18, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, -1, -1));
-
-        cmb_Fcentro.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        pnl_Fprograma.add(cmb_Fcentro, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, 190, 30));
-
-        txt17.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txt17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txt17.setText("Jornada");
-        txt17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnl_Fprograma.add(txt17, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 160, -1, -1));
-
-        cmb_Fjornada.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        cmb_Fjornada.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TECNICO", "TEGNOLOGO" }));
-        pnl_Fprograma.add(cmb_Fjornada, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 190, 190, 30));
-
-        txt12.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txt12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txt12.setText("Nivel de Formación");
-        txt12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnl_Fprograma.add(txt12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
-
-        cmb_Pnivel.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        cmb_Pnivel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TECNICO", "TEGNOLOGO" }));
-        pnl_Fprograma.add(cmb_Pnivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 190, 30));
-
-        txt10.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txt10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txt10.setText("Versión");
-        txt10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnl_Fprograma.add(txt10, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, -1, -1));
-
-        txt_Pversion.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        txt_Pversion.setForeground(new java.awt.Color(20, 7, 7));
-        pnl_Fprograma.add(txt_Pversion, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 170, 30));
-
-        jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        pnl_Fprograma.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 260, 10, 40));
-
-        txt15.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txt15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txt15.setText("Programa de Formación");
-        txt15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnl_Fprograma.add(txt15, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 240, -1, -1));
-
-        cmb_Fprograma.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        pnl_Fprograma.add(cmb_Fprograma, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, 190, 30));
-
-        tblFicha.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        tblFicha.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null}
-            },
-            new String [] {
-                "Código", "Programa de Formación", "Nivel", "Ficha", "Modalidad", "Jornada"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.Long.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        scrTablaPF.setViewportView(tblFicha);
-
-        pnl_Fprograma.add(scrTablaPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 710, 170));
-        pnl_Fprograma.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 140, 80));
-
-        BG.add(pnl_Fprograma, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 60, 740, 500));
+        BG.add(pnl_Fcentro, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 50, 440, 210));
 
         tblCentro.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         tblCentro.setModel(new javax.swing.table.DefaultTableModel(
@@ -576,7 +360,50 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
         });
         scrTablaRC.setViewportView(tblCentro);
 
-        BG.add(scrTablaRC, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 380, 520, 170));
+        BG.add(scrTablaRC, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 340, 620, 220));
+        BG.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 820, 10));
+
+        jLabel8.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        jLabel8.setText("Area  Consulta");
+        BG.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, -1, -1));
+        BG.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 730, 10));
+
+        jLabel1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel1.setText("Regional");
+        BG.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, -1, -1));
+
+        txtFuncionario.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        BG.add(txtFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 380, 180, 30));
+
+        jLabel2.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel2.setText("Formación");
+        BG.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 430, -1, -1));
+
+        txtAprendiz.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        BG.add(txtAprendiz, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 460, 180, 30));
+
+        btnRegional.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        btnRegional.setText("V");
+        btnRegional.setBorder(null);
+        btnRegional.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnRegionalMouseClicked(evt);
+            }
+        });
+        BG.add(btnRegional, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 380, 30, 30));
+
+        jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        BG.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 360, 10, 120));
+
+        btnFormacion.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        btnFormacion.setText("V");
+        btnFormacion.setBorder(null);
+        btnFormacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnFormacionMouseClicked(evt);
+            }
+        });
+        BG.add(btnFormacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 460, 30, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -662,70 +489,6 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
 
     }//GEN-LAST:event_cmb_CregionalItemStateChanged
 
-    private void btn_PverificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_PverificarMouseClicked
-        if (!this.txt_Pcodigo.getText().equals("")) {
-
-            modPr.setPf_codigo(Long.parseLong(this.txt_Pcodigo.getText()));
-            if (!sqlPr.Vereficar(modPr)) {
-                this.rbtRgistrar.setSelected(true);
-                Animacion(this.rbtRgistrar);
-                HabilitarCampos(this.rbtRgistrar, this.txt_Pversion, this.txt_Pnombre, this.cmb_Pnivel);
-            } else {
-                this.rbtActualizar.setSelected(true);
-                Animacion(this.rbtActualizar);
-                HabilitarCampos(this.rbtRgistrar, this.txt_Pversion, this.txt_Pnombre, this.cmb_Pnivel);
-                this.txt_Pversion.setEnabled(true);
-            }
-        }
-    }//GEN-LAST:event_btn_PverificarMouseClicked
-
-    private void btn_PguardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_PguardarMouseClicked
-
-        modPr.setPf_nombre(this.txt_Pnombre.getText());
-        modPr.setPf_version(Double.parseDouble(this.txt_Pversion.getText()));
-        modPr.setPf_nivel(this.cmb_Pnivel.getSelectedItem().toString());
-        if (this.rbtRgistrar.isSelected()) {
-            modPr.setPf_codigo(Long.parseLong(this.txt_Pcodigo.getText()));
-            sqlPr.Registrar(modPr);
-        }
-        if (this.rbtActualizar.isSelected()) {
-
-        }
-
-    }//GEN-LAST:event_btn_PguardarMouseClicked
-
-    private void btn_FguardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_FguardarMouseClicked
-
-        modFi.setFi_codigo(Long.parseLong(this.txt_Fcodigo.getText()));
-        modFi.setCf_codigo(this.cmb_Fcentro.getItemAt(this.cmb_Fcentro.getSelectedIndex()).getCf_codigo());
-        modFi.setPf_codifo(this.cmb_Fprograma.getItemAt(this.cmb_Fprograma.getSelectedIndex()).getPf_codigo());
-        modFi.setFi_jornada(this.cmb_Fjornada.getSelectedItem().toString());
-        modFi.setFi_modalidad(this.cmb_Fmodalidad.getSelectedItem().toString());
-        if (!sqlFi.Verificar(modFi)) {
-            sqlFi.Registrar(modFi);
-        } else {
-            //Modificar
-        }
-    }//GEN-LAST:event_btn_FguardarMouseClicked
-
-    private void btn_FverificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_FverificarMouseClicked
-        if (!this.txt_Fcodigo.getText().equals("")) {
-            modFi.setFi_codigo(Long.parseLong(this.txt_Fcodigo.getText()));
-            if (!sqlFi.Verificar(modFi)) {
-                this.rbtRgistrar.setSelected(true);
-                Animacion(this.rbtRgistrar);
-                LlenarCentro();
-                LlenarPrograma();
-            } else {
-                this.rbtActualizar.setSelected(true);
-                Animacion(this.rbtActualizar);
-                LlenarCentro();
-                LlenarPrograma();
-            }
-
-        }
-    }//GEN-LAST:event_btn_FverificarMouseClicked
-
     private void rbtActualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtActualizarMouseClicked
 
     }//GEN-LAST:event_rbtActualizarMouseClicked
@@ -734,67 +497,56 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
 
     }//GEN-LAST:event_rbtRgistrarMouseClicked
 
+    private void btnRegionalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegionalMouseClicked
+        
+    }//GEN-LAST:event_btnRegionalMouseClicked
+
+    private void btnFormacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFormacionMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFormacionMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BG;
     private javax.swing.JPanel bar_top;
+    private javax.swing.JButton btnFormacion;
+    private javax.swing.JButton btnRegional;
     private javax.swing.JButton btn_Cguardar;
     private javax.swing.JButton btn_Cverificar;
-    private javax.swing.JButton btn_Fguardar;
-    private javax.swing.JButton btn_Fverificar;
-    private javax.swing.JButton btn_Pguardar;
-    private javax.swing.JButton btn_Pverificar;
     private javax.swing.JButton btn_Rguardar;
     private javax.swing.JButton btn_Rverificar;
     private javax.swing.JComboBox<PAC_ENTIDAD.ENT_REGIONAL> cmb_Cregional;
-    private javax.swing.JComboBox<PAC_ENTIDAD.ENT_CENTRO> cmb_Fcentro;
-    private javax.swing.JComboBox<String> cmb_Fjornada;
-    private javax.swing.JComboBox<String> cmb_Fmodalidad;
-    private javax.swing.JComboBox<PAC_ENTIDAD.ENT_PROGRAMA> cmb_Fprograma;
-    private javax.swing.JComboBox<String> cmb_Pnivel;
     private javax.swing.JComboBox<PAC_ENTIDAD.ENT_USUARIO> cmb_Rusuario;
     private javax.swing.ButtonGroup grpRegional;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator9;
     private javax.swing.JLabel lbl_actualizar;
     private javax.swing.JPanel pnl_Fcentro;
-    private javax.swing.JPanel pnl_Fprograma;
     private javax.swing.JPanel pnl_Rgestion;
     private javax.swing.JPanel pnl_buscar;
     private javax.swing.JRadioButton rbtActualizar;
     private javax.swing.JRadioButton rbtRgistrar;
-    private javax.swing.JScrollPane scrTablaPF;
     private javax.swing.JScrollPane scrTablaRC;
     private javax.swing.JTable tblCentro;
-    private javax.swing.JTable tblFicha;
     private javax.swing.JLabel txt;
     private javax.swing.JLabel txt1;
-    private javax.swing.JLabel txt10;
     private javax.swing.JLabel txt11;
-    private javax.swing.JLabel txt12;
-    private javax.swing.JLabel txt13;
-    private javax.swing.JLabel txt14;
-    private javax.swing.JLabel txt15;
-    private javax.swing.JLabel txt16;
-    private javax.swing.JLabel txt17;
-    private javax.swing.JLabel txt18;
     private javax.swing.JLabel txt2;
     private javax.swing.JLabel txt3;
-    private javax.swing.JLabel txt4;
     private javax.swing.JLabel txt5;
     private javax.swing.JLabel txt6;
-    private javax.swing.JLabel txt7;
-    private javax.swing.JLabel txt8;
     private javax.swing.JLabel txt9;
+    private javax.swing.JTextField txtAprendiz;
+    private javax.swing.JTextField txtFuncionario;
     private javax.swing.JTextField txt_Ccodigo;
     private javax.swing.JTextField txt_Cnombre;
-    private javax.swing.JTextField txt_Fcodigo;
-    private javax.swing.JTextField txt_Pcodigo;
-    private javax.swing.JTextField txt_Pnombre;
-    private javax.swing.JTextField txt_Pversion;
     private javax.swing.JTextField txt_Rcodigo;
     private javax.swing.JTextField txt_Rnombre;
     // End of variables declaration//GEN-END:variables

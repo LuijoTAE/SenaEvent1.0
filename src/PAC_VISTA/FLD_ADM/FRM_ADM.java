@@ -17,6 +17,7 @@ public class FRM_ADM extends javax.swing.JFrame {
     VTN_REGIONAL vtn_a_regional = new VTN_REGIONAL();
     VTN_USUARIO vtnUsuario = new VTN_USUARIO();
     VTN_LOCACIONES vtnPais = new VTN_LOCACIONES();
+    VTN_PROGRAMA vtnPrograma = new VTN_PROGRAMA();
     
     public FRM_ADM() {
         initComponents();
@@ -52,6 +53,8 @@ public class FRM_ADM extends javax.swing.JFrame {
         jSeparator9 = new javax.swing.JSeparator();
         pnlDepartamento = new javax.swing.JPanel();
         lblA_pais = new javax.swing.JLabel();
+        pnlProgramas = new javax.swing.JPanel();
+        lblProgramas = new javax.swing.JLabel();
         pnlRegional = new javax.swing.JPanel();
         lblA_regional = new javax.swing.JLabel();
         pnlUsuario = new javax.swing.JPanel();
@@ -113,7 +116,40 @@ public class FRM_ADM extends javax.swing.JFrame {
             .addComponent(lblA_pais, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
         );
 
-        pnlA_bar_top.add(pnlDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 85, 180, -1));
+        pnlA_bar_top.add(pnlDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 85, 180, -1));
+
+        pnlProgramas.setBackground(new java.awt.Color(0, 150, 70));
+        pnlProgramas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lblProgramas.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        lblProgramas.setForeground(new java.awt.Color(255, 255, 255));
+        lblProgramas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblProgramas.setText("PROGRAMAS");
+        lblProgramas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblProgramas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblProgramasMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblProgramasMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblProgramasMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlProgramasLayout = new javax.swing.GroupLayout(pnlProgramas);
+        pnlProgramas.setLayout(pnlProgramasLayout);
+        pnlProgramasLayout.setHorizontalGroup(
+            pnlProgramasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblProgramas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+        );
+        pnlProgramasLayout.setVerticalGroup(
+            pnlProgramasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblProgramas, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+        );
+
+        pnlA_bar_top.add(pnlProgramas, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 85, 180, -1));
 
         pnlRegional.setBackground(new java.awt.Color(0, 150, 70));
 
@@ -247,6 +283,18 @@ public class FRM_ADM extends javax.swing.JFrame {
         AnimacionClara(this.pnlUsuario);
     }//GEN-LAST:event_lblA_usuariosMouseExited
 
+    private void lblProgramasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblProgramasMouseClicked
+        ShowPanel(vtnPrograma);
+    }//GEN-LAST:event_lblProgramasMouseClicked
+
+    private void lblProgramasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblProgramasMouseEntered
+        AnimacionOscura(this.pnlProgramas);
+    }//GEN-LAST:event_lblProgramasMouseEntered
+
+    private void lblProgramasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblProgramasMouseExited
+        AnimacionClara(this.pnlProgramas);
+    }//GEN-LAST:event_lblProgramasMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -290,9 +338,11 @@ public class FRM_ADM extends javax.swing.JFrame {
     private javax.swing.JLabel lblA_pais;
     private javax.swing.JLabel lblA_regional;
     private javax.swing.JLabel lblA_usuarios;
+    private javax.swing.JLabel lblProgramas;
     public javax.swing.JLabel lbl_usuario;
     private javax.swing.JPanel pnlA_bar_top;
     private javax.swing.JPanel pnlDepartamento;
+    private javax.swing.JPanel pnlProgramas;
     private javax.swing.JPanel pnlRegional;
     private javax.swing.JPanel pnlUsuario;
     private javax.swing.JPanel pnl_contenedor;
