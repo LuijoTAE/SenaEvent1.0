@@ -50,7 +50,7 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
         this.grpRegional.add(this.rbtRgistrar);
         LlenarUsuarios();
         LlenarRegional();
-        sqlCe.Cargar("", this.tblCentro);
+        sqlCe.Cargar(1, this.tblCentro);
     }
 
     private void LlenarUsuarios() {
@@ -79,28 +79,12 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
         if (btn.isSelected() && btn.getText().equals("Actualizar")) {
             this.bar_top.setBackground(new Color(51, 51, 51));
             this.pnl_buscar.setBackground(new Color(51, 51, 51));
-            
+
         } else {
             if (btn.isSelected() && btn.getText().equals("Registrar")) {
                 this.bar_top.setBackground(new Color(0, 150, 70));
                 this.pnl_buscar.setBackground(new Color(0, 150, 70));
             }
-        }
-
-    }
-
-    private void HabilitarCampos(JRadioButton btn, JTextField txtC, JTextField txtN, JComboBox cmb) {
-        if (btn.isSelected() && btn.getText().equals("Actualizar")) {
-            txtC.setEnabled(false);
-            txtN.setEnabled(true);
-            cmb.setEnabled(false);
-
-        }
-        if (btn.isSelected() && btn.getText().equals("Registrar")) {
-            txtC.setEnabled(true);
-            txtN.setEnabled(true);
-            cmb.setEnabled(true);
-
         }
 
     }
@@ -145,12 +129,13 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jSeparator9 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
-        txtFuncionario = new javax.swing.JTextField();
+        txtRegional = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        txtAprendiz = new javax.swing.JTextField();
+        txtCentro = new javax.swing.JTextField();
         btnRegional = new javax.swing.JButton();
         jSeparator5 = new javax.swing.JSeparator();
-        btnFormacion = new javax.swing.JButton();
+        btnCentro = new javax.swing.JButton();
+        btnRegional1 = new javax.swing.JButton();
 
         BG.setBackground(new java.awt.Color(255, 255, 255));
         BG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -290,6 +275,11 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
                 btn_CguardarMouseClicked(evt);
             }
         });
+        btn_Cguardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_CguardarActionPerformed(evt);
+            }
+        });
         pnl_Fcentro.add(btn_Cguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 60, 70, 30));
 
         txt3.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -309,6 +299,11 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
         btn_Cverificar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_CverificarMouseClicked(evt);
+            }
+        });
+        btn_Cverificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_CverificarActionPerformed(evt);
             }
         });
         pnl_Fcentro.add(btn_Cverificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 30, 30));
@@ -366,21 +361,21 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
         jLabel8.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jLabel8.setText("Area  Consulta");
         BG.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, -1, -1));
-        BG.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 730, 10));
+        BG.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 720, 10));
 
         jLabel1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel1.setText("Regional");
         BG.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, -1, -1));
 
-        txtFuncionario.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        BG.add(txtFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 380, 180, 30));
+        txtRegional.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        BG.add(txtRegional, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 380, 180, 30));
 
         jLabel2.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel2.setText("Formación");
+        jLabel2.setText("Centro Formación");
         BG.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 430, -1, -1));
 
-        txtAprendiz.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        BG.add(txtAprendiz, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 460, 180, 30));
+        txtCentro.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        BG.add(txtCentro, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 460, 180, 30));
 
         btnRegional.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         btnRegional.setText("V");
@@ -395,15 +390,35 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
         jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
         BG.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 360, 10, 120));
 
-        btnFormacion.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        btnFormacion.setText("V");
-        btnFormacion.setBorder(null);
-        btnFormacion.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnCentro.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        btnCentro.setText("V");
+        btnCentro.setBorder(null);
+        btnCentro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnFormacionMouseClicked(evt);
+                btnCentroMouseClicked(evt);
             }
         });
-        BG.add(btnFormacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 460, 30, 30));
+        btnCentro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCentroActionPerformed(evt);
+            }
+        });
+        BG.add(btnCentro, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 460, 30, 30));
+
+        btnRegional1.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        btnRegional1.setText("O");
+        btnRegional1.setBorder(null);
+        btnRegional1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnRegional1MouseClicked(evt);
+            }
+        });
+        btnRegional1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegional1ActionPerformed(evt);
+            }
+        });
+        BG.add(btnRegional1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 310, 30, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -421,21 +436,23 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_RverificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_RverificarMouseClicked
-        if (!this.txt_Rcodigo.getText().equals("")) {
+        try {
             modRe.setRe_codigo(Long.parseLong(this.txt_Rcodigo.getText()));
             if (!sqlRe.Verificar(modRe)) {
                 this.rbtRgistrar.setSelected(true);
                 Animacion(this.rbtRgistrar);
-                HabilitarCampos(this.rbtRgistrar, this.txt_Rnombre, this.txt_Rnombre, this.cmb_Rusuario);
+                //HabilitarCampos(this.rbtRgistrar, this.txt_Rnombre, this.txt_Rnombre, this.cmb_Rusuario);
                 LlenarUsuarios();
             } else {
                 this.rbtActualizar.setSelected(true);
                 Animacion(this.rbtActualizar);
-                HabilitarCampos(this.rbtActualizar, this.txt_Rnombre, this.txt_Rnombre, this.cmb_Rusuario);
+                //HabilitarCampos(this.rbtActualizar, this.txt_Rnombre, this.txt_Rnombre, this.cmb_Rusuario);
             }
-        } else {
-            JOptionPane.showMessageDialog(null, "Debe ingresra un valor para verificar");
+        }catch(Exception e){
+            System.out.print("\n"+e.toString());
         }
+            
+            
     }//GEN-LAST:event_btn_RverificarMouseClicked
 
     private void btn_RguardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_RguardarMouseClicked
@@ -459,24 +476,25 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
             if (!sqlCe.Verificar(modCe)) {
                 this.rbtRgistrar.setSelected(true);
                 Animacion(this.rbtRgistrar);
-                HabilitarCampos(this.rbtRgistrar, this.txt_Cnombre, this.txt_Cnombre, this.cmb_Cregional);
+                //HabilitarCampos(this.rbtRgistrar, this.txt_Cnombre, this.txt_Cnombre, this.cmb_Cregional);
                 LlenarRegional();
             } else {
                 this.rbtActualizar.setSelected(true);
                 Animacion(this.rbtActualizar);
-                HabilitarCampos(this.rbtActualizar, this.txt_Cnombre, this.txt_Cnombre, this.cmb_Cregional);
+                //HabilitarCampos(this.rbtActualizar, this.txt_Cnombre, this.txt_Cnombre, this.cmb_Cregional);
             }
         }
     }//GEN-LAST:event_btn_CverificarMouseClicked
 
     private void btn_CguardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_CguardarMouseClicked
 
-        modCe.setCf_codigo(Long.parseLong(this.txt_Ccodigo.getText()));
-        modCe.setCf_nombre(this.txt_Cnombre.getText());
-
+        if (!this.txt_Ccodigo.getText().equals("") && !this.txt_Cnombre.getText().equals("")) {
+            modCe.setCf_codigo(Long.parseLong(this.txt_Ccodigo.getText()));
+            modCe.setCf_nombre(this.txt_Cnombre.getText());
+        }
         if (this.rbtRgistrar.isSelected()) {
-            long regional = this.cmb_Cregional.getItemAt(this.cmb_Cregional.getSelectedIndex()).getRe_codigo();
-            modCe.setRe_codigo(regional);
+            long reCodigo = this.cmb_Cregional.getItemAt(this.cmb_Cregional.getSelectedIndex()).getRe_codigo();
+            modCe.setRe_codigo(reCodigo);
             sqlCe.Registrar(modCe);
         }
         if (this.rbtActualizar.isSelected()) {
@@ -498,19 +516,47 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
     }//GEN-LAST:event_rbtRgistrarMouseClicked
 
     private void btnRegionalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegionalMouseClicked
-        
+
+        try {
+            long codigo = Long.parseLong(this.txt_Rcodigo.getText());
+            sqlRe.Cargar(codigo, tblCentro);
+        } catch (Exception e) {
+            System.out.print("\n" + e.toString());
+        }
     }//GEN-LAST:event_btnRegionalMouseClicked
 
-    private void btnFormacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFormacionMouseClicked
+    private void btnCentroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCentroMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnFormacionMouseClicked
+    }//GEN-LAST:event_btnCentroMouseClicked
+
+    private void btnRegional1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegional1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegional1MouseClicked
+
+    private void btnCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCentroActionPerformed
+        long codigo = Long.parseLong(this.txtCentro.getText());
+        sqlCe.Cargar(codigo, tblCentro);
+    }//GEN-LAST:event_btnCentroActionPerformed
+
+    private void btnRegional1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegional1ActionPerformed
+        sqlCe.Cargar(1, tblCentro);
+    }//GEN-LAST:event_btnRegional1ActionPerformed
+
+    private void btn_CguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CguardarActionPerformed
+
+    }//GEN-LAST:event_btn_CguardarActionPerformed
+
+    private void btn_CverificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CverificarActionPerformed
+
+    }//GEN-LAST:event_btn_CverificarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BG;
     private javax.swing.JPanel bar_top;
-    private javax.swing.JButton btnFormacion;
+    private javax.swing.JButton btnCentro;
     private javax.swing.JButton btnRegional;
+    private javax.swing.JButton btnRegional1;
     private javax.swing.JButton btn_Cguardar;
     private javax.swing.JButton btn_Cverificar;
     private javax.swing.JButton btn_Rguardar;
@@ -543,8 +589,8 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
     private javax.swing.JLabel txt5;
     private javax.swing.JLabel txt6;
     private javax.swing.JLabel txt9;
-    private javax.swing.JTextField txtAprendiz;
-    private javax.swing.JTextField txtFuncionario;
+    private javax.swing.JTextField txtCentro;
+    private javax.swing.JTextField txtRegional;
     private javax.swing.JTextField txt_Ccodigo;
     private javax.swing.JTextField txt_Cnombre;
     private javax.swing.JTextField txt_Rcodigo;

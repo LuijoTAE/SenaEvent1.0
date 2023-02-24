@@ -73,7 +73,7 @@ public class FRM_ADM extends javax.swing.JFrame {
         pnlA_bar_top.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Ibarra Real Nova SemiBold", 1, 58)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(92, 200, 92));
+        jLabel1.setForeground(new java.awt.Color(0, 150, 70));
         jLabel1.setText("SenaEvents");
         pnlA_bar_top.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, -1, -1));
 

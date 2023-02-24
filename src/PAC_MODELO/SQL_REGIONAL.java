@@ -6,12 +6,16 @@
 package PAC_MODELO;
 
 import PAC_ENTIDAD.ENT_REGIONAL;
+import static PAC_MODELO.CONEXION.getConexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -127,4 +131,43 @@ public class SQL_REGIONAL extends CONEXION {
 
         return listar;
     }
+
+    public void Cargar(long condicion, JTable tabla){
+        String Where = "";
+        if(condicion != 1){
+            Where = " and re_codigo =" +condicion;
+        }
+        try{
+            DefaultTableModel modelo = new DefaultTableModel();
+            tabla.setModel(modelo);
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+            Connection con = getConexion();
+            String select = "select USUARIO.us_dni, us_nombre, REGIONAL.re_codigo, re_nombre ";
+            String from = "from USUARIO, ADMINISTRADOR, REGIONAL ";
+            String where = "where USUARIO.us_dni = ADMINISTRADOR.us_dni and ADMINISTRADOR.us_dni = REGIONAL.us_dni " +Where;
+            ps = con.prepareStatement(select);
+            rs = ps.executeQuery();
+            ResultSetMetaData rsmd = rs.getMetaData();
+            int colum = rsmd.getColumnCount();
+            modelo.addColumn("Número DNI");
+            modelo.addColumn("Administrador");
+            modelo.addColumn("Código");
+            modelo.addColumn("Regional");
+            int[] anchos = {50, 100, 70, 300};
+            for (int i = 0; i < colum; i++) {
+                tabla.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
+            }
+            while (rs.next()) {
+                Object[] filas = new Object[colum];
+                for (int i = 0; i < colum; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null, "¡UPS!...\nAlgo salió mal..!\nRevisa que los campos fueron diligenciados de forma correcta");
+        }
+    }
+    
 }

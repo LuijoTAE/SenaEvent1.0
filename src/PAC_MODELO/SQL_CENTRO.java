@@ -60,10 +60,10 @@ public class SQL_CENTRO {
             if (rs.next()) {
                 mod.setCf_nombre(rs.getString("cf_nombre"));
                 System.out.print(mod.getCf_nombre());
-                JOptionPane.showMessageDialog(null, "...MODO *ACTUALIZAR* ACTIVO...");
+                JOptionPane.showMessageDialog(null, "...ACTUALIZANDO...");
                 return true;
             }
-            JOptionPane.showMessageDialog(null, "...MODO *REGISTRAR* ACTIVO...");
+            JOptionPane.showMessageDialog(null, "...REGISTRANDO...");
             return false;
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "¡UPS!...\nAlgo salió mal..!\nRevisa que los campos fueron diligenciados de forma correcta");
@@ -115,10 +115,10 @@ public class SQL_CENTRO {
         }
     }
 
-    public void Cargar(String condicion, JTable tabla) {
+    public void Cargar(long condicion, JTable tabla) {
         String where = "";
-        if (!"".equals(condicion)) {
-            where = " where re_codigo = " + condicion;
+        if (condicion != 1) {
+            where = " and cf_codigo = " + condicion;
         }
         try {
             DefaultTableModel modelo = new DefaultTableModel();
@@ -126,8 +126,8 @@ public class SQL_CENTRO {
             PreparedStatement ps = null;
             ResultSet rs = null;
             Connection con = getConexion();
-            String sql = "select REGIONAL.re_codigo, re_nombre, cf_codigo, cf_Nombre from CENTRO_FORMACION, REGIONAL where REGIONAL.re_codigo = CENTRO_FORMACION.re_codigo";//+where;
-            // testing System.out.print(sql);
+            String sql = "select REGIONAL.re_codigo, re_nombre, cf_codigo, cf_Nombre from CENTRO_FORMACION, REGIONAL where REGIONAL.re_codigo = CENTRO_FORMACION.re_codigo " +where;
+            //System.out.print(sql);
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
             ResultSetMetaData rsmd = rs.getMetaData();
