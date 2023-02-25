@@ -154,7 +154,7 @@ public class SQL_REGIONAL extends CONEXION {
             modelo.addColumn("Administrador");
             modelo.addColumn("Código");
             modelo.addColumn("Regional");
-            int[] anchos = {50, 100, 70, 300};
+            int[] anchos = {100, 100, 70, 300};
             for (int i = 0; i < colum; i++) {
                 tabla.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
             }

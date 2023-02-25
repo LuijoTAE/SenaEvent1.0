@@ -17,11 +17,8 @@ import PAC_MODELO.SQL_REGIONAL;
 import PAC_MODELO.SQL_USUARIO;
 import java.awt.Color;
 import java.util.ArrayList;
-import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-import javax.swing.JTextField;
 
 /**
  *
@@ -394,6 +391,11 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
                 btnRegionalMouseClicked(evt);
             }
         });
+        btnRegional.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegionalActionPerformed(evt);
+            }
+        });
         BG.add(btnRegional, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 380, 30, 30));
 
         jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -459,7 +461,7 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
         } else {
             JOptionPane.showMessageDialog(null, " !UPS! \n Algo salió mal verificar que el si hace falat un campo por llenar");
         }
-
+        Clear();
     }//GEN-LAST:event_btn_RverificarMouseClicked
 
     private void btn_RguardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_RguardarMouseClicked
@@ -474,7 +476,10 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
             if (this.rbtActualizar.isSelected()) {
                 sqlRe.Modificar(modRe);
             }
+        }else{
+            JOptionPane.showMessageDialog(null, " !UPS! \n Algo salió mal verificar que el si hace falat un campo por llenar");
         }
+        Clear();
     }//GEN-LAST:event_btn_RguardarMouseClicked
 
     private void btn_CverificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_CverificarMouseClicked
@@ -484,20 +489,18 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
             if (!sqlCe.Verificar(modCe)) {
                 this.rbtRgistrar.setSelected(true);
                 Animacion(this.rbtRgistrar);
-                //HabilitarCampos(this.rbtRgistrar, this.txt_Cnombre, this.txt_Cnombre, this.cmb_Cregional);
                 LlenarRegional();
             } else {
                 this.rbtActualizar.setSelected(true);
                 Animacion(this.rbtActualizar);
-                //HabilitarCampos(this.rbtActualizar, this.txt_Cnombre, this.txt_Cnombre, this.cmb_Cregional);
             }
         } else {
             JOptionPane.showMessageDialog(null, " !UPS! \n Algo salió mal verificar que el si hace falat un campo por llenar");
         }
+        Clear();
     }//GEN-LAST:event_btn_CverificarMouseClicked
 
     private void btn_CguardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_CguardarMouseClicked
-
         if (!this.txt_Ccodigo.getText().equals("") && !this.txt_Cnombre.getText().equals("")) {
             modCe.setCf_codigo(Long.parseLong(this.txt_Ccodigo.getText()));
             modCe.setCf_nombre(this.txt_Cnombre.getText());
@@ -510,7 +513,10 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
             if (this.rbtActualizar.isSelected()) {
                 sqlCe.Modificar(modCe);
             }
+        }else{
+            JOptionPane.showMessageDialog(null, " !UPS! \n Algo salió mal verificar que el si hace falat un campo por llenar");
         }
+        Clear();
     }//GEN-LAST:event_btn_CguardarMouseClicked
 
     private void cmb_CregionalItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmb_CregionalItemStateChanged
@@ -533,6 +539,7 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
         } else {
             sqlRe.Cargar(1, tblCentro);
         }
+        Clear();
     }//GEN-LAST:event_btnRegionalMouseClicked
 
     private void btnCentroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCentroMouseClicked
@@ -550,7 +557,7 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
         } else {
             sqlCe.Cargar(1, tblCentro);
         }
-
+        Clear();
     }//GEN-LAST:event_btnCentroActionPerformed
 
     private void btnRegional1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegional1ActionPerformed
@@ -564,6 +571,10 @@ public class VTN_REGIONAL extends javax.swing.JPanel {
     private void btn_CverificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CverificarActionPerformed
 
     }//GEN-LAST:event_btn_CverificarActionPerformed
+
+    private void btnRegionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegionalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegionalActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
