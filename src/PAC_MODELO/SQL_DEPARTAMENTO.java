@@ -1,6 +1,7 @@
 package PAC_MODELO;
 
 import PAC_ENTIDAD.ENT_DEPARTAMENTO;
+import static PAC_MODELO.CONEXION.getConexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

@@ -112,15 +112,15 @@ public class SQL_CIUDAD extends CONEXION {
         }
     }
 
-    public void Cargar(JTable tabla, long Departamento, String Municipio) {
+    public void Cargar(JTable tabla, String Departamento, String Municipio) {
 
         String departamento = "";
         String municipio = "";
-        if (Departamento != 1) {
-            departamento = " and de_codigo=" + Departamento;
+        if (!Departamento.equals("")) {
+            departamento = " and de_nombre like '" + Departamento +"'";
         }
         if (!Municipio.equals("")) {
-            municipio = " and ci_codigo like '" + Municipio + "'";
+            municipio = " and ci_nombre like '" + Municipio + "'";
         }
 
         try {
@@ -132,7 +132,7 @@ public class SQL_CIUDAD extends CONEXION {
             String select = "select PAIS.pa_codigo, PAIS.pa_nombre, DEPARTAMENTO.de_codigo, DEPARTAMENTO.de_nombre, CIUDAD.ci_codigo, CIUDAD.ci_nombre";
             String from = " from PAIS, DEPARTAMENTO, CIUDAD ";
 
-            String where = "where PAIS.pa_codigo = DEPARTAMENTO.pa_codigo and DEPARTAMENTO.de_codigo = CIUDAD.de_codigo";
+            String where = "where PAIS.pa_codigo = DEPARTAMENTO.pa_codigo and DEPARTAMENTO.de_codigo = CIUDAD.de_codigo ";
             ps = con.prepareStatement(select + from + where + departamento + municipio);
             rs = ps.executeQuery();
             ResultSetMetaData rsmd = rs.getMetaData();

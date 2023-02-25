@@ -23,18 +23,18 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
 
     ENT_USUARIO modUsu = new ENT_USUARIO();
     SQL_USUARIO sqlUsu = new SQL_USUARIO();
-    
+
     ENT_DEPARTAMENTO modDp = new ENT_DEPARTAMENTO();
     SQL_DEPARTAMENTO sqlDp = new SQL_DEPARTAMENTO();
-    
+
     ENT_CIUDAD modCi = new ENT_CIUDAD();
     SQL_CIUDAD sqlCi = new SQL_CIUDAD();
-    
+
     public VTN_LOCACIONES() {
         initComponents();
         LlenarUsuarios();
         LlenarDepa();
-        sqlCi.Cargar(this.tblTabla, 1, "");
+        sqlCi.Cargar(this.tblTabla, "", "");
     }
 
     private void Animacion(JRadioButton btn) {
@@ -51,7 +51,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
         }
 
     }
-    
+
     private void LlenarUsuarios() {
 
         ArrayList<ENT_USUARIO> lista = sqlUsu.getUsuario();
@@ -62,7 +62,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
             this.cmbUsuario.addItem(new ENT_USUARIO(lista.get(i).getUs_nombre(), lista.get(i).getUs_apellido(), lista.get(i).getUs_dni()));
         }
     }
-    
+
     private void LlenarDepa() {
         modDp.setPa_codigo(57);
 
@@ -72,7 +72,22 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
             this.cmbDepartamento.addItem(new ENT_DEPARTAMENTO(lista.get(i).getDe_nombre(), lista.get(i).getDe_codigo()));
         }
     }
-    
+
+    private void Clear(int x) {
+        if (x == 1) {
+            this.txtPcodigo.setText("");
+            this.txtPnombre.setText("");
+        }
+        if (x == 2) {
+            this.txtDcodigo.setText("");
+            this.txtDnombre.setText("");
+        }
+        if (x == 3) {
+            this.txtCcodigo.setText("");
+            this.txtCnombre.setText("");
+        }
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -122,10 +137,10 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
         jSeparator6 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtPcodigo1 = new javax.swing.JTextField();
-        btnPverificar1 = new javax.swing.JButton();
-        txtPcodigo2 = new javax.swing.JTextField();
-        btnPverificar2 = new javax.swing.JButton();
+        txtDepartamento = new javax.swing.JTextField();
+        btnDepartamento = new javax.swing.JButton();
+        txtMunicipio = new javax.swing.JTextField();
+        btnMunicipio = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jSeparator7 = new javax.swing.JSeparator();
         btnCverificar1 = new javax.swing.JButton();
@@ -204,6 +219,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
         btnPverificar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnPverificar.setText("V");
         btnPverificar.setBorder(null);
+        btnPverificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnPverificar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnPverificarMouseClicked(evt);
@@ -214,6 +230,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
         btnPguardar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnPguardar.setText("Guardar");
         btnPguardar.setBorder(null);
+        btnPguardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnPguardar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnPguardarMouseClicked(evt);
@@ -222,6 +239,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
         pnl_Rgestion.add(btnPguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 70, 30));
 
         cmbUsuario.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        cmbUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pnl_Rgestion.add(cmbUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 170, 30));
 
         txt11.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -267,6 +285,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
         btnDverificar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnDverificar.setText("V");
         btnDverificar.setBorder(null);
+        btnDverificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDverificar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnDverificarMouseClicked(evt);
@@ -277,6 +296,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
         btnDguardar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnDguardar.setText("Guardar");
         btnDguardar.setBorder(null);
+        btnDguardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDguardar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnDguardarMouseClicked(evt);
@@ -286,6 +306,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
 
         cmbPais.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         cmbPais.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Colombia" }));
+        cmbPais.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pnl_Rgestion1.add(cmbPais, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 160, 30));
 
         txt12.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -334,6 +355,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
         btnCverificar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnCverificar.setText("V");
         btnCverificar.setBorder(null);
+        btnCverificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCverificar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnCverificarMouseClicked(evt);
@@ -344,6 +366,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
         btnCguardar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnCguardar.setText("Guardar");
         btnCguardar.setBorder(null);
+        btnCguardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCguardar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnCguardarMouseClicked(evt);
@@ -352,6 +375,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
         pnl_Rgestion2.add(btnCguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, 70, 30));
 
         cmbDepartamento.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        cmbDepartamento.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pnl_Rgestion2.add(cmbDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 160, 30));
 
         txt13.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -399,35 +423,37 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
         jLabel2.setText("Area de consulta");
         BG.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, -1, 20));
 
-        txtPcodigo1.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        txtPcodigo1.setForeground(new java.awt.Color(20, 7, 7));
-        txtPcodigo1.setToolTipText("");
-        BG.add(txtPcodigo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 140, 30));
+        txtDepartamento.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtDepartamento.setForeground(new java.awt.Color(20, 7, 7));
+        txtDepartamento.setToolTipText("");
+        BG.add(txtDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 140, 30));
 
-        btnPverificar1.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        btnPverificar1.setText("V");
-        btnPverificar1.setBorder(null);
-        btnPverificar1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnDepartamento.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        btnDepartamento.setText("V");
+        btnDepartamento.setBorder(null);
+        btnDepartamento.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDepartamento.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnPverificar1MouseClicked(evt);
+                btnDepartamentoMouseClicked(evt);
             }
         });
-        BG.add(btnPverificar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 380, 30, 30));
+        BG.add(btnDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 380, 30, 30));
 
-        txtPcodigo2.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        txtPcodigo2.setForeground(new java.awt.Color(20, 7, 7));
-        txtPcodigo2.setToolTipText("");
-        BG.add(txtPcodigo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 460, 140, 30));
+        txtMunicipio.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtMunicipio.setForeground(new java.awt.Color(20, 7, 7));
+        txtMunicipio.setToolTipText("");
+        BG.add(txtMunicipio, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 460, 140, 30));
 
-        btnPverificar2.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        btnPverificar2.setText("V");
-        btnPverificar2.setBorder(null);
-        btnPverificar2.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnMunicipio.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        btnMunicipio.setText("V");
+        btnMunicipio.setBorder(null);
+        btnMunicipio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMunicipio.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnPverificar2MouseClicked(evt);
+                btnMunicipioMouseClicked(evt);
             }
         });
-        BG.add(btnPverificar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 460, 30, 30));
+        BG.add(btnMunicipio, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 460, 30, 30));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel3.setText("Departamento");
@@ -438,6 +464,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
         btnCverificar1.setText("O");
         btnCverificar1.setToolTipText("");
         btnCverificar1.setBorder(null);
+        btnCverificar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCverificar1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnCverificar1MouseClicked(evt);
@@ -474,12 +501,14 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
     }//GEN-LAST:event_rbtRgistrarMouseClicked
 
     private void btnPverificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPverificarMouseClicked
-        
+
     }//GEN-LAST:event_btnPverificarMouseClicked
 
     private void btnPguardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPguardarMouseClicked
 
-        
+        if(!this.txtPcodigo.getText().equals("") && !this.txtPnombre.getText().equals("")){
+            
+        }
     }//GEN-LAST:event_btnPguardarMouseClicked
 
     private void btnDverificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDverificarMouseClicked
@@ -498,18 +527,18 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
     }//GEN-LAST:event_btnDverificarMouseClicked
 
     private void btnDguardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDguardarMouseClicked
-        
+
         modDp.setDe_codigo(Long.parseLong(this.txtDcodigo.getText()));
         modDp.setPa_codigo(57);
         modDp.setDe_nombre(this.txtDnombre.getText());
-        if(this.rbtRgistrar.isSelected()){
-           sqlDp.Registrar(modDp); 
-           LlenarDepa();
-        }else{
+        if (this.rbtRgistrar.isSelected()) {
+            sqlDp.Registrar(modDp);
+            LlenarDepa();
+        } else {
             sqlDp.Modificar(modDp);
             LlenarDepa();
         }
-        
+
     }//GEN-LAST:event_btnDguardarMouseClicked
 
     private void btnCverificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCverificarMouseClicked
@@ -531,23 +560,31 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
         modCi.setCi_codigo(Long.parseLong(this.txtCcodigo.getText()));
         modCi.setCi_nombre(this.txtCnombre.getText());
         modCi.setDe_codigo(this.cmbDepartamento.getItemAt(this.cmbDepartamento.getSelectedIndex()).getDe_codigo());
-        if(this.rbtRgistrar.isSelected()){
-           sqlCi.Registrar(modCi); 
-        }else{
+        if (this.rbtRgistrar.isSelected()) {
+            sqlCi.Registrar(modCi);
+        } else {
             sqlCi.Modificar(modCi);
         }
     }//GEN-LAST:event_btnCguardarMouseClicked
 
-    private void btnPverificar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPverificar1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnPverificar1MouseClicked
+    private void btnDepartamentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDepartamentoMouseClicked
+        if (!this.txtDepartamento.getText().equals("")) {
+            sqlCi.Cargar(tblTabla, this.txtDepartamento.getText(), "");
+        } else {
+            sqlCi.Cargar(tblTabla, "", "");
+        }
+    }//GEN-LAST:event_btnDepartamentoMouseClicked
 
-    private void btnPverificar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPverificar2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnPverificar2MouseClicked
+    private void btnMunicipioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMunicipioMouseClicked
+        if (!this.txtMunicipio.getText().equals("")) {
+            sqlCi.Cargar(tblTabla, "", this.txtMunicipio.getText());
+        } else {
+            sqlCi.Cargar(tblTabla, "", "");
+        }
+    }//GEN-LAST:event_btnMunicipioMouseClicked
 
     private void btnCverificar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCverificar1MouseClicked
-        // TODO add your handling code here:
+        sqlCi.Cargar(tblTabla, "", "");
     }//GEN-LAST:event_btnCverificar1MouseClicked
 
 
@@ -557,12 +594,12 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
     private javax.swing.JButton btnCguardar;
     private javax.swing.JButton btnCverificar;
     private javax.swing.JButton btnCverificar1;
+    private javax.swing.JButton btnDepartamento;
     private javax.swing.JButton btnDguardar;
     private javax.swing.JButton btnDverificar;
+    private javax.swing.JButton btnMunicipio;
     private javax.swing.JButton btnPguardar;
     private javax.swing.JButton btnPverificar;
-    private javax.swing.JButton btnPverificar1;
-    private javax.swing.JButton btnPverificar2;
     private javax.swing.JComboBox<PAC_ENTIDAD.ENT_DEPARTAMENTO> cmbDepartamento;
     private javax.swing.JComboBox<String> cmbPais;
     private javax.swing.JComboBox<PAC_ENTIDAD.ENT_USUARIO> cmbUsuario;
@@ -600,10 +637,10 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
     private javax.swing.JTextField txtCcodigo;
     private javax.swing.JTextField txtCnombre;
     private javax.swing.JTextField txtDcodigo;
+    private javax.swing.JTextField txtDepartamento;
     private javax.swing.JTextField txtDnombre;
+    private javax.swing.JTextField txtMunicipio;
     private javax.swing.JTextField txtPcodigo;
-    private javax.swing.JTextField txtPcodigo1;
-    private javax.swing.JTextField txtPcodigo2;
     private javax.swing.JTextField txtPnombre;
     // End of variables declaration//GEN-END:variables
 }
