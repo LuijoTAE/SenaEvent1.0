@@ -66,20 +66,33 @@ public class SQL_FICHA {
         }
     }
 
-    public void Cargar(String condicion, JTable tabla) {
-        String where = "";
-        if (!"".equals(condicion)) {
-            where = " and pf_codigo = " + condicion;
+    public void Cargar(String ProgramaName, long ProgramaCod, long Ficha, JTable tabla) {
+
+        String programa = "";
+        if (!ProgramaName.equals("")) {
+            programa = " and PROGRAMA_FORMACION.pf_siglas like '" + ProgramaName + "'";
         }
+        if (ProgramaCod != 1) {
+            programa = " and PROGRAMA_FORMACION.pf_codigo = " + ProgramaCod;
+        }
+        if (Ficha != 1) {
+            programa = " and FICHA.fi_codigo = " + Ficha;
+        }
+
         try {
+
             DefaultTableModel modelo = new DefaultTableModel();
             tabla.setModel(modelo);
             PreparedStatement ps = null;
             ResultSet rs = null;
             Connection con = getConexion();
-            String sql = "select PROGRAMA_FORMACION.pf_codigo, pf_nombre, pf_nivel, fi_codigo, fi_modalidad, fi_jornada from PROGRAMA_FORMACION, FICHA where PROGRAMA_FORMACION.pf_codigo = FICHA.pf_codigo";
-            // testing System.out.print("\n"+sql);
-            ps = con.prepareStatement(sql);
+
+            String select = "select PROGRAMA_FORMACION.pf_codigo, pf_nombre, pf_nivel, FICHA.fi_codigo, fi_modalidad, fi_jornada ";
+            String from = " from PROGRAMA_FORMACION, FICHA ";
+            String where = " where PROGRAMA_FORMACION.pf_codigo = FICHA.pf_codigo ";
+
+            System.out.print("\n"+programa);
+            ps = con.prepareStatement(select + from + where + programa);
             rs = ps.executeQuery();
             ResultSetMetaData rsmd = rs.getMetaData();
             int colum = rsmd.getColumnCount();
@@ -115,13 +128,13 @@ public class SQL_FICHA {
             ps = con.prepareStatement(sql);
             ps.setLong(1, mod.getPf_codigo());
             rs = ps.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 ENT_FICHA modd = new ENT_FICHA();
                 modd.setFi_codigo(rs.getLong("fi_codigo"));
                 lista.add(modd);
             }
-        } catch (SQLException e){
-            
+        } catch (SQLException e) {
+
             System.out.print("\n" + e.toString());
         }
         return lista;

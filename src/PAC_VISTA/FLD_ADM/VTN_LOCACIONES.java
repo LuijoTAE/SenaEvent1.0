@@ -323,6 +323,11 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
 
         cmbPais.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         cmbPais.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cmbPais.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cmbPaisItemStateChanged(evt);
+            }
+        });
         pnl_Rgestion1.add(cmbPais, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 160, 30));
 
         txt12.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -633,6 +638,10 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
     private void btnPguardarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPguardarMouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_btnPguardarMouseEntered
+
+    private void cmbPaisItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbPaisItemStateChanged
+        LlenarDepa();
+    }//GEN-LAST:event_cmbPaisItemStateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
