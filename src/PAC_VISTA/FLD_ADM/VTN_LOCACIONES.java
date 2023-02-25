@@ -249,6 +249,9 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnPguardarMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnPguardarMouseEntered(evt);
+            }
         });
         pnl_Rgestion.add(btnPguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 70, 30));
 
@@ -510,14 +513,22 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
     }//GEN-LAST:event_rbtActualizarMouseClicked
 
     private void rbtRgistrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtRgistrarMouseClicked
-        if (!this.txtPcodigo.getText().equals("")) {
-            modPa.setPaCodigo(Long.parseLong(this.txtPcodigo.getText()));
-            sqlPa.Verificar(modPa);
-        }
+        
     }//GEN-LAST:event_rbtRgistrarMouseClicked
 
     private void btnPverificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPverificarMouseClicked
-        
+        if(!this.txtPcodigo.getText().equals("")){
+            modPa.setPaCodigo(Long.parseLong(this.txtPcodigo.getText()));
+            if(!sqlPa.Verificar(modPa)){
+               this.rbtRgistrar.setSelected(true);
+               this.txtPnombre.setText("");
+               this.Animacion(rbtRgistrar);
+            }else{
+                this.rbtActualizar.setSelected(true);
+                this.txtPnombre.setText(modPa.getPaNombre());
+                this.Animacion(rbtActualizar);
+            }
+        }
     }//GEN-LAST:event_btnPverificarMouseClicked
 
     private void btnPguardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPguardarMouseClicked
@@ -527,6 +538,9 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
             modPa.setPaNombre(this.txtPnombre.getText());
             modPa.setUsCodigo(this.cmbUsuario.getItemAt(this.cmbUsuario.getSelectedIndex()).getUs_dni());
             sqlPa.Registrar(modPa);
+            LlenarPais();
+            sqlCi.Cargar(tblTabla, "", "");
+            Clear(1);
         }
     }//GEN-LAST:event_btnPguardarMouseClicked
 
@@ -536,6 +550,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
             
             if (!sqlDp.Verificar(modDp)) {
                 this.rbtRgistrar.setSelected(true);
+                this.txtDnombre.setText("");
                 Animacion(this.rbtRgistrar);
             } else {
                 this.rbtActualizar.setSelected(true);
@@ -553,9 +568,13 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
         if (this.rbtRgistrar.isSelected()) {
             sqlDp.Registrar(modDp);
             LlenarDepa();
+            sqlCi.Cargar(tblTabla, "", "");
+            Clear(2);
         } else {
             sqlDp.Modificar(modDp);
             LlenarDepa();
+            sqlCi.Cargar(tblTabla, "", "");
+            Clear(2);
         }
 
     }//GEN-LAST:event_btnDguardarMouseClicked
@@ -566,6 +585,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
             
             if (!sqlCi.Verificar(modCi)) {
                 this.rbtRgistrar.setSelected(true);
+                this.txtCnombre.setText("");
                 Animacion(this.rbtRgistrar);
             } else {
                 this.rbtActualizar.setSelected(true);
@@ -581,8 +601,12 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
         modCi.setDe_codigo(this.cmbDepartamento.getItemAt(this.cmbDepartamento.getSelectedIndex()).getDe_codigo());
         if (this.rbtRgistrar.isSelected()) {
             sqlCi.Registrar(modCi);
+            Clear(3);
+            sqlCi.Cargar(tblTabla, "", "");
         } else {
             sqlCi.Modificar(modCi);
+            Clear(3);
+            sqlCi.Cargar(tblTabla, "", "");
         }
     }//GEN-LAST:event_btnCguardarMouseClicked
 
@@ -605,6 +629,10 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
     private void btnCverificar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCverificar1MouseClicked
         sqlCi.Cargar(tblTabla, "", "");
     }//GEN-LAST:event_btnCverificar1MouseClicked
+
+    private void btnPguardarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPguardarMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPguardarMouseEntered
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

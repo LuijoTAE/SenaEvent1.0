@@ -21,6 +21,7 @@ public class SQL_PAIS extends CONEXION {
             rs = ps.executeQuery();
 
             if (rs.next()) {
+                mod.setPaNombre(rs.getString("pa_nombre"));
                 JOptionPane.showMessageDialog(null, "...MODO *ACTUALIZAR* ACTIVO...");
                 return true;
             }
@@ -65,9 +66,9 @@ public class SQL_PAIS extends CONEXION {
             ps.setLong(1, mod.getPaCodigo());
             ps.setLong(2, mod.getUsCodigo());
             ps.setString(3, mod.getPaNombre());
-            if(this.Verificar(mod)){
+            if(!this.Verificar(mod)){
                 ps.execute();
-                JOptionPane.showMessageDialog(null, " !YES!...\n El municipio " + mod.getPaNombre()+ " fue registrado exitosamente");
+                JOptionPane.showMessageDialog(null, " !YES!...\n El país " + mod.getPaNombre()+ " fue registrado exitosamente");
             return true;
             }else{
                 JOptionPane.showMessageDialog(null,"El pais ya existe");
