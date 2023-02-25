@@ -7,9 +7,11 @@ package PAC_VISTA.FLD_ADM;
 
 import PAC_ENTIDAD.ENT_CIUDAD;
 import PAC_ENTIDAD.ENT_DEPARTAMENTO;
+import PAC_ENTIDAD.ENT_PAIS;
 import PAC_ENTIDAD.ENT_USUARIO;
 import PAC_MODELO.SQL_CIUDAD;
 import PAC_MODELO.SQL_DEPARTAMENTO;
+import PAC_MODELO.SQL_PAIS;
 import PAC_MODELO.SQL_USUARIO;
 import java.awt.Color;
 import java.util.ArrayList;
@@ -20,23 +22,27 @@ import javax.swing.JRadioButton;
  * @author windows21
  */
 public class VTN_LOCACIONES extends javax.swing.JPanel {
-
+    
     ENT_USUARIO modUsu = new ENT_USUARIO();
     SQL_USUARIO sqlUsu = new SQL_USUARIO();
-
+    
     ENT_DEPARTAMENTO modDp = new ENT_DEPARTAMENTO();
     SQL_DEPARTAMENTO sqlDp = new SQL_DEPARTAMENTO();
-
+    
     ENT_CIUDAD modCi = new ENT_CIUDAD();
     SQL_CIUDAD sqlCi = new SQL_CIUDAD();
-
+    
+    ENT_PAIS modPa = new ENT_PAIS();
+    SQL_PAIS sqlPa = new SQL_PAIS();
+    
     public VTN_LOCACIONES() {
         initComponents();
+        LlenarPais();
         LlenarUsuarios();
         LlenarDepa();
         sqlCi.Cargar(this.tblTabla, "", "");
     }
-
+    
     private void Animacion(JRadioButton btn) {
         if (btn.isSelected() && btn.getText().equals("Actualizar")) {
             this.barTop.setBackground(new Color(51, 51, 51));
@@ -49,30 +55,38 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
                 //this.txt_buscar.setBackground(new Color(90, 184, 90));
             }
         }
-
+        
     }
-
+    
     private void LlenarUsuarios() {
-
+        
         ArrayList<ENT_USUARIO> lista = sqlUsu.getUsuario();
-
+        
         this.cmbUsuario.removeAllItems();
-
+        
         for (int i = 0; i < lista.size(); i++) {
             this.cmbUsuario.addItem(new ENT_USUARIO(lista.get(i).getUs_nombre(), lista.get(i).getUs_apellido(), lista.get(i).getUs_dni()));
         }
     }
-
+    
     private void LlenarDepa() {
-        modDp.setPa_codigo(57);
-
+        modDp.setPa_codigo(this.cmbPais.getItemAt(this.cmbPais.getSelectedIndex()).getPaCodigo());
+        
         ArrayList<ENT_DEPARTAMENTO> lista = sqlDp.getDepartamento(modDp);
         this.cmbDepartamento.removeAllItems();
         for (int i = 0; i < lista.size(); i++) {
             this.cmbDepartamento.addItem(new ENT_DEPARTAMENTO(lista.get(i).getDe_nombre(), lista.get(i).getDe_codigo()));
         }
     }
-
+    
+    private void LlenarPais() {
+        ArrayList<ENT_PAIS> lista = sqlPa.getPais();
+        this.cmbPais.removeAllItems();
+        for (int i = 0; i < lista.size(); i++) {
+            this.cmbPais.addItem(new ENT_PAIS(lista.get(i).getPaNombre(), lista.get(i).getPaCodigo()));
+        }
+    }
+    
     private void Clear(int x) {
         if (x == 1) {
             this.txtPcodigo.setText("");
@@ -87,7 +101,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
             this.txtCnombre.setText("");
         }
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -305,7 +319,6 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
         pnl_Rgestion1.add(btnDguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 70, 30));
 
         cmbPais.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        cmbPais.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Colombia" }));
         cmbPais.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pnl_Rgestion1.add(cmbPais, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 160, 30));
 
@@ -497,24 +510,30 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
     }//GEN-LAST:event_rbtActualizarMouseClicked
 
     private void rbtRgistrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtRgistrarMouseClicked
-
+        if (!this.txtPcodigo.getText().equals("")) {
+            modPa.setPaCodigo(Long.parseLong(this.txtPcodigo.getText()));
+            sqlPa.Verificar(modPa);
+        }
     }//GEN-LAST:event_rbtRgistrarMouseClicked
 
     private void btnPverificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPverificarMouseClicked
-
+        
     }//GEN-LAST:event_btnPverificarMouseClicked
 
     private void btnPguardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPguardarMouseClicked
-
-        if(!this.txtPcodigo.getText().equals("") && !this.txtPnombre.getText().equals("")){
-            
+        
+        if (!this.txtPcodigo.getText().equals("") && !this.txtPnombre.getText().equals("")) {
+            modPa.setPaCodigo(Long.parseLong(this.txtPcodigo.getText()));
+            modPa.setPaNombre(this.txtPnombre.getText());
+            modPa.setUsCodigo(this.cmbUsuario.getItemAt(this.cmbUsuario.getSelectedIndex()).getUs_dni());
+            sqlPa.Registrar(modPa);
         }
     }//GEN-LAST:event_btnPguardarMouseClicked
 
     private void btnDverificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDverificarMouseClicked
         if (!this.txtDcodigo.getText().equals("")) {
             modDp.setDe_codigo(Long.parseLong(this.txtDcodigo.getText()));
-
+            
             if (!sqlDp.Verificar(modDp)) {
                 this.rbtRgistrar.setSelected(true);
                 Animacion(this.rbtRgistrar);
@@ -527,7 +546,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
     }//GEN-LAST:event_btnDverificarMouseClicked
 
     private void btnDguardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDguardarMouseClicked
-
+        
         modDp.setDe_codigo(Long.parseLong(this.txtDcodigo.getText()));
         modDp.setPa_codigo(57);
         modDp.setDe_nombre(this.txtDnombre.getText());
@@ -544,7 +563,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
     private void btnCverificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCverificarMouseClicked
         if (!this.txtCcodigo.getText().equals("")) {
             modCi.setDe_codigo(Long.parseLong(this.txtCcodigo.getText()));
-
+            
             if (!sqlCi.Verificar(modCi)) {
                 this.rbtRgistrar.setSelected(true);
                 Animacion(this.rbtRgistrar);
@@ -601,7 +620,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
     private javax.swing.JButton btnPguardar;
     private javax.swing.JButton btnPverificar;
     private javax.swing.JComboBox<PAC_ENTIDAD.ENT_DEPARTAMENTO> cmbDepartamento;
-    private javax.swing.JComboBox<String> cmbPais;
+    private javax.swing.JComboBox<ENT_PAIS> cmbPais;
     private javax.swing.JComboBox<PAC_ENTIDAD.ENT_USUARIO> cmbUsuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
