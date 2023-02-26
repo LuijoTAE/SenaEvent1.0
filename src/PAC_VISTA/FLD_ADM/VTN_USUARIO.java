@@ -5,9 +5,12 @@
  */
 package PAC_VISTA.FLD_ADM;
 
+import PAC_ENTIDAD.ENT_CARGOS;
 import PAC_ENTIDAD.ENT_USUARIO;
+import PAC_MODELO.SQL_CARGOS;
 import PAC_MODELO.SQL_USUARIO;
 import java.awt.Color;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 
@@ -16,9 +19,22 @@ public class VTN_USUARIO extends javax.swing.JPanel {
     ENT_USUARIO modUsu = new ENT_USUARIO();
     SQL_USUARIO sqlUsu = new SQL_USUARIO();
 
+    ENT_CARGOS modCa = new ENT_CARGOS();
+    SQL_CARGOS sqlCa = new SQL_CARGOS();
+
     public VTN_USUARIO() {
         initComponents();
         sqlUsu.ConsultarA(0, 1, jTable1);
+    }
+
+    private void LlenarCargos() {
+        ArrayList<ENT_CARGOS> lista = sqlCa.getCargos();
+
+        this.cmbCArgos.removeAllItems();
+
+        for (int i = 0; i < lista.size(); i++) {
+            this.cmbCArgos.addItem(new ENT_CARGOS(lista.get(i).getIdCargo(), lista.get(i).getNombre(), lista.get(i).getSiglas()));
+        }
     }
 
     private void Animacion(JRadioButton btn) {
@@ -72,7 +88,7 @@ public class VTN_USUARIO extends javax.swing.JPanel {
         txtDni = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        cmbCArgos = new javax.swing.JComboBox<>();
         jTextField5 = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
         pnlConsulta = new javax.swing.JPanel();
@@ -160,6 +176,11 @@ public class VTN_USUARIO extends javax.swing.JPanel {
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
+            }
+        });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -255,8 +276,8 @@ public class VTN_USUARIO extends javax.swing.JPanel {
         jLabel8.setText("Nuevo Cargo");
         jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jComboBox2.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADMINISTRADOR", "APRENDIZ", "FUNCIONARIO" }));
+        cmbCArgos.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        cmbCArgos.setToolTipText("");
 
         jTextField5.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jTextField5.setForeground(new java.awt.Color(20, 7, 7));
@@ -293,9 +314,10 @@ public class VTN_USUARIO extends javax.swing.JPanel {
                         .addComponent(jLabel8))
                     .addGroup(pnlInfoConfirmacionLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cmbCArgos, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
                         .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
                         .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 10, Short.MAX_VALUE))
         );
@@ -322,7 +344,7 @@ public class VTN_USUARIO extends javax.swing.JPanel {
                     .addComponent(jLabel8))
                 .addGap(8, 8, 8)
                 .addGroup(pnlInfoConfirmacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbCArgos, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -481,12 +503,15 @@ public class VTN_USUARIO extends javax.swing.JPanel {
                             .addGroup(pnlConsultaLayout.createSequentialGroup()
                                 .addGap(30, 30, 30)
                                 .addComponent(txtAprendiz, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
                                 .addComponent(btnAprendiz, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(50, 50, 50)
                                 .addComponent(txtNull, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
                                 .addComponent(btnNull, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(50, 50, 50)
                                 .addComponent(txtFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
                                 .addComponent(btnFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(pnlConsultaLayout.createSequentialGroup()
                         .addGap(40, 40, 40)
@@ -596,7 +621,7 @@ public class VTN_USUARIO extends javax.swing.JPanel {
             modUsu.setUs_clave(String.valueOf(modUsu.getUs_dni()));
             modUsu.setUs_dni(Long.parseLong(this.txtDni.getText()));
             sqlUsu.Modificar(modUsu);
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "...Recuerda que debes seleccionar al usuario que deseas modificar de la tabla...");
         }
 
@@ -621,6 +646,10 @@ public class VTN_USUARIO extends javax.swing.JPanel {
 
     }//GEN-LAST:event_jTable1MouseClicked
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BG;
@@ -628,12 +657,12 @@ public class VTN_USUARIO extends javax.swing.JPanel {
     private javax.swing.JButton btnAprendiz;
     private javax.swing.JButton btnFuncionario;
     private javax.swing.JButton btnNull;
+    private javax.swing.JComboBox<ENT_CARGOS> cmbCArgos;
     private javax.swing.JComboBox<String> cmbRol;
     private javax.swing.ButtonGroup grbModo;
     private javax.swing.ButtonGroup grbRolConsulta;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton5;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
