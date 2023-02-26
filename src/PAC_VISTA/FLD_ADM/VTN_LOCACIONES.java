@@ -217,7 +217,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
         txtPcodigo.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtPcodigo.setForeground(new java.awt.Color(20, 7, 7));
         txtPcodigo.setToolTipText("");
-        pnl_Rgestion.add(txtPcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 140, 30));
+        pnl_Rgestion.add(txtPcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 140, 35));
 
         txt.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -228,7 +228,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
         txtPnombre.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtPnombre.setForeground(new java.awt.Color(20, 7, 7));
         txtPnombre.setToolTipText("");
-        pnl_Rgestion.add(txtPnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 170, 30));
+        pnl_Rgestion.add(txtPnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 170, 35));
 
         btnPverificar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnPverificar.setText("V");
@@ -239,7 +239,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
                 btnPverificarMouseClicked(evt);
             }
         });
-        pnl_Rgestion.add(btnPverificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 30, 30));
+        pnl_Rgestion.add(btnPverificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 30, 35));
 
         btnPguardar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnPguardar.setText("Guardar");
@@ -257,7 +257,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
 
         cmbUsuario.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         cmbUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnl_Rgestion.add(cmbUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 170, 30));
+        pnl_Rgestion.add(cmbUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 170, 35));
 
         txt11.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txt11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -286,7 +286,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
         txtDcodigo.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtDcodigo.setForeground(new java.awt.Color(20, 7, 7));
         txtDcodigo.setToolTipText("");
-        pnl_Rgestion1.add(txtDcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 160, 30));
+        pnl_Rgestion1.add(txtDcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 160, 35));
 
         txt1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txt1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -297,7 +297,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
         txtDnombre.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtDnombre.setForeground(new java.awt.Color(20, 7, 7));
         txtDnombre.setToolTipText("");
-        pnl_Rgestion1.add(txtDnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 190, 30));
+        pnl_Rgestion1.add(txtDnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 190, 35));
 
         btnDverificar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnDverificar.setText("V");
@@ -308,7 +308,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
                 btnDverificarMouseClicked(evt);
             }
         });
-        pnl_Rgestion1.add(btnDverificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 30, 30));
+        pnl_Rgestion1.add(btnDverificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 30, 35));
 
         btnDguardar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnDguardar.setText("Guardar");
@@ -328,7 +328,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
                 cmbPaisItemStateChanged(evt);
             }
         });
-        pnl_Rgestion1.add(cmbPais, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 160, 30));
+        pnl_Rgestion1.add(cmbPais, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 160, 35));
 
         txt12.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txt12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -360,7 +360,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
         txtCcodigo.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtCcodigo.setForeground(new java.awt.Color(20, 7, 7));
         txtCcodigo.setToolTipText("");
-        pnl_Rgestion2.add(txtCcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 160, 30));
+        pnl_Rgestion2.add(txtCcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 160, 35));
 
         txt8.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txt8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -371,7 +371,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
         txtCnombre.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtCnombre.setForeground(new java.awt.Color(20, 7, 7));
         txtCnombre.setToolTipText("");
-        pnl_Rgestion2.add(txtCnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 190, 30));
+        pnl_Rgestion2.add(txtCnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 190, 35));
 
         btnCverificar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnCverificar.setText("V");
@@ -382,7 +382,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
                 btnCverificarMouseClicked(evt);
             }
         });
-        pnl_Rgestion2.add(btnCverificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 30, 30));
+        pnl_Rgestion2.add(btnCverificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 30, 35));
 
         btnCguardar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnCguardar.setText("Guardar");
@@ -397,7 +397,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
 
         cmbDepartamento.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         cmbDepartamento.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnl_Rgestion2.add(cmbDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 160, 30));
+        pnl_Rgestion2.add(cmbDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 160, 35));
 
         txt13.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txt13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -411,7 +411,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
 
         BG.add(pnl_Rgestion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 50, 410, 220));
 
-        tblTabla.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        tblTabla.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         tblTabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -431,23 +431,25 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
+        tblTabla.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tblTabla.setRowHeight(20);
         jScrollPane2.setViewportView(tblTabla);
 
-        BG.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 340, 750, 210));
-        BG.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 1120, 10));
+        BG.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, 750, 230));
+        BG.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 275, 1120, 10));
 
         jLabel1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel1.setText("Municipio");
-        BG.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, -1, -1));
+        BG.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jLabel2.setText("Area de consulta");
-        BG.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, -1, 20));
+        BG.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, -1, 20));
 
         txtDepartamento.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtDepartamento.setForeground(new java.awt.Color(20, 7, 7));
         txtDepartamento.setToolTipText("");
-        BG.add(txtDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 140, 30));
+        BG.add(txtDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 140, 35));
 
         btnDepartamento.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnDepartamento.setText("V");
@@ -458,12 +460,12 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
                 btnDepartamentoMouseClicked(evt);
             }
         });
-        BG.add(btnDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 380, 30, 30));
+        BG.add(btnDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, 30, 35));
 
         txtMunicipio.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtMunicipio.setForeground(new java.awt.Color(20, 7, 7));
         txtMunicipio.setToolTipText("");
-        BG.add(txtMunicipio, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 460, 140, 30));
+        BG.add(txtMunicipio, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 440, 140, 35));
 
         btnMunicipio.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnMunicipio.setText("V");
@@ -474,12 +476,12 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
                 btnMunicipioMouseClicked(evt);
             }
         });
-        BG.add(btnMunicipio, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 460, 30, 30));
+        BG.add(btnMunicipio, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 440, 30, 35));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel3.setText("Departamento");
-        BG.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, -1, 20));
-        BG.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 320, 800, 10));
+        BG.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, -1, 20));
+        BG.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 800, 10));
 
         btnCverificar1.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnCverificar1.setText("O");
@@ -491,10 +493,10 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
                 btnCverificar1MouseClicked(evt);
             }
         });
-        BG.add(btnCverificar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 310, 30, 30));
+        BG.add(btnCverificar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 290, 30, 35));
 
         jSeparator8.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        BG.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 360, 20, 120));
+        BG.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 340, 20, 120));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

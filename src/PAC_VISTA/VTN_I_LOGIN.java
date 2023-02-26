@@ -107,7 +107,7 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
                 txt_usuarioActionPerformed(evt);
             }
         });
-        pnlIniciarSesion.add(txt_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 190, 30));
+        pnlIniciarSesion.add(txt_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 190, 35));
 
         jLabel14.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel14.setText("Contraseña");
@@ -151,7 +151,7 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
         pnlIniciarSesion.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 80, 10));
 
         txtClave.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        pnlIniciarSesion.add(txtClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 190, 30));
+        pnlIniciarSesion.add(txtClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 190, 35));
 
         BG.add(pnlIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 240, 300));
 
@@ -185,7 +185,7 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
                 cmb_generoActionPerformed(evt);
             }
         });
-        pnl_datos_personales.add(cmb_genero, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 190, 30));
+        pnl_datos_personales.add(cmb_genero, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 190, 35));
 
         jLabel16.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel16.setText("Genero");
@@ -210,23 +210,23 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
                 cmb_correoActionPerformed(evt);
             }
         });
-        pnl_datos_personales.add(cmb_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 140, 190, 30));
+        pnl_datos_personales.add(cmb_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 140, 190, 35));
 
         jLabel20.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel20.setText("Nombres");
         pnl_datos_personales.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
         txt_apellido.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        pnl_datos_personales.add(txt_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 190, 30));
+        pnl_datos_personales.add(txt_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 190, 35));
 
         txt_telefono.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        pnl_datos_personales.add(txt_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 190, 30));
+        pnl_datos_personales.add(txt_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 190, 35));
 
         txt_nombre.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        pnl_datos_personales.add(txt_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 190, 30));
+        pnl_datos_personales.add(txt_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 190, 35));
 
         txt_correo.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        pnl_datos_personales.add(txt_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 180, 190, 30));
+        pnl_datos_personales.add(txt_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 180, 190, 35));
         pnl_datos_personales.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 370, 10));
 
         jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -248,7 +248,7 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
         pnlRegistrar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txt_dni.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        pnlRegistrar.add(txt_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 190, 30));
+        pnlRegistrar.add(txt_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 190, 35));
 
         jLabel13.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel13.setText("Número DNI");
@@ -261,7 +261,7 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
                 cmb_dniActionPerformed(evt);
             }
         });
-        pnlRegistrar.add(cmb_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 190, 30));
+        pnlRegistrar.add(cmb_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 190, 35));
 
         jLabel12.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jLabel12.setText("Registrarse ");

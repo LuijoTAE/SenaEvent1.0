@@ -24,7 +24,7 @@ public class ENT_PROGRAMA {
     }
     
     public String toString(){
-        return pf_nombre +" - "+ pf_version;
+        return pf_nombre ;
     }
 
     public String getPf_nivel() {

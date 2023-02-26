@@ -59,8 +59,6 @@ public class VTN_USUARIO extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jLabel = new javax.swing.JLabel();
         cmbRol = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
-        txtClave = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
@@ -76,7 +74,6 @@ public class VTN_USUARIO extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         rbtAprendiz = new javax.swing.JRadioButton();
         rbtFuncionario = new javax.swing.JRadioButton();
-        jButton2 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         txtAprendiz = new javax.swing.JTextField();
         btnAprendiz = new javax.swing.JButton();
@@ -85,6 +82,11 @@ public class VTN_USUARIO extends javax.swing.JPanel {
         rbtNull = new javax.swing.JRadioButton();
         txtNull = new javax.swing.JTextField();
         btnNull = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator6 = new javax.swing.JSeparator();
 
         BG.setBackground(new java.awt.Color(255, 255, 255));
         BG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -153,7 +155,7 @@ public class VTN_USUARIO extends javax.swing.JPanel {
                 jButton1MouseClicked(evt);
             }
         });
-        BG.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, -1, 30));
+        BG.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, -1, 30));
 
         jLabel.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -163,36 +165,25 @@ public class VTN_USUARIO extends javax.swing.JPanel {
 
         cmbRol.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         cmbRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADMINISTRADOR", "APRENDIZ", "FUNCIONARIO" }));
-        BG.add(cmbRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 160, 30));
-
-        jLabel1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Clave de usuario");
-        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BG.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, -1, -1));
-
-        txtClave.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        txtClave.setForeground(new java.awt.Color(20, 7, 7));
-        txtClave.setToolTipText("");
-        BG.add(txtClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 160, 30));
+        BG.add(cmbRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 160, 35));
 
         jLabel3.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Usuario por confirmar");
         jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BG.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, -1, -1));
+        BG.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Nombre");
         jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BG.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, -1, -1));
+        BG.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, -1, -1));
 
         txtNombre.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtNombre.setForeground(new java.awt.Color(20, 7, 7));
         txtNombre.setToolTipText("");
         txtNombre.setEnabled(false);
-        BG.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 350, 160, 30));
+        BG.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 180, 35));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -204,35 +195,35 @@ public class VTN_USUARIO extends javax.swing.JPanel {
         txtDni.setForeground(new java.awt.Color(20, 7, 7));
         txtDni.setToolTipText("");
         txtDni.setEnabled(false);
-        BG.add(txtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, 160, 30));
+        BG.add(txtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, 190, 35));
 
         jLabel7.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Cargos existentes");
         jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BG.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, -1, -1));
+        BG.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 400, -1, -1));
 
         jComboBox2.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADMINISTRADOR", "APRENDIZ", "FUNCIONARIO" }));
-        BG.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 430, 160, 30));
+        BG.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, 180, 35));
 
         jLabel8.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Nuevo Cargo");
         jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BG.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 400, -1, -1));
+        BG.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 400, -1, -1));
 
         jTextField5.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jTextField5.setForeground(new java.awt.Color(20, 7, 7));
         jTextField5.setToolTipText("");
-        BG.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, 140, 30));
+        BG.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 430, 150, 35));
 
         jButton5.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jButton5.setText("V");
         jButton5.setBorder(null);
-        BG.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, 30, 30));
+        BG.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 430, 30, 35));
 
-        jTable1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jTable1.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -259,6 +250,9 @@ public class VTN_USUARIO extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        jTable1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_LAST_COLUMN);
+        jTable1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTable1.setRowHeight(20);
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTable1MouseClicked(evt);
@@ -304,17 +298,13 @@ public class VTN_USUARIO extends javax.swing.JPanel {
         });
         BG.add(rbtFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 150, -1, -1));
 
-        jButton2.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        jButton2.setText("Enviar");
-        BG.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 100, -1, 30));
-
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        BG.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 130, 10, 320));
+        BG.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 130, 10, 90));
 
         txtAprendiz.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtAprendiz.setForeground(new java.awt.Color(20, 7, 7));
         txtAprendiz.setToolTipText("");
-        BG.add(txtAprendiz, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 180, 160, 30));
+        BG.add(txtAprendiz, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 180, 160, 35));
 
         btnAprendiz.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         btnAprendiz.setText("V");
@@ -324,12 +314,12 @@ public class VTN_USUARIO extends javax.swing.JPanel {
                 btnAprendizMouseClicked(evt);
             }
         });
-        BG.add(btnAprendiz, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 180, 30, 30));
+        BG.add(btnAprendiz, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 180, 30, 35));
 
         txtFuncionario.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtFuncionario.setForeground(new java.awt.Color(20, 7, 7));
         txtFuncionario.setToolTipText("");
-        BG.add(txtFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 180, 160, 30));
+        BG.add(txtFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 180, 160, 35));
 
         btnFuncionario.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         btnFuncionario.setText("V");
@@ -339,7 +329,7 @@ public class VTN_USUARIO extends javax.swing.JPanel {
                 btnFuncionarioMouseClicked(evt);
             }
         });
-        BG.add(btnFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 180, 30, 30));
+        BG.add(btnFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 180, 30, 35));
 
         rbtNull.setBackground(new java.awt.Color(255, 255, 255));
         grbRolConsulta.add(rbtNull);
@@ -359,7 +349,7 @@ public class VTN_USUARIO extends javax.swing.JPanel {
         txtNull.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtNull.setForeground(new java.awt.Color(20, 7, 7));
         txtNull.setToolTipText("");
-        BG.add(txtNull, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 180, 160, 30));
+        BG.add(txtNull, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 180, 160, 35));
 
         btnNull.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         btnNull.setText("V");
@@ -369,7 +359,14 @@ public class VTN_USUARIO extends javax.swing.JPanel {
                 btnNullMouseClicked(evt);
             }
         });
-        BG.add(btnNull, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 180, 30, 30));
+        BG.add(btnNull, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 180, 30, 35));
+        BG.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 190, 10));
+        BG.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, 380, 20));
+        BG.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 230, 10));
+
+        jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        BG.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 290, 10, 160));
+        BG.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 120, 510, 10));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -436,7 +433,7 @@ public class VTN_USUARIO extends javax.swing.JPanel {
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
 
         modUsu.setUs_rol(this.cmbRol.getSelectedItem().toString());
-        modUsu.setUs_clave(this.txtClave.getText());
+        modUsu.setUs_clave(String.valueOf(modUsu.getUs_dni()));
         modUsu.setUs_dni(Long.parseLong(this.txtDni.getText()));
         sqlUsu.Modificar(modUsu);
         Clear();
@@ -471,11 +468,9 @@ public class VTN_USUARIO extends javax.swing.JPanel {
     private javax.swing.ButtonGroup grbModo;
     private javax.swing.ButtonGroup grbRolConsulta;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton5;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -486,6 +481,11 @@ public class VTN_USUARIO extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JLabel lbl_actualizar;
@@ -495,7 +495,6 @@ public class VTN_USUARIO extends javax.swing.JPanel {
     private javax.swing.JRadioButton rbtNull;
     private javax.swing.JRadioButton rbtRgistrar;
     private javax.swing.JTextField txtAprendiz;
-    private javax.swing.JTextField txtClave;
     private javax.swing.JTextField txtDni;
     private javax.swing.JTextField txtFuncionario;
     private javax.swing.JTextField txtNombre;
