@@ -203,7 +203,7 @@ public class VTN_PROGRAMA extends javax.swing.JPanel {
 
         barTop.add(pnl_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 10, 90, -1));
 
-        BG.add(barTop, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 50));
+        BG.add(barTop, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1310, 50));
 
         pnlFicha.setBackground(new java.awt.Color(255, 255, 255));
         pnlFicha.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -305,7 +305,7 @@ public class VTN_PROGRAMA extends javax.swing.JPanel {
         pnlFicha.add(cmb_Fprograma, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 220, 35));
         pnlFicha.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 470, 10));
 
-        BG.add(pnlFicha, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 50, 700, 220));
+        BG.add(pnlFicha, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 50, 700, 220));
 
         pnlPrograma.setBackground(new java.awt.Color(255, 255, 255));
         pnlPrograma.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -382,7 +382,7 @@ public class VTN_PROGRAMA extends javax.swing.JPanel {
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
         pnlPrograma.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 50, 10, 150));
 
-        BG.add(pnlPrograma, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 460, 220));
+        BG.add(pnlPrograma, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 460, 220));
         BG.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 275, 1010, 10));
 
         pnlConsultas.setBackground(new java.awt.Color(255, 255, 255));
@@ -495,7 +495,7 @@ public class VTN_PROGRAMA extends javax.swing.JPanel {
         jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
         pnlConsultas.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 20, 210));
 
-        BG.add(pnlConsultas, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 1080, 270));
+        BG.add(pnlConsultas, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, 1080, 270));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -503,8 +503,8 @@ public class VTN_PROGRAMA extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(BG, javax.swing.GroupLayout.PREFERRED_SIZE, 1300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(BG, javax.swing.GroupLayout.PREFERRED_SIZE, 1310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

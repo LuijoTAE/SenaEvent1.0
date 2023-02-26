@@ -11,14 +11,11 @@ import PAC_ENTIDAD.ENT_USUARIO;
 import PAC_MODELO.SQL_USUARIO;
 import PAC_VISTA.FLD_FUN.FRM_FUN;
 import java.awt.Color;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-/**
- *
- * @author windows21
- */
+
+
 public class VTN_I_LOGIN extends javax.swing.JPanel {
 
     ENT_USUARIO modUs = new ENT_USUARIO();
@@ -28,7 +25,7 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
 
     public VTN_I_LOGIN() {
         initComponents();
-        this.pnl_datos_personales.setVisible(false);
+        pnlIniciarSesion.setVisible(false);
     }
 
     private void AnimacioBtn1(JPanel back) {
@@ -43,6 +40,7 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
         this.txt_nombre.setText("");
         this.txt_apellido.setText("");
         this.txt_telefono.setText("");
+        this.txt_dni.setText("");
     }
 
     @SuppressWarnings("unchecked")
@@ -76,6 +74,7 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
         btnGuardar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
         pnlRegistrar = new javax.swing.JPanel();
         txt_dni = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
@@ -85,7 +84,6 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
         pnlValidar = new javax.swing.JPanel();
         lbtL_validar = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
-        jSeparator4 = new javax.swing.JSeparator();
 
         BG.setBackground(new java.awt.Color(255, 255, 255));
         BG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -153,7 +151,7 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
         txtClave.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         pnlIniciarSesion.add(txtClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 190, 35));
 
-        BG.add(pnlIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 240, 300));
+        BG.add(pnlIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 240, 300));
 
         pnl_top.setBackground(new java.awt.Color(0, 150, 70));
 
@@ -227,7 +225,7 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
 
         txt_correo.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         pnl_datos_personales.add(txt_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 180, 190, 35));
-        pnl_datos_personales.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 370, 10));
+        pnl_datos_personales.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 340, 10));
 
         jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
         pnl_datos_personales.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 10, 240));
@@ -235,14 +233,26 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
         btnGuardar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         btnGuardar.setText("Guardar");
         btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGuardar.setEnabled(false);
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarActionPerformed(evt);
             }
         });
-        pnl_datos_personales.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, -1, -1));
+        pnl_datos_personales.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, -1, -1));
 
-        BG.add(pnl_datos_personales, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 60, 670, 300));
+        btnCancelar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        btnCancelar.setText("X");
+        btnCancelar.setBorder(null);
+        btnCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
+        pnl_datos_personales.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 20, 30, 30));
+
+        BG.add(pnl_datos_personales, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 60, 670, 300));
 
         pnlRegistrar.setBackground(new java.awt.Color(255, 255, 255));
         pnlRegistrar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -306,10 +316,7 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
         pnlRegistrar.add(pnlValidar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 190, 40));
         pnlRegistrar.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 100, 10));
 
-        jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        pnlRegistrar.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 10, 240));
-
-        BG.add(pnlRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 60, 240, 300));
+        BG.add(pnlRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 240, 300));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -390,7 +397,7 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "El usuario | " + usuario + " | ya exixte");
             } else {
                 this.txt_dni.setEnabled(false);
-                this.pnl_datos_personales.setVisible(true);
+                this.btnGuardar.setEnabled(true);
             }
         } else {
             JOptionPane.showConfirmDialog(null, "algo salió mal intenta otra vez", "¿Desea continuar con el proceso de pre registro?", 1);
@@ -411,13 +418,25 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
 
             if (sqlUs.Registrar(modUs)) {
                 this.txt_dni.setEnabled(true);
+                this.btnGuardar.setEnabled(false);
+                Clear();
+            }else{
+                
             }
         }
 
     }//GEN-LAST:event_btnGuardarActionPerformed
 
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        this.btnGuardar.setEnabled(false);
+        this.txt_dni.setEnabled(true);
+        Clear();
+        
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BG;
+    private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JComboBox<String> cmb_correo;
     private javax.swing.JComboBox<String> cmb_dni;
@@ -437,7 +456,6 @@ public class VTN_I_LOGIN extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JLabel lbtL_ingresar;
     private javax.swing.JLabel lbtL_validar;

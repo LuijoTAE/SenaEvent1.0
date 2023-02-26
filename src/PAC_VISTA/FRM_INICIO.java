@@ -57,13 +57,13 @@ public class FRM_INICIO extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jSeparator9 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
-        txt_clave = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         txt_usuario = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         pnlL_ingresar = new javax.swing.JPanel();
         lbtL_ingresar = new javax.swing.JLabel();
         cmb_dni = new javax.swing.JComboBox<>();
+        txt_clave = new javax.swing.JPasswordField();
         pnl_contenedor = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -87,22 +87,6 @@ public class FRM_INICIO extends javax.swing.JFrame {
         jSeparator9.setFont(new java.awt.Font("Roboto Medium", 0, 11)); // NOI18N
         pnlA_bar_top.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 10, 90));
         pnlA_bar_top.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 115, 150, 10));
-
-        txt_clave.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
-        txt_clave.setForeground(new java.awt.Color(102, 102, 102));
-        txt_clave.setText("Clave...");
-        txt_clave.setBorder(null);
-        txt_clave.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                txt_claveMousePressed(evt);
-            }
-        });
-        txt_clave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_claveActionPerformed(evt);
-            }
-        });
-        pnlA_bar_top.add(txt_clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 90, 150, 30));
         pnlA_bar_top.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 115, 150, 10));
 
         txt_usuario.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
@@ -168,6 +152,15 @@ public class FRM_INICIO extends javax.swing.JFrame {
         });
         pnlA_bar_top.add(cmb_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 240, 240, 40));
 
+        txt_clave.setText("jPasswordField1");
+        txt_clave.setBorder(null);
+        txt_clave.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txt_claveMousePressed(evt);
+            }
+        });
+        pnlA_bar_top.add(txt_clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 90, 150, 30));
+
         BG.add(pnlA_bar_top, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1320, 120));
 
         pnl_contenedor.setBackground(new java.awt.Color(0, 102, 102));
@@ -199,10 +192,6 @@ public class FRM_INICIO extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txt_claveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_claveActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_claveActionPerformed
-
     private void txt_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_usuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_usuarioActionPerformed
@@ -219,6 +208,7 @@ public class FRM_INICIO extends javax.swing.JFrame {
                 if (mod_usu.getUs_rol().equals("ADMINISTRADOR")) {
                     FRM_ADM frm = new FRM_ADM();
                     frm.setVisible(true);
+                    this.dispose();
                 }
 
             }
@@ -244,7 +234,7 @@ public class FRM_INICIO extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_usuarioMousePressed
 
     private void txt_claveMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_claveMousePressed
-        this.txt_clave.setText("");
+        txt_clave.setText("");
     }//GEN-LAST:event_txt_claveMousePressed
 
     /**
@@ -283,20 +273,20 @@ public class FRM_INICIO extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel BG;
+    public javax.swing.JPanel BG;
     private javax.swing.JComboBox<String> cmb_dni;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JSeparator jSeparator9;
-    private javax.swing.JLabel lbtL_ingresar;
-    private javax.swing.JPanel pnlA_bar_top;
-    private javax.swing.JPanel pnlL_ingresar;
-    private javax.swing.JPanel pnl_contenedor;
-    private javax.swing.JTextField txt_clave;
-    private javax.swing.JTextField txt_usuario;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel14;
+    public javax.swing.JLabel jLabel2;
+    public javax.swing.JSeparator jSeparator1;
+    public javax.swing.JSeparator jSeparator5;
+    public javax.swing.JSeparator jSeparator6;
+    public javax.swing.JSeparator jSeparator9;
+    public javax.swing.JLabel lbtL_ingresar;
+    public javax.swing.JPanel pnlA_bar_top;
+    public javax.swing.JPanel pnlL_ingresar;
+    public javax.swing.JPanel pnl_contenedor;
+    public javax.swing.JPasswordField txt_clave;
+    public javax.swing.JTextField txt_usuario;
     // End of variables declaration//GEN-END:variables
 }
