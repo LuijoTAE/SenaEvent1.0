@@ -6,8 +6,10 @@
 package PAC_VISTA.FLD_ADM;
 
 import PAC_ENTIDAD.ENT_CARGOS;
+import PAC_ENTIDAD.ENT_ROLES;
 import PAC_ENTIDAD.ENT_USUARIO;
 import PAC_MODELO.SQL_CARGOS;
+import PAC_MODELO.SQL_ROLES;
 import PAC_MODELO.SQL_USUARIO;
 import java.awt.Color;
 import java.util.ArrayList;
@@ -21,10 +23,14 @@ public class VTN_USUARIO extends javax.swing.JPanel {
 
     ENT_CARGOS modCa = new ENT_CARGOS();
     SQL_CARGOS sqlCa = new SQL_CARGOS();
+    
+    ENT_ROLES modRo = new ENT_ROLES();
+    SQL_ROLES sqlRo = new SQL_ROLES();
 
     public VTN_USUARIO() {
         initComponents();
         sqlUsu.ConsultarA(0, 1, jTable1);
+        LlenarCargos();
     }
 
     private void LlenarCargos() {
@@ -621,6 +627,11 @@ public class VTN_USUARIO extends javax.swing.JPanel {
             modUsu.setUs_clave(String.valueOf(modUsu.getUs_dni()));
             modUsu.setUs_dni(Long.parseLong(this.txtDni.getText()));
             sqlUsu.Modificar(modUsu);
+            
+            long dni = modUsu.getUs_dni();
+            modRo.setCargo(this.cmbCArgos.getItemAt(this.cmbCArgos.getSelectedIndex()).getIdCargo());
+            modRo.setUsDni(dni);
+            sqlRo.Registrar(modRo, dni);
         } else {
             JOptionPane.showMessageDialog(null, "...Recuerda que debes seleccionar al usuario que deseas modificar de la tabla...");
         }
