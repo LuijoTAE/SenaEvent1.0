@@ -8,6 +8,7 @@ package PAC_VISTA.FLD_ADM;
 import PAC_ENTIDAD.ENT_USUARIO;
 import PAC_MODELO.SQL_USUARIO;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 
 public class VTN_USUARIO extends javax.swing.JPanel {
@@ -590,10 +591,15 @@ public class VTN_USUARIO extends javax.swing.JPanel {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
 
-        modUsu.setUs_rol(this.cmbRol.getSelectedItem().toString());
-        modUsu.setUs_clave(String.valueOf(modUsu.getUs_dni()));
-        modUsu.setUs_dni(Long.parseLong(this.txtDni.getText()));
-        sqlUsu.Modificar(modUsu);
+        if (!this.txtDni.getText().equals("")) {
+            modUsu.setUs_rol(this.cmbRol.getSelectedItem().toString());
+            modUsu.setUs_clave(String.valueOf(modUsu.getUs_dni()));
+            modUsu.setUs_dni(Long.parseLong(this.txtDni.getText()));
+            sqlUsu.Modificar(modUsu);
+        }else{
+            JOptionPane.showMessageDialog(null, "...Recuerda que debes seleccionar al usuario que deseas modificar de la tabla...");
+        }
+
         Clear();
     }//GEN-LAST:event_jButton1MouseClicked
 
