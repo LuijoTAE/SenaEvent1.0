@@ -21,6 +21,7 @@ public class FRM_ADM extends javax.swing.JFrame {
     
     public FRM_ADM() {
         initComponents();
+        ShowPanel(vtnUsuario);
     }
     
     private void ShowPanel(JPanel hijo) {

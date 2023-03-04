@@ -18,7 +18,7 @@ public class SQL_CARGOS extends CONEXION{
         PreparedStatement ps = null;
         Connection cn = getConexion();
         ResultSet rs = null;
-        String sql = "";
+        String sql = "select * from CARGOS";
         try{
             ps = cn.prepareStatement(sql);
             rs = ps.executeQuery();
