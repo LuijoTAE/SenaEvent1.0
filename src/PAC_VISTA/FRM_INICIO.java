@@ -8,6 +8,7 @@ package PAC_VISTA;
 import PAC_VISTA.FLD_ADM.FRM_ADM;
 import PAC_ENTIDAD.ENT_USUARIO;
 import PAC_MODELO.SQL_USUARIO;
+import PAC_VISTA.FLD_FUN.FRM_FUN;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -205,12 +206,17 @@ public class FRM_INICIO extends javax.swing.JFrame {
 
             if (sql_usuario.Validar_ingreso(mod_usu)) {
 
-                if (mod_usu.getUs_rol().equals("ADMINISTRADOR")) {
-                    FRM_ADM frm = new FRM_ADM();
+                if (mod_usu.getUs_rol().equals("FUNCIONARIO")) {
+                    FRM_FUN frm = new FRM_FUN();
                     frm.setVisible(true);
                     this.dispose();
+                } else {
+                    if (mod_usu.getUs_rol().equals("ADMINISTRADOR")) {
+                        FRM_ADM frm = new FRM_ADM();
+                        frm.setVisible(true);
+                        this.dispose();
+                    }
                 }
-
             }
         } else {
             System.out.print("NO entró al primer if");

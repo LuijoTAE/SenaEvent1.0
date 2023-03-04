@@ -61,7 +61,7 @@ public class SQL_ASISTENCIAS extends CONEXION {
             String select = " select cf_Nombre, pf_nombre, FICHA.fi_codigo, USUARIO.us_dni, us_nombre, us_apellido, us_rol ";
             String from = " from USUARIO, APRENDIZ, FICHA, PROGRAMA_FORMACION, CENTRO_FORMACION ";
             String where = " where USUARIO.us_dni = APRENDIZ.us_dni and APRENDIZ.fi_codigo = FICHA.fi_codigo and FICHA.pf_codigo = PROGRAMA_FORMACION.pf_codigo and FICHA.cf_codigo = CENTRO_FORMACION.cf_codigo ";
-            System.out.print("\n" + select + "\n" + from + "\n" + where + "\n" + Uswhere + "\n" + Cfwhere + "\n" + Pfwhere + "\n" + Fiwhere);
+            
             ps = con.prepareStatement(select + from + where + Uswhere + Cfwhere + Pfwhere + Fiwhere);
             rs = ps.executeQuery();
             ResultSetMetaData rsmd = rs.getMetaData();

@@ -13,10 +13,12 @@ import javax.swing.JPanel;
  */
 public class FRM_FUN extends javax.swing.JFrame {
 
+    VTN_ASISTENCIAS vtnAsistencias = new VTN_ASISTENCIAS();
+    VTN_F_EVENTOS vtnFeventos = new VTN_F_EVENTOS();
     
     public FRM_FUN() {
         initComponents();
-        
+        ShowPanel(vtnAsistencias);
     }
 
     
@@ -203,12 +205,12 @@ public class FRM_FUN extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lblF_eventosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblF_eventosMouseClicked
-        VTN_F_EVENTOS vtnFeventos = new VTN_F_EVENTOS();
+
         ShowPanel(vtnFeventos);
     }//GEN-LAST:event_lblF_eventosMouseClicked
 
     private void lblF_asistenciasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblF_asistenciasMouseClicked
-        VTN_ASISTENCIAS vtnAsistencias = new VTN_ASISTENCIAS();
+        
         ShowPanel(vtnAsistencias);
     }//GEN-LAST:event_lblF_asistenciasMouseClicked
 

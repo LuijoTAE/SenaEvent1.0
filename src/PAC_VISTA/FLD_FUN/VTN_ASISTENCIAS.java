@@ -45,6 +45,7 @@ public class VTN_ASISTENCIAS extends javax.swing.JPanel {
         LlenarCentro();
         LlenarPrograma();
         LlenarEvento();
+        LlenarFicha();
         sqlAs.Cargar(1, 1, 1, 1, tblTabla);
     }
 
@@ -76,7 +77,7 @@ public class VTN_ASISTENCIAS extends javax.swing.JPanel {
     }
 
     private void LlenarEvento() {
-        ArrayList<ENT_EVENTO> lista = sqlEv.getEvento(modEv);
+        ArrayList<ENT_EVENTO> lista = sqlEv.getEvento(this.txtEventos.getText());
         this.cmbEventos.removeAllItems();
         for (int i = 0; i < lista.size(); i++) {
             this.cmbEventos.addItem(new ENT_EVENTO(lista.get(i).getEv_nombre(), lista.get(i).getEv_codigo()));
@@ -192,6 +193,8 @@ public class VTN_ASISTENCIAS extends javax.swing.JPanel {
         scrTabla = new javax.swing.JScrollPane();
         tblTabla = new javax.swing.JTable();
 
+        setEnabled(false);
+
         BG.setBackground(new java.awt.Color(250, 250, 250));
         BG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -210,6 +213,7 @@ public class VTN_ASISTENCIAS extends javax.swing.JPanel {
         rbtActualizar.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         rbtActualizar.setForeground(new java.awt.Color(255, 255, 255));
         rbtActualizar.setText("Actualizar");
+        rbtActualizar.setEnabled(false);
         rbtActualizar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 rbtActualizarMouseClicked(evt);
@@ -223,6 +227,7 @@ public class VTN_ASISTENCIAS extends javax.swing.JPanel {
         rbtRgistrar.setForeground(new java.awt.Color(255, 255, 255));
         rbtRgistrar.setSelected(true);
         rbtRgistrar.setText("Registrar");
+        rbtRgistrar.setEnabled(false);
         rbtRgistrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 rbtRgistrarMouseClicked(evt);
@@ -248,14 +253,27 @@ public class VTN_ASISTENCIAS extends javax.swing.JPanel {
 
         cmbEventos.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         cmbEventos.setAutoscrolls(true);
+        cmbEventos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pnlAsistencia.add(cmbEventos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 210, 30));
 
         txtEventos.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtEventos.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtEventos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEventosKeyReleased(evt);
+            }
+        });
         pnlAsistencia.add(txtEventos, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 110, 30));
 
         btnEventos.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         btnEventos.setText("V");
         btnEventos.setBorder(null);
+        btnEventos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEventos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnEventosMouseClicked(evt);
+            }
+        });
         pnlAsistencia.add(btnEventos, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 30, 30));
 
         jSeparator4.setForeground(new java.awt.Color(102, 102, 102));
@@ -288,6 +306,7 @@ public class VTN_ASISTENCIAS extends javax.swing.JPanel {
         btnGuardar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnGuardar.setText("CONFIRMAR");
         btnGuardar.setBorder(null);
+        btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnGuardarMouseClicked(evt);
@@ -318,6 +337,7 @@ public class VTN_ASISTENCIAS extends javax.swing.JPanel {
 
         cmbCentro.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         cmbCentro.setAutoscrolls(true);
+        cmbCentro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cmbCentro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 cmbCentroMouseEntered(evt);
@@ -351,11 +371,18 @@ public class VTN_ASISTENCIAS extends javax.swing.JPanel {
         pnlConsulta.add(rbtCentro, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 50, -1, -1));
 
         txtAprendiz.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtAprendiz.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtAprendiz.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtAprendizKeyReleased(evt);
+            }
+        });
         pnlConsulta.add(txtAprendiz, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, 180, 30));
 
         btnAprendiz.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         btnAprendiz.setText("V");
         btnAprendiz.setBorder(null);
+        btnAprendiz.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAprendiz.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnAprendizMouseClicked(evt);
@@ -368,11 +395,13 @@ public class VTN_ASISTENCIAS extends javax.swing.JPanel {
         pnlConsulta.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, -1, -1));
 
         txtFuncionario.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtFuncionario.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         pnlConsulta.add(txtFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 180, 30));
 
         btnFuncionario.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         btnFuncionario.setText("V");
         btnFuncionario.setBorder(null);
+        btnFuncionario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pnlConsulta.add(btnFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 30, 30));
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -389,6 +418,7 @@ public class VTN_ASISTENCIAS extends javax.swing.JPanel {
         pnlConsulta.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, -1, -1));
         pnlConsulta.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 20, 500, 10));
 
+        cmbPrograma.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cmbPrograma.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 cmbProgramaMouseEntered(evt);
@@ -401,6 +431,7 @@ public class VTN_ASISTENCIAS extends javax.swing.JPanel {
 
         cmbFicha.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         cmbFicha.setAutoscrolls(true);
+        cmbFicha.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pnlConsulta.add(cmbFicha, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 80, 130, 30));
 
         rbtFicha.setBackground(new java.awt.Color(255, 255, 255));
@@ -418,6 +449,7 @@ public class VTN_ASISTENCIAS extends javax.swing.JPanel {
         btnAprendiz1.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         btnAprendiz1.setText("V");
         btnAprendiz1.setBorder(null);
+        btnAprendiz1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAprendiz1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnAprendiz1MouseClicked(evt);
@@ -442,6 +474,7 @@ public class VTN_ASISTENCIAS extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
+        tblTabla.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         tblTabla.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblTablaMouseClicked(evt);
@@ -512,6 +545,8 @@ public class VTN_ASISTENCIAS extends javax.swing.JPanel {
         modAs.setUsDni(Long.parseLong(this.txtDni.getText()));
         if(this.txtRol.getText().equals("APRENDIZ")){
             sqlAs.Registrar(modAs,1);
+        }else{
+            sqlAs.Registrar(modAs,2);
         }
         
     }//GEN-LAST:event_btnGuardarMouseClicked
@@ -524,6 +559,21 @@ public class VTN_ASISTENCIAS extends javax.swing.JPanel {
         //Animacion(this.rbtRgistrar);
     }//GEN-LAST:event_rbtRgistrarMouseClicked
 
+    private void btnEventosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEventosMouseClicked
+        LlenarEvento();
+    }//GEN-LAST:event_btnEventosMouseClicked
+
+    private void txtEventosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEventosKeyReleased
+        LlenarEvento();
+    }//GEN-LAST:event_txtEventosKeyReleased
+
+    private void txtAprendizKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAprendizKeyReleased
+        if (!this.txtAprendiz.getText().equals("")) {
+            long usuario = Long.parseLong(this.txtAprendiz.getText());
+            sqlAs.Cargar(usuario, 1, 1, 1, tblTabla);
+        }
+    }//GEN-LAST:event_txtAprendizKeyReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BG;
@@ -532,10 +582,10 @@ public class VTN_ASISTENCIAS extends javax.swing.JPanel {
     private javax.swing.JButton btnEventos;
     private javax.swing.JButton btnFuncionario;
     private javax.swing.JButton btnGuardar;
-    private javax.swing.JComboBox<ENT_CENTRO> cmbCentro;
-    private javax.swing.JComboBox<ENT_EVENTO> cmbEventos;
-    private javax.swing.JComboBox<ENT_FICHA> cmbFicha;
-    private javax.swing.JComboBox<ENT_PROGRAMA> cmbPrograma;
+    private javax.swing.JComboBox<PAC_ENTIDAD.ENT_CENTRO> cmbCentro;
+    private javax.swing.JComboBox<PAC_ENTIDAD.ENT_EVENTO> cmbEventos;
+    private javax.swing.JComboBox<PAC_ENTIDAD.ENT_FICHA> cmbFicha;
+    private javax.swing.JComboBox<PAC_ENTIDAD.ENT_PROGRAMA> cmbPrograma;
     private javax.swing.ButtonGroup grbModo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

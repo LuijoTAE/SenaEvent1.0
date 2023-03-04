@@ -107,6 +107,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        modo = new javax.swing.ButtonGroup();
         BG = new javax.swing.JPanel();
         barTop = new javax.swing.JPanel();
         lbl_actualizar = new javax.swing.JLabel();
@@ -175,6 +176,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
         barTop.add(lbl_actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 96, 35));
 
         rbtActualizar.setBackground(new java.awt.Color(0, 150, 70));
+        modo.add(rbtActualizar);
         rbtActualizar.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         rbtActualizar.setForeground(new java.awt.Color(255, 255, 255));
         rbtActualizar.setText("Actualizar");
@@ -187,6 +189,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
         barTop.add(rbtActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 120, 40));
 
         rbtRgistrar.setBackground(new java.awt.Color(0, 150, 70));
+        modo.add(rbtRgistrar);
         rbtRgistrar.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         rbtRgistrar.setForeground(new java.awt.Color(255, 255, 255));
         rbtRgistrar.setText("Registrar");
@@ -690,6 +693,7 @@ public class VTN_LOCACIONES extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JLabel lbl_actualizar;
+    private javax.swing.ButtonGroup modo;
     private javax.swing.JPanel pnl_Rgestion;
     private javax.swing.JPanel pnl_Rgestion1;
     private javax.swing.JPanel pnl_Rgestion2;

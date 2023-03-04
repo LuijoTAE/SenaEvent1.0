@@ -44,6 +44,7 @@ public class VTN_F_EVENTOS extends javax.swing.JPanel {
         initComponents();
         LlenarEstrategico();
         LlenarDepa();
+        sqlEv.Cargar(tabla,"","");
     }
 
     private void LlenarEstrategico() {
@@ -100,18 +101,15 @@ public class VTN_F_EVENTOS extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        modo = new javax.swing.ButtonGroup();
         BG = new javax.swing.JPanel();
         pnl_top = new javax.swing.JPanel();
-        pnlL_validar2 = new javax.swing.JPanel();
-        lbtL_validar2 = new javax.swing.JLabel();
-        pnlL_validar3 = new javax.swing.JPanel();
-        lbtL_validar3 = new javax.swing.JLabel();
-        pnlGuardar = new javax.swing.JPanel();
-        lblEguardar = new javax.swing.JLabel();
+        rbtActualizar = new javax.swing.JRadioButton();
+        rbtRgistrar = new javax.swing.JRadioButton();
+        lbl_actualizar = new javax.swing.JLabel();
         pnlEventoInfo = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
+        btnGuardar = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
@@ -136,27 +134,24 @@ public class VTN_F_EVENTOS extends javax.swing.JPanel {
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
         pnlLugar = new javax.swing.JPanel();
-        jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         cmbDepa = new javax.swing.JComboBox<>();
         jLabel25 = new javax.swing.JLabel();
         cmbCiudad = new javax.swing.JComboBox<>();
         jSeparator5 = new javax.swing.JSeparator();
+        jLabel23 = new javax.swing.JLabel();
+        jSeparator9 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
         jSeparator7 = new javax.swing.JSeparator();
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane2.setViewportView(jTable1);
+        pnlConsulta = new javax.swing.JPanel();
+        jLabel27 = new javax.swing.JLabel();
+        jSeparator8 = new javax.swing.JSeparator();
+        jLabel15 = new javax.swing.JLabel();
+        txtEventoConsul = new javax.swing.JTextField();
+        btnEventoConsul = new javax.swing.JButton();
+        jLabel16 = new javax.swing.JLabel();
+        txtMunicipioConsul = new javax.swing.JTextField();
+        btnMunicipioConsul = new javax.swing.JButton();
 
         BG.setBackground(new java.awt.Color(255, 255, 255));
         BG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -164,110 +159,38 @@ public class VTN_F_EVENTOS extends javax.swing.JPanel {
         pnl_top.setBackground(new java.awt.Color(0, 150, 70));
         pnl_top.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pnlL_validar2.setBackground(new java.awt.Color(0, 150, 70));
-
-        lbtL_validar2.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        lbtL_validar2.setForeground(new java.awt.Color(255, 255, 255));
-        lbtL_validar2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbtL_validar2.setText("Actualizar");
-        lbtL_validar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lbtL_validar2.addMouseListener(new java.awt.event.MouseAdapter() {
+        rbtActualizar.setBackground(new java.awt.Color(0, 150, 70));
+        modo.add(rbtActualizar);
+        rbtActualizar.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        rbtActualizar.setForeground(new java.awt.Color(255, 255, 255));
+        rbtActualizar.setText("Actualizar");
+        rbtActualizar.setEnabled(false);
+        rbtActualizar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lbtL_validar2MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lbtL_validar2MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lbtL_validar2MouseExited(evt);
+                rbtActualizarMouseClicked(evt);
             }
         });
+        pnl_top.add(rbtActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 120, 40));
 
-        javax.swing.GroupLayout pnlL_validar2Layout = new javax.swing.GroupLayout(pnlL_validar2);
-        pnlL_validar2.setLayout(pnlL_validar2Layout);
-        pnlL_validar2Layout.setHorizontalGroup(
-            pnlL_validar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lbtL_validar2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
-        );
-        pnlL_validar2Layout.setVerticalGroup(
-            pnlL_validar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlL_validar2Layout.createSequentialGroup()
-                .addComponent(lbtL_validar2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 11, Short.MAX_VALUE))
-        );
-
-        pnl_top.add(pnlL_validar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 90, 40));
-
-        pnlL_validar3.setBackground(new java.awt.Color(0, 150, 70));
-
-        lbtL_validar3.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        lbtL_validar3.setForeground(new java.awt.Color(255, 255, 255));
-        lbtL_validar3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbtL_validar3.setText("Registrar");
-        lbtL_validar3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lbtL_validar3.addMouseListener(new java.awt.event.MouseAdapter() {
+        rbtRgistrar.setBackground(new java.awt.Color(0, 150, 70));
+        modo.add(rbtRgistrar);
+        rbtRgistrar.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        rbtRgistrar.setForeground(new java.awt.Color(255, 255, 255));
+        rbtRgistrar.setText("Registrar");
+        rbtRgistrar.setEnabled(false);
+        rbtRgistrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lbtL_validar3MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lbtL_validar3MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lbtL_validar3MouseExited(evt);
+                rbtRgistrarMouseClicked(evt);
             }
         });
+        pnl_top.add(rbtRgistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 110, 40));
 
-        javax.swing.GroupLayout pnlL_validar3Layout = new javax.swing.GroupLayout(pnlL_validar3);
-        pnlL_validar3.setLayout(pnlL_validar3Layout);
-        pnlL_validar3Layout.setHorizontalGroup(
-            pnlL_validar3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlL_validar3Layout.createSequentialGroup()
-                .addGap(0, 3, Short.MAX_VALUE)
-                .addComponent(lbtL_validar3, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        pnlL_validar3Layout.setVerticalGroup(
-            pnlL_validar3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlL_validar3Layout.createSequentialGroup()
-                .addComponent(lbtL_validar3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 11, Short.MAX_VALUE))
-        );
-
-        pnl_top.add(pnlL_validar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 90, 40));
-
-        pnlGuardar.setBackground(new java.awt.Color(0, 150, 70));
-
-        lblEguardar.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        lblEguardar.setForeground(new java.awt.Color(255, 255, 255));
-        lblEguardar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblEguardar.setText("Guardar");
-        lblEguardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblEguardar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblEguardarMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblEguardarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblEguardarMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout pnlGuardarLayout = new javax.swing.GroupLayout(pnlGuardar);
-        pnlGuardar.setLayout(pnlGuardarLayout);
-        pnlGuardarLayout.setHorizontalGroup(
-            pnlGuardarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlGuardarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblEguardar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        pnlGuardarLayout.setVerticalGroup(
-            pnlGuardarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblEguardar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        pnl_top.add(pnlGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, 100, 30));
+        lbl_actualizar.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
+        lbl_actualizar.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_actualizar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_actualizar.setText("MODO");
+        lbl_actualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnl_top.add(lbl_actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 96, 35));
 
         BG.add(pnl_top, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 50));
 
@@ -277,6 +200,17 @@ public class VTN_F_EVENTOS extends javax.swing.JPanel {
         jLabel10.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jLabel10.setText("Evento");
         pnlEventoInfo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, -1));
+
+        btnGuardar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        btnGuardar.setText("Guardar");
+        btnGuardar.setBorder(null);
+        btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnGuardarMouseClicked(evt);
+            }
+        });
+        pnlEventoInfo.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 70, 30));
 
         jLabel11.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel11.setText("Código");
@@ -425,10 +359,6 @@ public class VTN_F_EVENTOS extends javax.swing.JPanel {
         pnlLugar.setBackground(new java.awt.Color(255, 255, 255));
         pnlLugar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel23.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        jLabel23.setText("Lugar");
-        pnlLugar.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, -1));
-
         jLabel24.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel24.setText("Departamento");
         pnlLugar.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
@@ -463,7 +393,15 @@ public class VTN_F_EVENTOS extends javax.swing.JPanel {
         jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
         pnlLugar.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 180, 10));
 
-        BG.add(pnlLugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 50, 280, 230));
+        jLabel23.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        jLabel23.setText("Lugar");
+        pnlLugar.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, -1));
+
+        jSeparator9.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator9.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        pnlLugar.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 10, 160));
+
+        BG.add(pnlLugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 50, 250, 230));
 
         jSeparator6.setForeground(new java.awt.Color(0, 0, 0));
         BG.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 280, 250, 20));
@@ -471,13 +409,81 @@ public class VTN_F_EVENTOS extends javax.swing.JPanel {
         jSeparator7.setForeground(new java.awt.Color(0, 0, 0));
         BG.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 280, 220, 20));
 
+        pnlConsulta.setBackground(new java.awt.Color(255, 255, 255));
+        pnlConsulta.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel27.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        jLabel27.setText("Area de conusulta");
+        pnlConsulta.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, -1));
+
+        jSeparator8.setForeground(new java.awt.Color(0, 0, 0));
+        pnlConsulta.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 270, 10));
+
+        jLabel15.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel15.setText("Evento");
+        pnlConsulta.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
+
+        txtEventoConsul.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtEventoConsul.setForeground(new java.awt.Color(102, 102, 102));
+        txtEventoConsul.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEventoConsulActionPerformed(evt);
+            }
+        });
+        txtEventoConsul.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEventoConsulKeyReleased(evt);
+            }
+        });
+        pnlConsulta.add(txtEventoConsul, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 200, 30));
+
+        btnEventoConsul.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        btnEventoConsul.setText("V");
+        btnEventoConsul.setBorder(null);
+        btnEventoConsul.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnEventoConsulMouseClicked(evt);
+            }
+        });
+        pnlConsulta.add(btnEventoConsul, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 30, 30));
+
+        jLabel16.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel16.setText("Municipio");
+        pnlConsulta.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
+
+        txtMunicipioConsul.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtMunicipioConsul.setForeground(new java.awt.Color(102, 102, 102));
+        txtMunicipioConsul.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtMunicipioConsulActionPerformed(evt);
+            }
+        });
+        txtMunicipioConsul.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtMunicipioConsulKeyReleased(evt);
+            }
+        });
+        pnlConsulta.add(txtMunicipioConsul, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 200, 30));
+
+        btnMunicipioConsul.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        btnMunicipioConsul.setText("V");
+        btnMunicipioConsul.setBorder(null);
+        btnMunicipioConsul.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMunicipioConsulMouseClicked(evt);
+            }
+        });
+        pnlConsulta.add(btnMunicipioConsul, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 30, 30));
+
+        BG.add(pnlConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 50, 420, 230));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(BG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BG, javax.swing.GroupLayout.PREFERRED_SIZE, 1300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -514,54 +520,6 @@ public class VTN_F_EVENTOS extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbCiudadActionPerformed
 
-    private void lbtL_validar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbtL_validar2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lbtL_validar2MouseClicked
-
-    private void lbtL_validar2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbtL_validar2MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lbtL_validar2MouseEntered
-
-    private void lbtL_validar2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbtL_validar2MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lbtL_validar2MouseExited
-
-    private void lbtL_validar3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbtL_validar3MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lbtL_validar3MouseClicked
-
-    private void lbtL_validar3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbtL_validar3MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lbtL_validar3MouseEntered
-
-    private void lbtL_validar3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbtL_validar3MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lbtL_validar3MouseExited
-
-    private void lblEguardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEguardarMouseClicked
-
-        modEv.setEv_codigo(Long.parseLong(this.txtCodigo.getText()));
-        modEv.setObo_nombre(this.cmbOperativo.getItemAt(this.cmbOperativo.getSelectedIndex()).getObo_nombre());
-        modEv.setObo_version(this.cmbOperativo.getItemAt(this.cmbOperativo.getSelectedIndex()).getObo_version());
-        modEv.setCi_codigo(this.cmbCiudad.getItemAt(this.cmbCiudad.getSelectedIndex()).getCi_codigo());
-        modEv.setEv_nombre(this.txtNombre.getText());
-        modEv.setEv_fecha(this.txtFecha.getText());
-        modEv.setEv_proposito(this.txtProposito.getText());
-        if (!sqlEv.Verificar(modEv)) {
-            System.out.print("No entró al registro");
-            sqlEv.Registrar(modEv);
-        }
-
-    }//GEN-LAST:event_lblEguardarMouseClicked
-
-    private void lblEguardarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEguardarMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblEguardarMouseEntered
-
-    private void lblEguardarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEguardarMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblEguardarMouseExited
-
     private void cmbEstrategicoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbEstrategicoItemStateChanged
         LlenarOperativo();
     }//GEN-LAST:event_cmbEstrategicoItemStateChanged
@@ -584,28 +542,79 @@ public class VTN_F_EVENTOS extends javax.swing.JPanel {
 
     }//GEN-LAST:event_btnCverificarMouseClicked
 
+    private void txtEventoConsulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEventoConsulActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEventoConsulActionPerformed
+
+    private void btnEventoConsulMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEventoConsulMouseClicked
+        sqlEv.Cargar(tabla, this.txtEventoConsul.getText(), "");
+    }//GEN-LAST:event_btnEventoConsulMouseClicked
+
+    private void txtMunicipioConsulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMunicipioConsulActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMunicipioConsulActionPerformed
+
+    private void btnMunicipioConsulMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMunicipioConsulMouseClicked
+        sqlEv.Cargar(tabla, "", this.txtMunicipioConsul.getText());
+    }//GEN-LAST:event_btnMunicipioConsulMouseClicked
+
+    private void txtEventoConsulKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEventoConsulKeyReleased
+        sqlEv.Cargar(tabla, this.txtEventoConsul.getText(), "");
+    }//GEN-LAST:event_txtEventoConsulKeyReleased
+
+    private void txtMunicipioConsulKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMunicipioConsulKeyReleased
+        sqlEv.Cargar(tabla, "", this.txtMunicipioConsul.getText());
+    }//GEN-LAST:event_txtMunicipioConsulKeyReleased
+
+    private void btnGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarMouseClicked
+        modEv.setEv_codigo(Long.parseLong(this.txtCodigo.getText()));
+        modEv.setObo_nombre(this.cmbOperativo.getItemAt(this.cmbOperativo.getSelectedIndex()).getObo_nombre());
+        modEv.setObo_version(this.cmbOperativo.getItemAt(this.cmbOperativo.getSelectedIndex()).getObo_version());
+        modEv.setCi_codigo(this.cmbCiudad.getItemAt(this.cmbCiudad.getSelectedIndex()).getCi_codigo());
+        modEv.setEv_nombre(this.txtNombre.getText());
+        modEv.setEv_fecha(this.txtFecha.getText());
+        modEv.setEv_proposito(this.txtProposito.getText());
+        if (!sqlEv.Verificar(modEv)) {
+            System.out.print("No entró al registro");
+            sqlEv.Registrar(modEv);
+        }
+    }//GEN-LAST:event_btnGuardarMouseClicked
+
+    private void rbtActualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtActualizarMouseClicked
+
+    }//GEN-LAST:event_rbtActualizarMouseClicked
+
+    private void rbtRgistrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtRgistrarMouseClicked
+
+    }//GEN-LAST:event_rbtRgistrarMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BG;
     private javax.swing.JButton btnCverificar;
+    private javax.swing.JButton btnEventoConsul;
     private javax.swing.JButton btnFcalendario;
-    private javax.swing.JComboBox<ENT_CIUDAD> cmbCiudad;
-    private javax.swing.JComboBox<ENT_DEPARTAMENTO> cmbDepa;
-    private javax.swing.JComboBox<ENT_ESTRATEGICO> cmbEstrategico;
-    private javax.swing.JComboBox<ENT_OPERATIVO> cmbOperativo;
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnMunicipioConsul;
+    private javax.swing.JComboBox<PAC_ENTIDAD.ENT_CIUDAD> cmbCiudad;
+    private javax.swing.JComboBox<PAC_ENTIDAD.ENT_DEPARTAMENTO> cmbDepa;
+    private javax.swing.JComboBox<PAC_ENTIDAD.ENT_ESTRATEGICO> cmbEstrategico;
+    private javax.swing.JComboBox<PAC_ENTIDAD.ENT_OPERATIVO> cmbOperativo;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
@@ -614,20 +623,22 @@ public class VTN_F_EVENTOS extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JLabel lblEguardar;
-    private javax.swing.JLabel lbtL_validar2;
-    private javax.swing.JLabel lbtL_validar3;
+    private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
+    private javax.swing.JLabel lbl_actualizar;
+    private javax.swing.ButtonGroup modo;
+    private javax.swing.JPanel pnlConsulta;
     private javax.swing.JPanel pnlEventoInfo;
-    private javax.swing.JPanel pnlGuardar;
-    private javax.swing.JPanel pnlL_validar2;
-    private javax.swing.JPanel pnlL_validar3;
     private javax.swing.JPanel pnlLugar;
     private javax.swing.JPanel pnlObjetivos;
     private javax.swing.JPanel pnl_top;
+    private javax.swing.JRadioButton rbtActualizar;
+    private javax.swing.JRadioButton rbtRgistrar;
     private javax.swing.JTable tabla;
     private javax.swing.JTextField txtCodigo;
+    private javax.swing.JTextField txtEventoConsul;
     private javax.swing.JTextField txtFecha;
+    private javax.swing.JTextField txtMunicipioConsul;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextArea txtProposito;
     // End of variables declaration//GEN-END:variables

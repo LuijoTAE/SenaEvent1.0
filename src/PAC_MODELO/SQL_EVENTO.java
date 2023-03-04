@@ -4,9 +4,12 @@ import PAC_ENTIDAD.ENT_EVENTO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public class SQL_EVENTO extends CONEXION {
 
@@ -54,24 +57,75 @@ public class SQL_EVENTO extends CONEXION {
         }
     }
 
-    public ArrayList<ENT_EVENTO> getEvento(ENT_EVENTO mod) {
+    public ArrayList<ENT_EVENTO> getEvento(String name) {
         PreparedStatement ps = null;
         Connection con = getConexion();
         ResultSet rs = null;
         String sql = "select * from EVENTO";
+        if (!name.equals("")) {
+            sql += " where ev_nombre like '" + name + "'";
+        }
         ArrayList<ENT_EVENTO> lista = new ArrayList();
         try {
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
-                ENT_EVENTO modd = new ENT_EVENTO();
-                modd.setEv_codigo(rs.getLong("ev_codigo"));
-                modd.setEv_nombre(rs.getString("ev_nombre"));
-                lista.add(modd);
+                ENT_EVENTO mod = new ENT_EVENTO();
+                mod.setEv_codigo(rs.getLong("ev_codigo"));
+                mod.setEv_nombre(rs.getString("ev_nombre"));
+                lista.add(mod);
             }
         } catch (SQLException e) {
             System.out.print("\n" + e.toString());
         }
         return lista;
+    }
+
+    public void Cargar(JTable tabla, String evento, String municipio) {
+
+        try {
+            DefaultTableModel modelo = new DefaultTableModel();
+            tabla.setModel(modelo);
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+            Connection cn = getConexion();
+            String select = "select EVENTO.ev_codigo, ev_nombre, ev_fecha, ev_proposito, ci_nombre, OBJ_OPERATIVO.obo_nombre ";
+            String from = " from EVENTO, OBJ_OPERATIVO, CIUDAD ";
+            String where = " where OBJ_OPERATIVO.obo_nombre = EVENTO.obo_nombre AND CIUDAD.ci_codigo = EVENTO.ci_codigo ";
+
+            if (!evento.equals("")) {
+                where += " and EVENTO.ev_nombre like '" +evento+ "' ";
+            }else{
+                if(!municipio.equals("")){
+                    where += " and CIUDAD.ci_nombre like '" +municipio+ "' ";
+                }
+            }
+
+            ps = cn.prepareStatement(select + from + where);
+            rs = ps.executeQuery();
+            ResultSetMetaData rsmd = rs.getMetaData();
+            int colum = rsmd.getColumnCount();
+            modelo.addColumn("Código");
+            modelo.addColumn("Evento");
+            modelo.addColumn("Fecha");
+            modelo.addColumn("Proposito");
+            modelo.addColumn("Municipio");
+            modelo.addColumn("Objetivo operativo");
+
+            int[] anchos = {50, 100, 50, 150, 100, 200};
+            for (int i = 0; i < colum; i++) {
+                tabla.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[colum];
+                for (int i = 0; i < colum; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException e) {
+            System.out.print("\n" + e.toString());
+        }
     }
 }
