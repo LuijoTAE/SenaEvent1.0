@@ -43,11 +43,18 @@ public class SQL_CIUDAD extends CONEXION {
         PreparedStatement ps = null;
         Connection con = getConexion();
         ResultSet rs = null;
-        String sql = "select * from CIUDAD where de_codigo=?";
+        String sql = "select * from CIUDAD ";
+        String where = "";
+        if(mod.getDe_codigo() != 0){
+           where  = " where de_codigo=?";
+        }
+        
         ArrayList<ENT_CIUDAD> lista = new ArrayList();
         try {
-            ps = con.prepareStatement(sql);
-            ps.setLong(1, mod.getDe_codigo());
+            ps = con.prepareStatement(sql + where);
+            if (mod.getDe_codigo() != 0) {
+                ps.setLong(1, mod.getDe_codigo());
+            }
             rs = ps.executeQuery();
             while (rs.next()) {
 

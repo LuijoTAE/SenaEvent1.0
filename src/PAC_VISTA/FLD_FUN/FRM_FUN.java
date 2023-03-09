@@ -15,6 +15,7 @@ public class FRM_FUN extends javax.swing.JFrame {
 
     VTN_ASISTENCIAS vtnAsistencias = new VTN_ASISTENCIAS();
     VTN_F_EVENTOS vtnFeventos = new VTN_F_EVENTOS();
+    VTN_REPORTE vtnReporte = new VTN_REPORTE();
     
     public FRM_FUN() {
         initComponents();
@@ -156,6 +157,11 @@ public class FRM_FUN extends javax.swing.JFrame {
         lblF_reportes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblF_reportes.setText("Reportes");
         lblF_reportes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblF_reportes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblF_reportesMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlReporteLayout = new javax.swing.GroupLayout(pnlReporte);
         pnlReporte.setLayout(pnlReporteLayout);
@@ -213,6 +219,10 @@ public class FRM_FUN extends javax.swing.JFrame {
         
         ShowPanel(vtnAsistencias);
     }//GEN-LAST:event_lblF_asistenciasMouseClicked
+
+    private void lblF_reportesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblF_reportesMouseClicked
+        ShowPanel(vtnReporte);
+    }//GEN-LAST:event_lblF_reportesMouseClicked
 
     /**
      * @param args the command line arguments
